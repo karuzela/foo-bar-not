@@ -1,0 +1,35 @@
+@mixin minimal-width {
+    @media only screen and (min-width: $minimal-width){
+        @content;
+    }
+}
+
+@mixin xs-width {
+    @media only screen and (min-width: $xs-width){
+        @content;
+    }
+}
+
+@mixin s-width {
+    @media only screen and (min-width: $s-width){
+        @content;
+    }
+}
+
+@mixin m-width {
+    @media only screen and (min-width: $m-width){
+        @content;
+    }
+}
+
+@mixin l-width {
+    @media only screen and (min-width: $l-width){
+        @content;
+    }
+}
+
+@mixin xl-width {
+    @media only screen and (min-width: $xl-width){
+        @content;
+    }
+}

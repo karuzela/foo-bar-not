@@ -1,0 +1,150 @@
+@include minimal-width {
+    body {
+        height: 200vh;
+    }
+    
+/* ukrywa content przewidziany dla ekranów mniejszych niż 350px szerokości */
+    
+    .small_screens {
+        display: none;
+    }
+    
+    .col {
+        position: relative;
+        width: 30%;
+        margin:4% 0 5% 3%;
+        padding:0;
+        border-top: none;
+        animation-name: bounce;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    
+/* element konieczny do uzyskania koła w RWD */
+        
+      .spacer {
+        position: relative;
+        padding-top: 100%;
+       }
+    }
+    
+    .circle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 1px solid #454444;
+        border-radius: 50%;
+        text-align: center;
+        display: block;
+        padding: 5px;
+        box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, 2); 
+        background: rgba(22,15,26,1);
+        background: -moz-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(22,15,26,1)), color-stop(100%, rgba(199,104,199,1)));
+        background: -webkit-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
+        background: -o-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
+        background: -ms-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
+        background: linear-gradient(to right, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#160f1a', endColorstr='#c768c7', GradientType=1 );
+        
+/* element konieczny do uzyskania koła w RWD */
+        
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -2%;
+         }
+        
+        .scroll_me {
+//            font-size: 1.2em;
+            line-height: 1em;
+            color:#efeaea;
+            text-align: center;
+            text-transform: uppercase;
+            font-family:$main-font, cursive;
+        }
+        
+        &>.wrapcontent {
+            display: inline-block;
+            vertical-align: middle;
+            
+    /* copy wewnątrz koła */
+            
+            & > p {
+                display:block;
+                line-height: 1em;
+                color:#efeaea;
+                text-align: center;
+                text-transform: uppercase;
+                font-family:$main-font, cursive;
+            }
+        }
+     }
+}
+
+@include xs-width {
+    .small_screens {
+        display: none;
+    }
+    .wrapcontent {
+        p, .scroll_me {
+            font-size: 1.2em;
+        }
+    }
+}
+@include s-width {
+    .small_screens {
+        display: none;
+    }
+    .wrapcontent {
+        p, .scroll_me {
+            font-size: 1.7em;
+        }
+    }
+}
+@include m-width {
+    .small_screens {
+        display: none;
+    }
+    .wrapcontent {
+        p, .scroll_me {
+            font-size: 2em;
+        }
+    }
+}
+@include l-width {
+    .small_screens {
+        display: none;
+    }
+    .wrapcontent {
+        p, .scroll_me {
+            font-size: 2.3em;
+        }
+    }
+}
+@include xl-width {
+    .small_screens, .scroll_me {
+        display: none;
+    }
+    .wrapcontent {
+        p, .scroll_me {
+            font-size: 3em;
+        }
+    }
+}
+
+@keyframes bounce {
+     0% {
+        top: 0;
+    }
+    50% {
+        top: -15px;
+    }
+     100% {
+        top: 0;
+    }
+}

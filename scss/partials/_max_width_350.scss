@@ -1,0 +1,96 @@
+.container {
+    width:98%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.small_screens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-transform: uppercase;
+    font-family:'Special Elite', cursive;
+    font-size: 1em;
+}
+
+.too_small {
+    text-align: center;
+    padding: 2em;
+}
+
+.col {
+    width: 100%;
+    padding:5%;
+    margin-bottom: 5%;
+}
+
+.wrapcontent {
+    display: none;
+}
+
+.sad_face {
+  animation-name: sad_face;
+    animation-delay: 3s;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: linear;
+  transform-origin:0% 0%;
+  animation-timing-function:ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sad_face
+{
+    0%  {transform: rotate(0deg); }
+  100%  {transform: rotate(45deg); 
+        color: red;
+    }
+
+}
+
+.foo {
+    position: relative;
+    animation-name: foo;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes bar {
+     0% {
+        top: 0;
+    }
+    50% {
+        top: -15px;
+    }
+     100% {
+        top: 0;
+    }
+}
+
+.bar {
+    position: relative;
+    animation-delay: 1s;
+    animation-name: bar;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes foo {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -15px;
+    }
+     100% {
+        top: 0;
+    }
+}
