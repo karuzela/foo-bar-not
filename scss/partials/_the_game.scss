@@ -89,7 +89,7 @@
                 display: flex;
                 justify-content: space-around;
                 flex-direction: column;
-                height: 60vh;
+                height: 65vh;
                 
                 .game_screen_wrapcontent_buttons {
                     display: flex;
@@ -102,27 +102,44 @@
             
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
+                    height: 12vh;
                     font-size: 4em;
                     font-family: $main-font;
                     position: relative;
                     top: 27vh;
+                    animation-name: ready;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
                 }
             }
         }
      }
 }
 
+@keyframes ready {
+     0% {
+        font-size: 4em;
+    }
+    50% {
+        font-size: 4.3em;
+    }
+     100% {
+        font-size: 4em;
+    }
+}
 
 .foo_button, .bar_button, .foobar_button, .not_button {
     font-family: $main-font;
-    font-size: 1.3em;
+    font-size: 1.2em;
 //    background-color: $background-color;
     color: white;
     border: none;
     padding: 0.8em 0.2em 0.8em 0.2em;
-    border-radius: 0.2em 0.2em 0.2em 0.2em;
+    border-radius: 20px;
+    box-shadow: 0 4px #9c1b82;
     width: 8vw;
-    margin: 0.06em;
+    margin: 0.07em;
 }
 
 .background_button {
@@ -136,14 +153,21 @@
 
 .bar_button {
     background-position: -400px -200px;
+    
+  
 }
 
 .foobar_button {
     background-position: -600px -300px;
+    margin-bottom: 0.3em;
 }
 
 .not_button {
     background-position: -800px -400px;
+}
+
+.item:hover a p.new-label:after{
+  content: 'ADD';
 }
 
 //.beyond_parallax {
