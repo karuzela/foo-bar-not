@@ -7,14 +7,59 @@
     align-items: center;
     
     .third_rule_inside {
-        width: 90vw;
+        width: 72vw;
         p {
             font-size: 1.5em;
             line-height: 1.5em;
             color: white;
         }
-        #p1_third_rule, #p2_third_rule, #p3_third_rule, #p4_third_rule {
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
             opacity: 0;
         }
+        #p1_third_rule {
+            font-size: 2em;
+        }
     }
+}
+
+.third_rule_inside_copy {
+    display: flex;
+    justify-content: space-between;
+    height: 14vh;
+    align-items: center;
+}
+
+.background_key {
+    background-image: url("../images/klawisze_nowe.png");
+    background-repeat: no-repeat;
+    width: 250px;
+	height: 170px;
+}
+
+.left {
+    background-position: -15px -100px;
+	width: 59px;
+	height: 56px;
+    opacity: 0;
+}
+
+.right {
+    background-position: -176px -100px;
+	width: 63px;
+	height: 54px;
+    opacity: 0;
+}
+
+.up {
+    background-position: -96px -8px;
+	width: 59px;
+	height: 56px;
+    opacity: 0;
+}
+
+.down {
+    background-position: -98px -101px;
+	width: 56px;
+	height: 55px;
+    opacity: 0;
 }

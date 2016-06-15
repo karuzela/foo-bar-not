@@ -19,15 +19,15 @@ function leave_main_circle (circle){
     })
 }
 
-/* napis się powiększy */
-function animation_first_rule(){
-    $(window).scroll(function(){
-        if($(window).scrollTop() > 150) {
-            $("#first_rule_copy").animate({ 
-                fontSize: "2.7em"}, 2000);
-        } 
-    });
-}
+///* napis się powiększy */
+//function animation_first_rule(){
+//    $(window).scroll(function(){
+//        if($(window).scrollTop() > 150) {
+//            $("#first_rule_copy").animate({ 
+//                fontSize: "2.7em"}, 2000);
+//        } 
+//    });
+//}
 
 /* napis przeniesie się na dół strony */
 function animation_second_rule(){
@@ -39,26 +39,30 @@ function animation_second_rule(){
     });
 }
 
-/* napisy będą się pojawiać po kolei */
+/* animacja ukazująca elementy po kolei */
+function opacity_1 (element, delay) {
+    element.delay(delay).animate({
+               opacity: 1}, 3000);
+}
+
 function animation_third_rule(){
     $(window).scroll(function(){
        if($(window).scrollTop() > 410) {
-           $("#p1_third_rule").delay(3000).animate({
-               opacity: 1}, 3000);
-           $("#p2_third_rule").delay(5000).animate({
-               opacity: 1}, 3000);
-           $("#p3_third_rule").delay(7000).animate({
-               opacity: 1}, 3000);
-           $("#p4_third_rule").delay(9000).animate({
-               opacity: 1}, 3000);
+           opacity_1($("#p2_third_rule"), 3000);
+           opacity_1($(".left"), 3000);
+           opacity_1($("#p3_third_rule"), 5000);
+           opacity_1($(".right"), 5000);
+           opacity_1($("#p4_third_rule"), 7000);
+           opacity_1($(".up"), 7000);
+           opacity_1($("#p5_third_rule"), 9000);
+           opacity_1($(".down"), 9000);
        }
     });
 }
 
 $(document).ready(function(){
-   hover_main_circle($(".circle"));
-    leave_main_circle($(".circle"));
-//    animation_first_rule();
+    hover_main_circle($(".main_circle"));
+    leave_main_circle($(".main_circle"));
     animation_second_rule();
     animation_third_rule();
     
