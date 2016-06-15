@@ -1,17 +1,25 @@
+
+
 @include minimal-width {
     body {
         height: 200vh;
     }
     
 /* ukrywa content przewidziany dla ekranów mniejszych niż 350px szerokości */
-    
-    .small_screens {
-        display: none;
+    .main_container_circle {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        
+        .inner_container_circle {
+        width: 30%;
+        }
     }
     
     .col {
         position: relative;
-        width: 30%;
+//        width: 20%;
         margin:4% 0 5% 3%;
         padding:0;
         border-top: none;
@@ -39,15 +47,15 @@
         text-align: center;
         display: block;
         padding: 5px;
-        box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, 2); 
-        background: rgba(22,15,26,1);
-        background: -moz-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
-        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(22,15,26,1)), color-stop(100%, rgba(199,104,199,1)));
-        background: -webkit-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
-        background: -o-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
-        background: -ms-linear-gradient(left, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
-        background: linear-gradient(to right, rgba(22,15,26,1) 0%, rgba(199,104,199,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#160f1a', endColorstr='#c768c7', GradientType=1 );
+        box-shadow: 2px 5px 15px 0px rgba(26, 38, 44, 0.5); 
+        background: rgba(136,123,143,1);
+        background: -moz-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,123,143,1)), color-stop(100%, rgba(219,155,219,0.22)));
+        background: -webkit-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+        background: -o-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+        background: -ms-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+        background: linear-gradient(to right, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#887b8f', endColorstr='#db9bdb', GradientType=1 );
         
 /* element konieczny do uzyskania koła w RWD */
         
@@ -60,7 +68,6 @@
          }
         
         .scroll_me {
-//            font-size: 1.2em;
             line-height: 1em;
             color:#efeaea;
             text-align: center;
@@ -75,6 +82,7 @@
     /* copy wewnątrz koła */
             
             & > p {
+//                font-size: 1em;
                 display:block;
                 line-height: 1em;
                 color:#efeaea;

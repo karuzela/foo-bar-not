@@ -1,0 +1,64 @@
+body {
+  overflow-x: hidden;
+  display: flex;
+//  background: url('../images/black_chair.png') repeat top left;
+background: rgba(6,0,17,1);
+background: -moz-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(6,0,17,1)), color-stop(98%, rgba(6,0,17,1)), color-stop(100%, rgba(67,42,117,1)));
+background: -webkit-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
+background: -o-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
+background: -ms-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
+background: linear-gradient(to right, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060011', endColorstr='#432a75', GradientType=1 );
+}
+
+.parallax_container {
+    .scroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .horizon {
+        z-index: 1;
+        width: 650vw;
+    }
+//    .middle {
+//        z-index: 500;
+//        width: 4000px;
+//    }
+    .front {
+    // odpowiada za wysokość na paralaksie //
+//     top: 30vh;
+        z-index: 1000;
+        width: 550vw;
+        p {
+            font-family: $main-font;
+//          font-size: 2em;
+            color: whitesmoke;
+        }
+        .page {
+            position: absolute;
+            width: 100vw;
+            top: 0;
+        }
+    }
+}
+/**
+  * important: keep position fixed, you can however use top:0 instead of bottom:0
+  * if you want to make it stick to the top of the browser
+  */
+
+/**
+  * z-index ordering of the different layers, do this for your layers,
+  * also assign absolute width (to prevent issues if the script gets executed before the images get loaded)
+  */
+
+
+.beyond_parallax {
+    background-color: white;
+    width: 100vw;
+    height: 300vh;
+    float: right;
+    align-self: flex-end;
+}
+

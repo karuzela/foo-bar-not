@@ -16,6 +16,8 @@
     text-transform: uppercase;
     font-family:'Special Elite', cursive;
     font-size: 1em;
+    z-index: 1000;
+    background-color: white;
 }
 
 .too_small {
@@ -94,3 +96,4 @@
         top: 0;
     }
 }
+

@@ -1,0 +1,20 @@
+
+.third_rule_container {
+    width: 90vw;
+    height: 100vh;
+    left: 270vw;
+    display: flex;
+    align-items: center;
+    
+    .third_rule_inside {
+        width: 90vw;
+        p {
+            font-size: 1.5em;
+            line-height: 1.5em;
+            color: white;
+        }
+        #p1_third_rule, #p2_third_rule, #p3_third_rule, #p4_third_rule {
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.beyond_parallax {
+    background-color: white;
+    width: 100vw;
+    height: 300vh;
+    float: right;
+    align-self: flex-end;
+    border-radius: 50%;
+    
+    .game_view {
+        button {
+            color: black;
+        }
+    }
+}

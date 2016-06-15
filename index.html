@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
     <script src="scripts/jquery-2.2.4.min.js"></script>
-    <script src="scripts/painter.js"></script>
+    <script type="text/javascript" src="scripts/jquery.jInvertScroll.js"></script>
     <script src="scripts/app.js"></script>
     <title>Foo, bar or not?</title>
 </head>
@@ -18,16 +18,66 @@
             <span>#sadface</span>
         </div>
     </div>
-    <div class="container">
-      <article class="col">
-        <div class="spacer"></div>
-        <div class="circle">
-            <div class="wrapcontent">
-                <p>foo, bar</p>
-                <p>or not?</p>
+    <div class="parallax_container">
+        <div class="horizon scroll">
+            <img src="images/purple-spirals-background.jpg"/>
+        </div>
+        <div class="middle scroll">
+<!--            <img src="images/kubek_ciastka.png"/>-->
+        </div>
+        <div class="front scroll">
+            <div class="main_container_circle">
+                <div class="inner_container_circle">
+                    <div class="container">
+                        <article class="col">
+                            <div class="spacer"></div>
+                            <div class="circle">
+                                <div class="wrapcontent">
+                                    <p>foo, bar</p>
+                                    <p>or not?</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="first_rule_container page">
+                <div class="first_rule_inside">
+                    <p id="first_rule_copy">#1 You have to divide numbers.</p>
+                </div>
+            </div>
+            <div class="second_rule_container page">
+                <div class="second_rule_inside"> 
+                    <p id="second_rule_copy">#2 Be fast 
+                    <br>and accurate!</p>
+                </div>
+            </div>
+             <div class="third_rule_container page">
+                <div class="third_rule_inside">
+                    <p>#3 When you see a number, hit the right button:</p>
+                    <br>
+                    <p id="p1_third_rule">
+                    Number divisible by 3 -> "FOO" button (or the left arrow key).</p>
+                    <p id="p2_third_rule">
+                    Number divisible by 5 -> "BAR" button (or the right arrow key).</p>
+                    <p id="p3_third_rule">Number divisible by 3 and 5 -> "FOOBAR" button (or the up arrow key).</p>
+                    <p id="p4_third_rule">
+                    In all the other cases -> "NOT" button (or the down arrow key).
+                    </p>
+                </div>
             </div>
         </div>
-      </article>
+    
+    </div>
+    <div class="beyond_parallax">
+        <div class="game_view">
+            <div class="game_screen">
+            </div>
+            <button class="foo">foo</button>
+            <button class="bar">bar</button>
+            <button class="foobar">foobar</button>
+            <button class="not">not</button>
+        </div>
     </div>
 </body>
 </html>

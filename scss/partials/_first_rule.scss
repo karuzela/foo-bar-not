@@ -1,0 +1,15 @@
+.first_rule_container {
+    width: 100vw;
+    height: 100vh;
+    left: 100vw;
+    display: flex;
+    align-items: center;
+    
+    .first_rule_inside {
+        width: 100vw;
+        
+        #first_rule_copy {
+            font-size: 2em;
+        }
+    }
+}

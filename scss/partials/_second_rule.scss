@@ -1,0 +1,16 @@
+.second_rule_container {
+    width: 100vw;
+    height: 400px;
+    left: 200vw;
+    
+    .second_rule_inside {
+        position: relative;
+        top: 40vh;
+        width: 100vw;
+        
+        #second_rule_copy {
+            position: relative;
+            font-size: 2.5em;    
+        }
+    }
+}
