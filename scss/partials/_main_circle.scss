@@ -6,18 +6,18 @@
     }
     
 /* ukrywa content przewidziany dla ekranów mniejszych niż 350px szerokości */
-    .main_container_circle {
+    .main_container_main_circle {
         width: 100vw;
         display: flex;
         justify-content: center;
         align-content: center;
         
-        .inner_container_circle {
+        .subcontainer_main_circle {
         width: 30%;
         }
     }
     
-    .col {
+    .main_circle_outside {
         position: relative;
 //        width: 20%;
         margin:4% 0 5% 3%;
@@ -30,13 +30,13 @@
     
 /* element konieczny do uzyskania koła w RWD */
         
-      .spacer {
+      .main_circle_spacer {
         position: relative;
         padding-top: 100%;
        }
     }
     
-    .circle {
+    .main_circle {
         position: absolute;
         top: 0;
         bottom: 0;

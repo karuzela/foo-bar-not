@@ -1,17 +1,9 @@
 body {
   overflow-x: hidden;
   display: flex;
-//  background: url('../images/black_chair.png') repeat top left;
-background: rgba(6,0,17,1);
-background: -moz-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(6,0,17,1)), color-stop(98%, rgba(6,0,17,1)), color-stop(100%, rgba(67,42,117,1)));
-background: -webkit-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
-background: -o-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
-background: -ms-linear-gradient(left, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
-background: linear-gradient(to right, rgba(6,0,17,1) 0%, rgba(6,0,17,1) 98%, rgba(67,42,117,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060011', endColorstr='#432a75', GradientType=1 );
+  background-color: $background-color;
 }
-
+    
 .parallax_container {
     .scroll {
         position: fixed;
@@ -20,7 +12,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060011', end
     }
     .horizon {
         z-index: 1;
-        width: 650vw;
+        width: 450vw;
     }
 //    .middle {
 //        z-index: 500;
@@ -30,7 +22,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060011', end
     // odpowiada za wysokość na paralaksie //
 //     top: 30vh;
         z-index: 1000;
-        width: 550vw;
+        width: 450vw;
         p {
             font-family: $main-font;
 //          font-size: 2em;
@@ -53,12 +45,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#060011', end
   * also assign absolute width (to prevent issues if the script gets executed before the images get loaded)
   */
 
-
-.beyond_parallax {
-    background-color: white;
-    width: 100vw;
-    height: 300vh;
-    float: right;
-    align-self: flex-end;
-}
 
