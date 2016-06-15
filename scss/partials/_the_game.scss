@@ -82,23 +82,32 @@
         .game_screen_wrapcontent {
             display: inline-block;
             vertical-align: middle;
+            position: relative;
+            height: 100%;
             
             .game_screen_wrapcontent_inside {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-    /* copy wewnątrz koła */
+                justify-content: space-around;
+                flex-direction: column;
+                height: 60vh;
+                
+                .game_screen_wrapcontent_buttons {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap-reverse;
+                    width: 30vw;
+                    position: relative;
+                    top: 20vh;
+                }
             
-//            & > p {
-////                font-size: 1em;
-//                display:block;
-//                line-height: 1em;
-//                color:#efeaea;
-//                text-align: center;
-//                text-transform: uppercase;
-//                font-family:$main-font, cursive;
-//            }
+                .game_screen_wrapcontent_ready {
+                    text-transform: uppercase;
+                    font-size: 4em;
+                    font-family: $main-font;
+                    position: relative;
+                    top: 27vh;
+                }
+            }
         }
      }
 }
@@ -106,13 +115,35 @@
 
 .foo_button, .bar_button, .foobar_button, .not_button {
     font-family: $main-font;
-    font-size: 1.5em;
-    background-color: $background-color;
+    font-size: 1.3em;
+//    background-color: $background-color;
     color: white;
     border: none;
     padding: 0.8em 0.2em 0.8em 0.2em;
     border-radius: 0.2em 0.2em 0.2em 0.2em;
-    width: 12vw;
+    width: 8vw;
+    margin: 0.06em;
+}
+
+.background_button {
+    background-image: url("../images/buttons_background.jpg");
+    background-repeat: no-repeat;
+}
+
+.foo_button {
+    background-position: -200px -100px;
+}
+
+.bar_button {
+    background-position: -400px -200px;
+}
+
+.foobar_button {
+    background-position: -600px -300px;
+}
+
+.not_button {
+    background-position: -800px -400px;
 }
 
 //.beyond_parallax {
