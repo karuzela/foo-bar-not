@@ -3,6 +3,16 @@
 @import "partials/first_rule";
 @import "partials/second_rule";
 @import "partials/third_rule";
+@import "partials/ready";
 @import "partials/the_game";
 @import "partials/max_width_350";
 @import "partials/main_circle";
+
+button:focus {
+    outline:0;
+}
+
+button:active {
+    position: relative;
+    top: 1px;
+}

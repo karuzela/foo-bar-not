@@ -1,11 +1,10 @@
-.game_container {
+.ready_container {
     width: 100vw;
     height: 100vh;
     left: 350vw;
-    top: -200vh;
 }
 
-.container_game_screen {
+.container_ready_screen {
     width:190%;
     height: 100vh;
     margin: 0 auto;
@@ -14,7 +13,7 @@
     align-items: center;
 }
 
-.game_screen_outside {
+.ready_screen_outside {
     width: 100%;
     padding:5%;
     margin-bottom: 5%;
@@ -26,18 +25,18 @@
     }
     
 /* ukrywa content przewidziany dla ekranów mniejszych niż 350px szerokości */
-    .main_container_game_screen {
+    .main_container_ready_screen {
         width: 100vw;
         display: flex;
         justify-content: center;
         align-content: center;
         
-        .subcontainer_game_screen {
+        .subcontainer_ready_screen {
         width: 30%;
         }
     }
     
-    .game_screen_outside {
+    .ready_screen_outside {
         position: relative;
         margin:4% 0 5% 3%;
         padding:0;
@@ -45,13 +44,13 @@
     
 /* element konieczny do uzyskania koła w RWD */
         
-      .game_screen_spacer {
+      .ready_screen_spacer {
         position: relative;
         padding-top: 100%;
        }
     }
     
-    .game_screen {
+    .ready_screen {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -75,19 +74,19 @@
          }
         
         
-        .game_screen_wrapcontent {
+        .ready_screen_wrapcontent {
             display: inline-block;
             vertical-align: middle;
             position: relative;
             height: 100%;
             
-            .game_screen_wrapcontent_inside {
+            .ready_screen_wrapcontent_inside {
                 display: flex;
                 justify-content: space-around;
                 flex-direction: column;
                 height: 65vh;
                 
-                .game_screen_wrapcontent_buttons {
+                .ready_screen_wrapcontent_buttons {
                     display: flex;
                     justify-content: center;
                     flex-wrap: wrap-reverse;
@@ -96,20 +95,36 @@
                     top: 20vh;
                 }
             
-                .game_screen_wrapcontent_ready {
+                .ready_screen_wrapcontent_ready {
                     text-transform: uppercase;
                     height: 12vh;
-                    font-size: 6em;
+                    font-size: 4em;
                     font-family: $main-font;
                     position: relative;
                     top: 27vh;
+                    animation-name: ready;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
                 }
             }
         }
      }
 }
 
-.foo_button, .bar_button, .foobar_button, .not_button {
+@keyframes ready {
+     0% {
+        font-size: 4em;
+    }
+    50% {
+        font-size: 4.3em;
+    }
+     100% {
+        font-size: 4em;
+    }
+}
+
+.yes_button, .no_button, .maybe_button {
     font-family: $main-font;
     font-size: 1.2em;
     color: white;
@@ -127,19 +142,34 @@
 //    background-repeat: no-repeat;
 //}
 //
-//.foo_button {
-//    background-position: -200px -100px;
-//}
-//
-//.not_button {
+//.maybe_button {
 //    background-position: -400px -200px;
 //}
 //
-//.bar_button {
+//.yes_button {
 //    background-position: -600px -300px;
 //}
 //
-.foobar_button {
+//.no_button {
 //    background-position: -800px -400px;
-     margin-bottom: 0.5em;
-}
+//}
+
+
+//.beyond_parallax {
+//    background-color: #19092e;
+//    width: 100vw;
+//    height: 100vh;
+//    float: right;
+//    align-self: flex-end;
+//    
+//    .game_view {
+//        display: flex;
+//        justify-content: center;
+//        
+//        .game_screen_container {
+//            width:80%;
+//            height: 100vh;
+//            margin: 0 auto;
+//        }
+//    }
+//}

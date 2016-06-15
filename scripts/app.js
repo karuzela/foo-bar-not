@@ -60,11 +60,32 @@ function animation_third_rule(){
     });
 }
 
+function prepareTheGame(){
+    var game_screen = $("div.game_container");
+    
+    $("div.ready_container").remove();
+    game_screen.animate({
+            top: "0vh"}, 3000);
+}
+
+function hide_ready_screen (){
+    var ready_screen = $("div.ready_container");
+    var button_yes = $(".yes_button");
+    
+    button_yes.on("click", function(){
+        ready_screen.animate({
+            top: "-100vh"}, 3000, function(){
+                prepareTheGame();
+            });
+    })
+}
+
 $(document).ready(function(){
     hover_main_circle($(".main_circle"));
     leave_main_circle($(".main_circle"));
     animation_second_rule();
     animation_third_rule();
+    hide_ready_screen();
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {
