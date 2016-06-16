@@ -150,6 +150,12 @@ $(document).ready(function(){
     clickButtonNo();
     hideHeart();
     
+    $('.timer').startTimer({
+    onComplete: function(element){
+      console.log('ldsfdsf')
+    }
+  });
+    
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {
         height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height

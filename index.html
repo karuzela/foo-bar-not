@@ -9,6 +9,7 @@
     <script src="scripts/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.jInvertScroll.js"></script>
     <script src="scripts/typewriting.js"></script>
+    <script src="scripts/jquery.simple.timer.js"></script>
     <script src="scripts/app.js"></script>
     <title>Foo, bar or not?</title>
 </head>
@@ -31,8 +32,8 @@
                             <div class="main_circle_spacer"></div>
                             <div class="main_circle">
                                 <div class="wrapcontent">
-                                    <p>foo, bar</p>
-                                    <p>or not?</p>
+                                    <p class="main_circle_copy">foo, bar</p>
+                                    <p class="main_circle_copy">or not?</p>
                                 </div>
                             </div>
                         </article>
@@ -41,7 +42,8 @@
             </div>
             <div class="first_rule_container page">
                 <div class="first_rule_inside">
-                    <p id="first_rule_copy">#1 You have to divide numbers.</p>
+                    <p id="first_rule_copy">#1 You have to divide numbers.
+                    </p>
                 </div>
             </div>
             <div class="second_rule_container page">
@@ -142,8 +144,18 @@
                                     <div class="game_screen_wrapcontent">
                                         <div class="game_screen_wrapcontent_inside">
                                             <div class="game_screen_menu_container">
-                                                <div class="timer"></div>
-                                                <div class="counter"></div>
+                                                <div class="timer_container">
+                                                    <p id="timer">time:
+                                                        <br>
+                                                        <div class="timer" data-seconds-left=90></div>
+                                                    </p>
+                                                </div>
+                                                <div class="counter_container">
+                                                    <p id="counter">points:
+                                                        <br>
+                                                        <span id="counter_value">1000</span>
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="game_screen_wrapcontent_ready">2</div>
                                             <div class="game_screen_wrapcontent_buttons">
