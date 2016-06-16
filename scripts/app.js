@@ -140,6 +140,52 @@ function hideHeart(){
     $("#heart").toggleClass("heart_hide");
 }
 
+function initiateGame(){
+    var foo_button = $(".foo_button");
+    var bar_button = $(".bar_button");
+    var foobar_button = $(".foobar_button");
+    var not_button = $(".not_button");
+    
+    
+}
+
+function startGame(){
+    var start = $(".game_screen_wrapcontent_ready");
+    
+    start.addClass("start").html("START");
+    start.on("click", function(){
+        showRandomNumber();
+        $('.timer').startTimer({
+            onComplete: function(element){
+            console.log('ldsfdsf')
+            }
+        });
+    })
+}
+
+function getRandomNumber(){
+    var random_number = Math.ceil(Math.random() * 100);
+    return random_number;
+}
+
+function showRandomNumber(){
+    var random_number = getRandomNumber();
+    var start = $(".game_screen_wrapcontent_ready");
+    
+//    html(random_number);
+    
+    start.removeClass("start");
+    start.annalka(random_number,{
+      tick: 5,
+      steps: 4,
+//      chars: '0123456789',
+      // Callback function
+      callback: function() {
+        console.log("dziala");
+      }
+    });  
+}
+
 $(document).ready(function(){
     hover_main_circle($(".main_circle"));
     leave_main_circle($(".main_circle"));
@@ -149,12 +195,8 @@ $(document).ready(function(){
     clickButtonMaybe();
     clickButtonNo();
     hideHeart();
-    
-    $('.timer').startTimer({
-    onComplete: function(element){
-      console.log('ldsfdsf')
-    }
-  });
+    initiateGame();
+    startGame();
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {

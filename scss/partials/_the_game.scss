@@ -134,10 +134,11 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        flex-direction: column;
                             
                         
                         #counter {
-                              line-height: 1.5em;
+                            line-height: 1.5em;
                         }
                         
                         #counter_value {
@@ -167,11 +168,18 @@
                     align-self: center;
                     border-radius: 20px;
                     padding: 0.2em 0 0.2em 0;
+                    
                 }
-            }
+                 .start {
+                        font-size: 4em;
+                        line-height: 1.7em;
+                        cursor:pointer;
+                }
         }
      }
 }
+}
+
 
 .foo_button, .bar_button, .foobar_button, .not_button {
     font-family: $main-font;
