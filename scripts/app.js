@@ -172,18 +172,9 @@ function showRandomNumber(){
     var random_number = getRandomNumber();
     var start = $(".game_screen_wrapcontent_ready");
     
-//    html(random_number);
-    
     start.removeClass("start");
-    start.annalka(random_number,{
-      tick: 5,
-      steps: 4,
-//      chars: '0123456789',
-      // Callback function
-      callback: function() {
-        console.log("dziala");
-      }
-    });  
+    start.html(random_number);
+    transform_number($('.counter'), 30, 'fixed_width');
 }
 
 $(document).ready(function(){
