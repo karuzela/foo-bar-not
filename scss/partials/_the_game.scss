@@ -181,11 +181,17 @@
                 }
                 .gameover {
                         position: relative;
-//                        height: 40vh;
-//                        width: 35vh;
-//                        font-size: 3em;
-//                        top: -10vh;
-                    
+                }
+                
+                .gameover_copy {
+                    color: $pink-color;
+                    font-size: 1em !important;
+                }
+                
+                .gameover_points_accuracy {
+                    color: $pink-color;
+                    font-size: 0.7em;
+                    line-height: 1.5em !important;
                 }
         }
      }
