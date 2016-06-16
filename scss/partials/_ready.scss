@@ -19,6 +19,14 @@
     margin-bottom: 5%;
 }
 
+.span_ready_hide {
+    display: none;
+}
+
+.heart_hide {
+    opacity: 0;
+}
+
 @include minimal-width {
     body {
         height: 200vh;

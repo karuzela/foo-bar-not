@@ -19,16 +19,6 @@ function leave_main_circle (circle){
     })
 }
 
-///* napis się powiększy */
-//function animation_first_rule(){
-//    $(window).scroll(function(){
-//        if($(window).scrollTop() > 150) {
-//            $("#first_rule_copy").animate({ 
-//                fontSize: "2.7em"}, 2000);
-//        } 
-//    });
-//}
-
 /* napis przeniesie się na dół strony */
 function animation_second_rule(){
     $(window).scroll(function(){
@@ -40,7 +30,7 @@ function animation_second_rule(){
 }
 
 /* animacja ukazująca elementy po kolei */
-function opacity_1 (element, delay) {
+function setOpacity1 (element, delay) {
     element.delay(delay).animate({
                opacity: 1}, 3000);
 }
@@ -48,19 +38,20 @@ function opacity_1 (element, delay) {
 function animation_third_rule(){
     $(window).scroll(function(){
        if($(window).scrollTop() > 410) {
-           opacity_1($("#p2_third_rule"), 3000);
-           opacity_1($(".left"), 3000);
-           opacity_1($("#p3_third_rule"), 5000);
-           opacity_1($(".right"), 5000);
-           opacity_1($("#p4_third_rule"), 7000);
-           opacity_1($(".up"), 7000);
-           opacity_1($("#p5_third_rule"), 9000);
-           opacity_1($(".down"), 9000);
+           setOpacity1($("#p2_third_rule"), 3000);
+           setOpacity1($(".left"), 3000);
+           setOpacity1($("#p3_third_rule"), 5000);
+           setOpacity1($(".right"), 5000);
+           setOpacity1($("#p4_third_rule"), 7000);
+           setOpacity1($(".up"), 7000);
+           setOpacity1($("#p5_third_rule"), 9000);
+           setOpacity1($(".down"), 9000);
        }
     });
 }
 
-function prepareTheGame(){
+/* pojawia się ekran do gry */
+function prepareTheGameScreen(){
     var game_screen = $("div.game_container");
     
     $("div.ready_container").remove();
@@ -68,16 +59,60 @@ function prepareTheGame(){
             top: "0vh"}, 3000);
 }
 
-function hide_ready_screen (){
+/* ukrywa się ekran z pytaniem "ready?"*/
+function clickButtonYes(){
     var ready_screen = $("div.ready_container");
     var button_yes = $(".yes_button");
     
     button_yes.on("click", function(){
         ready_screen.animate({
             top: "-100vh"}, 3000, function(){
-                prepareTheGame();
+                prepareTheGameScreen();
             });
     })
+}
+
+/* reakcja na wybór "maybe" */
+function clickButtonMaybe(){
+    var button_maybe = $(".maybe_button");
+    var comment = $("#span_ready");
+    var heart = $("#heart");
+    
+    button_maybe.on("click", function(){
+        heart.toggleClass("heart_hide");
+        comment.toggleClass("span_ready_hide");
+        var typeWriting = new TypeWriting({
+        targetElement: comment [0],
+        inputString: "(o_O)",
+        typing_interval: 130,
+        blink_interval: '1s',
+        cursor_color: '#9c1b82',
+        }, function() {
+        });   
+    })
+}
+
+function clickButtonNo(){
+    var button_no = $(".no_button");
+    var comment = $("#span_ready");
+
+    button_no.click(function(){
+        var heart = $("#heart");
+        var newHeart = heart.clone(true); 
+        heart.before(newHeart); 
+        heart.remove();
+        
+        comment.toggleClass("span_ready_hide");
+        $("#heart").removeClass("heart_hide");
+        setTimeout(function() {
+            newHeart.find('.heart-Container').addClass('broken');
+        }, 1000);
+    })
+        
+}
+
+function hideHeart(){
+    $("#heart").toggleClass("heart_hide");
 }
 
 $(document).ready(function(){
@@ -85,7 +120,10 @@ $(document).ready(function(){
     leave_main_circle($(".main_circle"));
     animation_second_rule();
     animation_third_rule();
-    hide_ready_screen();
+    clickButtonYes();
+    clickButtonMaybe();
+    clickButtonNo();
+    hideHeart();
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {
