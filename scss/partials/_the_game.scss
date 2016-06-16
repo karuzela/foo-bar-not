@@ -85,18 +85,24 @@
                 display: flex;
                 justify-content: space-around;
                 flex-direction: column;
-                height: 65vh;
+                height: 85vh;
                 
                 .game_screen_menu_container {
-                    border: 1px solid red;
                     height: 20vh;
+                    width: 50vw;
+                    display: flex;
+                    justify-content: space-around;
                     
                     .timer {
                         background-color: yellow;
+                        height: 15vh;
+                        width: 20vh;
                     }
                     
                     .counter {
                         background-color: orange;
+                        height: 15vh;
+                        width: 20vh;
                     }
                 }
                 .game_screen_wrapcontent_buttons {
@@ -104,8 +110,7 @@
                     justify-content: center;
                     flex-wrap: wrap-reverse;
                     width: 30vw;
-                    position: relative;
-                    top: 25vh;
+                    align-self: center;
                 }
             
                 .game_screen_wrapcontent_ready {
@@ -113,8 +118,6 @@
                     height: 12vh;
                     font-size: 6em;
                     font-family: $main-font;
-                    position: relative;
-                    top: 16vh;
                 }
             }
         }
