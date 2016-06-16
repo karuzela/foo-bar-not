@@ -140,7 +140,7 @@ function hideHeart(){
     $("#heart").toggleClass("heart_hide");
 }
 
-function initiateGame(){
+function activeButtons(){
     var foo_button = $(".foo_button");
     var bar_button = $(".bar_button");
     var foobar_button = $(".foobar_button");
@@ -149,17 +149,36 @@ function initiateGame(){
     
 }
 
+function showGameOver(){
+    var start = $(".game_screen_wrapcontent_ready");
+    var buttons = $(".game_screen_wrapcontent_buttons");
+    
+    start.removeClass("start");
+    buttons.addClass("gameover_buttons");
+    start.addClass("gameover");
+    start.html("game over");
+    start.animate({
+        "font-size": "3em",
+        width: "35vh",
+        height: "40vh",
+        top: "-10vh",
+        },200)
+}
+
 function startGame(){
     var start = $(".game_screen_wrapcontent_ready");
+    var buttons = $(".game_screen_wrapcontent_buttons");
     
     start.addClass("start").html("START");
     start.on("click", function(){
         showRandomNumber();
+        start.removeClass("start");
         $('.timer').startTimer({
             onComplete: function(element){
-            console.log('ldsfdsf')
+                showGameOver();
             }
         });
+        start.off("click");
     })
 }
 
@@ -186,7 +205,6 @@ $(document).ready(function(){
     clickButtonMaybe();
     clickButtonNo();
     hideHeart();
-    initiateGame();
     startGame();
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate

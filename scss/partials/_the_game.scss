@@ -154,6 +154,10 @@
                     width: 30vw;
                     align-self: center;
                 }
+                
+                .gameover_buttons {
+                    display: none;
+                }
             
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
@@ -170,10 +174,18 @@
                     padding: 0.2em 0 0.2em 0;
                     
                 }
-                 .start {
+                .start {
                         font-size: 4em;
                         line-height: 1.7em;
                         cursor:pointer;
+                }
+                .gameover {
+                        position: relative;
+//                        height: 40vh;
+//                        width: 35vh;
+//                        font-size: 3em;
+//                        top: -10vh;
+                    
                 }
         }
      }
