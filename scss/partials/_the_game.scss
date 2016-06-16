@@ -99,27 +99,50 @@
                     .timer_container {
                         background-image: url("../images/plama.png");
                         background-repeat: no-repeat;
-                        height: 15vh;
+                        background-size: contain;
+                        height: 20vh;
                         width: 20vh;
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
                         justify-content: center;
+                        color: whitesmoke;
                         
-                        #timer_value {
+                        .timer {
+//                            display: inline-block;
+                            line-height: 1.5em;
                             
+                            .hours {
+                                display: none;
+                            }
+                            .minutes {
+                                float: left;
+                            }
+                            
+                            .seconds {
+                                float: left;
+                            }
                         }
                     }
                     
                     .counter_container {
-//                        background-color: orange;
-                        height: 15vh;
+                      background-image: url("../images/plama_alt.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 20vh;
                         width: 20vh;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                            
+                        
+                        #counter {
+                              line-height: 1.5em;
+                        }
                         
                         #counter_value {
-                            
+                            font-size: 1.8em;
+                            color: $background-color;
                         }
                     }
                 }
@@ -133,9 +156,17 @@
             
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-                    height: 12vh;
+                    height: 18vh;
+                    width: 20vw;
                     font-size: 6em;
                     font-family: $main-font;
+                    color: $pink-color;
+                    -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
+                    -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
+                    box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
+                    align-self: center;
+                    border-radius: 20px;
+                    padding: 0.2em 0 0.2em 0;
                 }
             }
         }
@@ -152,7 +183,9 @@
     box-shadow: 0 4px $background-color;
     width: 8vw;
     margin: 0.07em;
-    background-color: #9c1b82;
+//    background-color: #9c1b82;
+//    background-color: #6e4794;
+    background-color: #ae83b9;
 }
 
 //.background_button {
