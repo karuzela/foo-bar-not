@@ -1,3 +1,12 @@
+.heart_hide {
+    opacity: 0;
+}
+
+#heart {
+    position: relative;
+    top: -8vh;
+}
+
 .heart-Circle{
   border-radius:260px;
   height:140px;
@@ -13,8 +22,6 @@
   -moz-transition:all 1s; 
   -webkit-transition:all 1s;  
   transition:all 1s;
-//    -webkit-transition-delay: 5s;
-//    transition-delay: 3s;
 }
 
 .heart-Container.broken{

@@ -23,10 +23,6 @@
     display: none;
 }
 
-.heart_hide {
-    opacity: 0;
-}
-
 @include minimal-width {
     body {
         height: 200vh;
@@ -100,7 +96,7 @@
                     flex-wrap: wrap-reverse;
                     width: 30vw;
                     position: relative;
-                    top: 20vh;
+                    top: 25vh;
                 }
             
                 .ready_screen_wrapcontent_ready {
@@ -109,7 +105,7 @@
                     font-size: 4em;
                     font-family: $main-font;
                     position: relative;
-                    top: 27vh;
+                    top: 30vh;
                     animation-name: ready;
                     animation-duration: 1.5s;
                     animation-iteration-count: infinite;

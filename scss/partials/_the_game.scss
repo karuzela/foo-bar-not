@@ -87,13 +87,25 @@
                 flex-direction: column;
                 height: 65vh;
                 
+                .game_screen_menu_container {
+                    border: 1px solid red;
+                    height: 20vh;
+                    
+                    .timer {
+                        background-color: yellow;
+                    }
+                    
+                    .counter {
+                        background-color: orange;
+                    }
+                }
                 .game_screen_wrapcontent_buttons {
                     display: flex;
                     justify-content: center;
                     flex-wrap: wrap-reverse;
                     width: 30vw;
                     position: relative;
-                    top: 20vh;
+                    top: 25vh;
                 }
             
                 .game_screen_wrapcontent_ready {
@@ -102,7 +114,7 @@
                     font-size: 6em;
                     font-family: $main-font;
                     position: relative;
-                    top: 27vh;
+                    top: 16vh;
                 }
             }
         }
