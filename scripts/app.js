@@ -1,87 +1,129 @@
-var gamePoints = {
+var gameSettings = {
     points: 0,
     accuracy: 0,
     clicks: 0,
     random_number: null,
-    isActive: false
+    isActive: false,
+    start: null
 }
 
 function startGame(){
-    gamePoints.points = 0;
-    gamePoints.accuracy = 0;
-    gamePoints.clicks = 0;
+    gameSettings.points = 0;
+    gameSettings.accuracy = 0;
+    gameSettings.clicks = 0;
     var counter_value = $("#counter_value");
-    var start = $(".game_screen_wrapcontent_ready");
-    var buttons = $(".game_screen_wrapcontent_buttons");
+//    var buttons = $(".game_screen_wrapcontent_buttons");
     var foo_button = $(".foo_button");
     var bar_button = $(".bar_button");
     var foobar_button = $(".foobar_button");
     var not_button = $(".not_button");
   
     
-    start.addClass("start").html("START");
-    start.on("click", function(){
-        gamePoints.random_number = getRandomNumber();
-        showRandomNumber( gamePoints.random_number);
-        start.removeClass("start");
-        gamePoints.isActive = true;
+    gameSettings.start.addClass("start").html("START");
+    gameSettings.start.on("click", function(){
+        gameSettings.random_number = getRandomNumber();
+        showRandomNumber(gameSettings.random_number);
+        gameSettings.start.removeClass("start");
+        gameSettings.isActive = true;
         // uruchamia timer //
         $('.timer').startTimer({
             onComplete: function(element){
-                gamePoints.isActive = false;
-                showGameOver(gamePoints.points, gamePoints.accuracy, gamePoints.clicks);
+                gameSettings.isActive = false;
+                showGameOver(gameSettings.points, gameSettings.accuracy, gameSettings.clicks);
             }
         });
-        start.off("click");
+        gameSettings.start.off("click");
     });
     
-   
         foo_button.on("click", function(){
-             if (gamePoints.isActive) {
+             if (gameSettings.isActive) {
                     isFoo();
              }
         })
+//        addEventToGameButton(foo_button, isFoo());    
+    
+        bar_button.on("click", function(){
+            if(gameSettings.isActive){
+                isBar();
+            }
+        })
+        
+        foobar_button.on("click", function(){
+            if(gameSettings.isActive){
+                isFooBar();
+            }
+        })
+        
+        not_button.on("click", function(){
+            if(gameSettings.isActive){
+                isNot();
+            }
+        })
+        
+//        addEventToGameButton(bar_button, isBar());
+//        addEventToGameButton(foobar_button, isFooBar());
+//        addEventToGameButton(isNot, isNot());
 }
 
-function isFoo (){
+//function addEventToGameButton(choose_button, choose_option){
+//    choose_button.on("click", function(){
+//             if (gameSettings.isActive) {
+//                    choose_option;
+//             }
+//        })
+//}
+
+function isAnswerCorrect(condition){
     var counter_value = $("#counter_value");
-     
-     if ( gamePoints.random_number % 3 === 0){
-            gamePoints.points = gamePoints.points + 10;
-            gamePoints.accuracy++;
-            console.log("333!!!");
-        }
-        gamePoints.random_number = getRandomNumber();
-        showRandomNumber( gamePoints.random_number);
-        gamePoints.clicks++;
-        counter_value.html(gamePoints.points); 
- }
+    
+    if (condition){
+        gameSettings.points = gameSettings.points + 10;
+        gameSettings.accuracy++;
+    }
+    gameSettings.random_number = getRandomNumber();
+    showRandomNumber(gameSettings.random_number);
+    gameSettings.clicks++;
+    counter_value.html(gameSettings.points); 
+}
+
+function isFoo(){
+    isAnswerCorrect(gameSettings.random_number % 3 === 0);
+}
+
+function isBar(){
+    isAnswerCorrect(gameSettings.random_number % 5 === 0);
+}
+
+function isFooBar(){
+    isAnswerCorrect(gameSettings.random_number % 3 === 0 && gameSettings.random_number % 5 === 0);
+}
+
+function isNot(){
+    isAnswerCorrect(gameSettings.random_number % 3 !== 0 && gameSettings.random_number % 5 !== 0)
+}
 
 function getRandomNumber(){
     return Math.ceil(Math.random() * 100); 
 }
 
 function showRandomNumber(random_number){
-    var start = $(".game_screen_wrapcontent_ready");
-    
-    start.removeClass("start");
-    start.html(random_number);
+    gameSettings.start.removeClass("start");
+    gameSettings.start.html(random_number);
 // animacja numerów
     transform_number($('.counter'), 30, 'fixed_width');
     return random_number;
 }
 
 function showGameOver(points, accuracy, clicks){
-    var start = $(".game_screen_wrapcontent_ready");
     var buttons = $(".game_screen_wrapcontent_buttons");
     
-    start.removeClass("start");
+    gameSettings.start.removeClass("start");
     buttons.addClass("gameover_buttons");
-    start.addClass("gameover");
-    start.html(function (){
+    gameSettings.start.addClass("gameover");
+    gameSettings.start.html(function (){
         return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + accuracy + "/" + clicks + "</p><button class='play_again'>play again</button></div>"
     });
-    start.animate({
+    gameSettings.start.animate({
         width: "35vh",
         height: "40vh",
         top: "-10vh",
@@ -91,29 +133,35 @@ function showGameOver(points, accuracy, clicks){
 function playAgain(){
     var button_play_again = $(".play_again");
     
-    button_play_again.on("click", function(){
-        console.log("hello");
+    gameSettings.start.on("click", button_play_again, function(){
         startGame();
     })
 }
 
 $(document).ready(function(){
+    gameSettings.start= $(".game_screen_wrapcontent_ready");
  
     document.onkeydown = function(e) {
     switch (e.keyCode) {
         case 37:
-            if (gamePoints.isActive) {
-                    isFoo();
+            if(gameSettings.isActive) {
+                isFoo();
              }
             break;
         case 38:
-            alert('up');
+            if(gameSettings.isActive){
+                isFooBar();
+            }
             break;
         case 39:
-            alert('right');
+            if(gameSettings.isActive){
+                isBar();
+            }
             break;
         case 40:
-            alert('down');
+            if(gameSettings.isActive){
+                isNot();
+            }
             break;
         }
     };
