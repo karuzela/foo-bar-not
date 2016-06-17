@@ -17,16 +17,41 @@ function startGame(){
     var bar_button = $(".bar_button");
     var foobar_button = $(".foobar_button");
     var not_button = $(".not_button");
-  
-    gameSettings.start.addClass("start").html("START");
-    gameSettings.start.on("click", function(){
+    var button_play_again = $(".play_again");
+
+// resetuje ustawienia do rozpoczęcia nowej gry
+    function reset(){
+        var buttons = $(".game_screen_wrapcontent_buttons");
+        
+        $('.timer').empty();
+        buttons.removeClass("gameover_buttons");
+        gameSettings.start.removeClass("gameover");
+        gameSettings.start.empty();
+        gameSettings.start.animate({
+            width: "20vw",
+            height: "18vh",
+            top: "0vh",
+            },200)
+    }
+    
+// odpala grę
+    function init() {
         gameSettings.random_number = getRandomNumber();
         showRandomNumber(gameSettings.random_number);
         gameSettings.start.removeClass("start");
         gameSettings.isActive = true;
         startTimer();
         gameSettings.start.off("click");
-    });
+    }
+  
+    gameSettings.start.addClass("start").html("START");
+    
+// po kliknięciu w "play again" zaczynamy od nowa
+    $('body').on("click", ".play_again", function() {
+        reset();
+        init();
+    })
+    gameSettings.start.on("click", init);
     foo_button.on("click", function(){
          if (gameSettings.isActive) {
                 isFoo();
@@ -47,19 +72,7 @@ function startGame(){
             isNot();
         }
     })
-//        addEventToGameButton(foo_button, isFoo)  
-//        addEventToGameButton(bar_button, isBar)
-//        addEventToGameButton(foobar_button, isFooBar)
-//        addEventToGameButton(not_button, isNot)
 }
-
-//function addEventToGameButton(choose_button, choose_option){
-//    choose_button.on("click", function(){
-//             if (gameSettings.isActive) {
-//                    choose_option;
-//             }
-//        })
-//}
 
 // koniec gry - pokazuje się wynik
 function showGameOver(points, accuracy, clicks){
@@ -79,16 +92,6 @@ function showGameOver(points, accuracy, clicks){
         },200)
 }
 
-// zagraj ponownie - do dopracowania
-function playAgain(){
-    var button_play_again = $(".play_again");
-    
-    gameSettings.start.on("click", button_play_again, function(){
-        startGame();
-    })
-}
-
-// uruchamia timer z plug-ina
 function startTimer(){
     $('.timer').startTimer({
         onComplete: function(element){
@@ -112,6 +115,7 @@ function isAnswerCorrect(condition){
     showRandomNumber(gameSettings.random_number);
     gameSettings.clicks++;
     counter_value.html(gameSettings.points); 
+    transform_number($('.counter'), 30, 'fixed_width');
 }
 
 function isFoo(){
@@ -145,8 +149,8 @@ function showRandomNumber(random_number){
     gameSettings.start.removeClass("start");
     gameSettings.start.html(random_number);
 // animacja numerów
-    transform_number($('.counter'), 30, 'fixed_width');
-    return random_number;
+    //transform_number($('.counter'), 30, 'fixed_width');
+  
 }
 // -----------------------------------//
 
@@ -188,7 +192,7 @@ $(document).ready(function(){
     clickButtonNo();
     hideHeart();
     startGame();
-//    playAgain();
+    
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {
