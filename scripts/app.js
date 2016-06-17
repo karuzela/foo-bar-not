@@ -69,7 +69,8 @@ function showGameOver(points, accuracy, clicks){
     buttons.addClass("gameover_buttons");
     gameSettings.start.addClass("gameover");
     gameSettings.start.html(function (){
-        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + accuracy + "/" + clicks + "</p><button class='play_again'>play again</button></div>"
+        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((accuracy/clicks)*100) + "%</p><button class='play_again'>play again</button></div>"
+        
     });
     gameSettings.start.animate({
         width: "35vh",
@@ -187,7 +188,7 @@ $(document).ready(function(){
     clickButtonNo();
     hideHeart();
     startGame();
-    playAgain();
+//    playAgain();
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {
