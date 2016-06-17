@@ -5,7 +5,7 @@ var gameSettings = {
     random_number: null,
     isActive: false,
     start: null,
-//    success: gameSettings[accuracy]/gameSettings[clicks]
+    consecutive_hits: 0
 }
 
 // przebieg gry
@@ -13,6 +13,7 @@ function startGame(){
     gameSettings.points = 0;
     gameSettings.accuracy = 0;
     gameSettings.clicks = 0;
+    gameSettings.consecutive_hits = 0;
     var counter_value = $("#counter_value");
     var foo_button = $(".foo_button");
     var bar_button = $(".bar_button");
@@ -23,18 +24,24 @@ function startGame(){
 // resetuje ustawienia do rozpoczęcia nowej gry
     function reset(){
         var buttons = $(".game_screen_wrapcontent_buttons");
+        var buttons_final = $(".game_screen_wrapcontent_buttons_final");
         gameSettings.points = 0;
-        
+        gameSettings.consecutive_hits = 0;
         
         $('.timer').empty();
         counter_value.html(gameSettings.points); 
         buttons.removeClass("gameover_buttons");
+        buttons_final.removeClass("gameover_buttons");
+        $(".game_screen_wrapcontent_buttons").css(
+            "top", "0vh");
+        $(".game_screen_wrapcontent_final_buttons").css(
+            "top", "200vh");
         gameSettings.start.removeClass("gameover");
         gameSettings.start.empty();
         gameSettings.start.animate({
             width: "20vw",
             height: "18vh",
-            top: "0vh",
+            top: "5vh",
             },200)
     }
     
@@ -57,7 +64,7 @@ function startGame(){
     })
     gameSettings.start.on("click", init);
     foo_button.on("click", function(){
-         if (gameSettings.isActive) {
+        if (gameSettings.isActive) {
                 isFoo();
          }
     })
@@ -81,8 +88,10 @@ function startGame(){
 // koniec gry - pokazuje się wynik
 function showGameOver(points, accuracy, clicks){
     var buttons = $(".game_screen_wrapcontent_buttons");
+    var buttons_final = $(".game_screen_wrapcontent_final_buttons");
     
     gameSettings.start.removeClass("start");
+    buttons_final.addClass("gameover_buttons");
     buttons.addClass("gameover_buttons");
     gameSettings.start.addClass("gameover");
     gameSettings.start.html(function (){
@@ -96,7 +105,7 @@ function showGameOver(points, accuracy, clicks){
     gameSettings.start.animate({
         width: "35vh",
         height: "40vh",
-        top: "-10vh",
+        top: "5vh",
         },200)
 }
 
@@ -109,7 +118,6 @@ function startTimer(){
     });
 }
 
-
 // ------------------------------------ //
 // weryfikacja poprawności odpowiedzi   //
 function isAnswerCorrect(condition){
@@ -118,43 +126,48 @@ function isAnswerCorrect(condition){
     var bar_button = $(".bar_button");
     var foobar_button = $(".foobar_button");
     var not_button = $(".not_button");
+    var final_buttons = false;
     
     if (condition){
         gameSettings.points = gameSettings.points + 10;
         gameSettings.accuracy++;
+        gameSettings.consecutive_hits++;
         $(".checkmark").animate({
-            opacity: 0.8},200).animate({
-            opacity: 0},200)
+            opacity: 0.8},150).animate({
+            opacity: 0},150)
          $(".checkmark_final").animate({
-            opacity: 0.8},200).animate({
-            opacity: 0},200)
+            opacity: 0.8},150).animate({
+            opacity: 0},150)
+        if (gameSettings.consecutive_hits === 5 && final_buttons === false){
+            $(".game_screen_wrapcontent_buttons").animate({
+            top:"200vh"},300).delay(300);
+             $(".game_screen_wrapcontent_final_buttons").css(
+            "opacity", "1")
+            $(".game_screen_wrapcontent_final_buttons").animate({
+            top: "0vh"}, 300)
+            final_buttons = true;
+        }
     }
     else {
         $("div.game_screen_wrapcontent_ready.counter").animate({
-            "background-color": "#9c1b82"},170).animate({
-            "background-color": "white"},170)  
+            "background-color": "#9c1b82"},120).animate({
+            "background-color": "white"},120)  
+        gameSettings.consecutive_hits = 0;
     }
     gameSettings.random_number = getRandomNumber();
     showRandomNumber(gameSettings.random_number);
     gameSettings.clicks++;
     counter_value.html(gameSettings.points);
     
-    if (gameSettings.accuracy/gameSettings.clicks === 1 && gameSettings.clicks === 2){
-        console.log("dziala");
-        
-        $(".game_screen_wrapcontent_buttons").animate({
-            top:"200vh"},500).delay(1000);
-        $(".game_screen_wrapcontent_final_buttons").animate({
-            top: "0vh"}, 500)
-    }
+    final_buttons = true;
 }
 
 function isFoo(){
-    isAnswerCorrect(gameSettings.random_number % 3 === 0);
+    isAnswerCorrect(gameSettings.random_number % 3 === 0 && !(gameSettings.random_number % 5 === 0));
 }
 
 function isBar(){
-    isAnswerCorrect(gameSettings.random_number % 5 === 0);
+    isAnswerCorrect(gameSettings.random_number % 5 === 0 && !(gameSettings.random_number % 3 === 0));
 }
 
 function isFooBar(){

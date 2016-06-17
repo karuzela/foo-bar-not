@@ -86,7 +86,7 @@
                 justify-content: space-around;
                 flex-direction: column;
                 height: 85vh;
-                border: 1px solid orange;
+//                border: 1px solid orange;
                 
                 .game_screen_menu_container {
                     height: 16vh;
@@ -96,7 +96,7 @@
                     font-family: $main-font;
                     font-size: 1.5em;
                     text-transform: uppercase;
-                    border: 1px solid orange;
+//                    border: 1px solid orange;
                     position: relative;
                     top: 10vh;
                     
@@ -158,7 +158,7 @@
                     width: 30vw;
                     align-self: center;
                     position: relative;
-                    border: 1px solid red;
+//                    border: 1px solid red;
                     top: 20vh;
                 }
                 
@@ -170,7 +170,7 @@
                     width: 30vw;
                     align-self: center;
                     top: 200vh;
-                    border: 1px solid red;
+//                    border: 1px solid red;
                 }
                 
                 .gameover_buttons {
@@ -190,7 +190,7 @@
                     align-self: center;
                     border-radius: 20px;
                     padding: 0.2em 0 0.2em 0;
-                    border: 1px solid green;
+//                    border: 1px solid green;
                     position: relative;
                     top: 15vh;
                 }
@@ -266,19 +266,25 @@
 }
 
 
-.foo_button, .bar_button, .foobar_button, .not_button, .foo_final_button, .bar_final_button, .foobar_final_button, .not_final_button {
+.foo_button, .bar_button, .foobar_button, .not_button {
     font-family: $main-font;
     font-size: 1.2em;
     color: white;
     border: none;
     padding: 0.8em 0.2em 0.8em 0.2em;
     border-radius: 20px;
-    box-shadow: 0 4px $background-color;
     width: 8vw;
     margin: 0.07em;
+    box-shadow: 0 4px $background-color;
     background-color: #ae83b9;
 }
 
-.foobar_button, .foobar_final_button {
+.buttons_final {
+    box-shadow: 0 4px $pink-color;
+    background-color: $background-color;
+    
+}
+
+.foobar_button {
      margin-bottom: 0.5em;
 }

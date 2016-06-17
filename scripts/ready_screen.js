@@ -41,7 +41,7 @@ function clickButtonYes(){
             removeReadyScreen(1100);
         }  
         else if( comment.hasClass("eyes")) {
-            typeWriting("(@_@)");
+            typeWriting(":)");
             removeReadyScreen(1200);
         }
         else {
