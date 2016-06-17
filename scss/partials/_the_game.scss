@@ -174,25 +174,46 @@
                     padding: 0.2em 0 0.2em 0;
                     
                 }
-                .start {
-                        font-size: 4em;
-                        line-height: 1.7em;
-                        cursor:pointer;
-                }
-                .gameover {
-                        position: relative;
+                
+                .score {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: space-between;
+                    justify-content: center;
+                    align-items: center;
                 }
                 
-                .gameover_copy {
-                    color: $pink-color;
-                    font-size: 1em !important;
-                }
-                
-                .gameover_points_accuracy {
-                    color: $pink-color;
-                    font-size: 0.7em;
-                    line-height: 1.5em !important;
-                }
+                    .start {
+                            font-size: 4em;
+                            line-height: 1.7em;
+                            cursor:pointer;
+                    }
+                    .gameover {
+                            position: relative;
+                    }
+
+                    .gameover_copy {
+                        color: $pink-color;
+                        font-size: 0.5em;
+                    }
+
+                    .gameover_points_accuracy {
+                        color: $pink-color;
+                        font-size: 0.2em;
+//                        line-height: 1em;
+                        padding: 0.5em;
+                    }
+
+                    .play_again {
+                        padding: 1em 0.7em 1em 0.7em;
+                        box-shadow: 0 4px $background-color;
+                        border-radius: 20px;
+                        border: none;
+                        background-color: #ae83b9;
+                        font-family: $main-font;
+                        font-size: 0.2em;
+                        line-height: 0;
+                    }
         }
      }
 }
