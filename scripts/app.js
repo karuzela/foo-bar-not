@@ -99,7 +99,7 @@ function showGameOver(points, accuracy, clicks){
         return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: 0%</p><button class='play_again'>play again</button></div>";
         }
         else {
-            return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((accuracy/clicks)*100) + "%</p><button class='play_again'>play again</button></div>";
+            return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + gameSettings.points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) + "%</p><button class='play_again'>play again</button></div>";
         }
     });
     gameSettings.start.animate({
@@ -118,48 +118,63 @@ function startTimer(){
     });
 }
 
+
 // ------------------------------------ //
 // weryfikacja poprawności odpowiedzi   //
 function isAnswerCorrect(condition){
     var counter_value = $("#counter_value");
-    var foo_button = $(".foo_button");
-    var bar_button = $(".bar_button");
-    var foobar_button = $(".foobar_button");
-    var not_button = $(".not_button");
     var final_buttons = false;
     
     if (condition){
-        gameSettings.points = gameSettings.points + 10;
-        gameSettings.accuracy++;
-        gameSettings.consecutive_hits++;
-        $(".checkmark").animate({
-            opacity: 0.8},150).animate({
-            opacity: 0},150)
-         $(".checkmark_final").animate({
-            opacity: 0.8},150).animate({
-            opacity: 0},150)
-        if (gameSettings.consecutive_hits === 5 && final_buttons === false){
-            $(".game_screen_wrapcontent_buttons").animate({
-            top:"200vh"},300).delay(300);
-             $(".game_screen_wrapcontent_final_buttons").css(
-            "opacity", "1")
-            $(".game_screen_wrapcontent_final_buttons").animate({
-            top: "0vh"}, 300)
-            final_buttons = true;
-        }
+        answerIsCorrect(final_buttons);
     }
     else {
-        $("div.game_screen_wrapcontent_ready.counter").animate({
-            "background-color": "#9c1b82"},120).animate({
-            "background-color": "white"},120)  
+       showThatAnswerIsIncorrect(); 
         gameSettings.consecutive_hits = 0;
     }
     gameSettings.random_number = getRandomNumber();
     showRandomNumber(gameSettings.random_number);
     gameSettings.clicks++;
     counter_value.html(gameSettings.points);
-    
     final_buttons = true;
+}
+
+// po niepoprawnej odpowiedzi tło liczby robi się na chwilę fioletowe
+function showThatAnswerIsIncorrect(){
+    $("div.game_screen_wrapcontent_ready.counter").animate({
+        "background-color": "#9c1b82"},120).animate({
+        "background-color": "white"},120)  
+}
+
+function answerIsCorrect(final_buttons){
+    gameSettings.points = gameSettings.points + 10;
+    gameSettings.accuracy++;
+    gameSettings.consecutive_hits++;
+    showCheckmark();
+     if (gameSettings.consecutive_hits === 5 && final_buttons === false){
+            showFinalButtons();
+            final_buttons = true;
+        }
+}
+
+// po każdej poprawnej odpowiedzi pojawia się checkmark
+function showCheckmark (){
+    $(".checkmark").animate({
+        opacity: 0.8},150).animate({
+        opacity: 0},150);
+    $(".checkmark_final").animate({
+        opacity: 0.8},150).animate({
+        opacity: 0},150)
+}
+
+// po 5 prawidłowych odpowiedziach z rzędu pokaże się trudniejsza wersja buttonów
+function showFinalButtons (){
+    $(".game_screen_wrapcontent_buttons").animate({
+        top:"200vh"},300).delay(300);
+    $(".game_screen_wrapcontent_final_buttons").css(
+        "opacity", "1")
+    $(".game_screen_wrapcontent_final_buttons").animate({
+        top: "0vh"}, 300)
 }
 
 function isFoo(){
@@ -194,7 +209,6 @@ function showRandomNumber(random_number){
     gameSettings.start.html(random_number);
 // animacja numerów
     transform_number($('.counter'), 50, 'fixed_width');
-  
 }
 // -----------------------------------//
 
@@ -222,7 +236,6 @@ $(document).ready(function(){
             if(gameSettings.isActive){
                 isBar();
             }
-            
             break;
         case 40:
             if(gameSettings.isActive){
