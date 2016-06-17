@@ -7,62 +7,50 @@ var gameSettings = {
     start: null
 }
 
+// przebieg gry
 function startGame(){
     gameSettings.points = 0;
     gameSettings.accuracy = 0;
     gameSettings.clicks = 0;
     var counter_value = $("#counter_value");
-//    var buttons = $(".game_screen_wrapcontent_buttons");
     var foo_button = $(".foo_button");
     var bar_button = $(".bar_button");
     var foobar_button = $(".foobar_button");
     var not_button = $(".not_button");
   
-    
     gameSettings.start.addClass("start").html("START");
     gameSettings.start.on("click", function(){
         gameSettings.random_number = getRandomNumber();
         showRandomNumber(gameSettings.random_number);
         gameSettings.start.removeClass("start");
         gameSettings.isActive = true;
-        // uruchamia timer //
-        $('.timer').startTimer({
-            onComplete: function(element){
-                gameSettings.isActive = false;
-                showGameOver(gameSettings.points, gameSettings.accuracy, gameSettings.clicks);
-            }
-        });
+        startTimer();
         gameSettings.start.off("click");
     });
-    
-        foo_button.on("click", function(){
-             if (gameSettings.isActive) {
-                    isFoo();
-             }
-        })
-//        addEventToGameButton(foo_button, isFoo());    
-    
-        bar_button.on("click", function(){
-            if(gameSettings.isActive){
-                isBar();
-            }
-        })
-        
-        foobar_button.on("click", function(){
-            if(gameSettings.isActive){
-                isFooBar();
-            }
-        })
-        
-        not_button.on("click", function(){
-            if(gameSettings.isActive){
-                isNot();
-            }
-        })
-        
-//        addEventToGameButton(bar_button, isBar());
-//        addEventToGameButton(foobar_button, isFooBar());
-//        addEventToGameButton(isNot, isNot());
+    foo_button.on("click", function(){
+         if (gameSettings.isActive) {
+                isFoo();
+         }
+    })
+    bar_button.on("click", function(){
+        if(gameSettings.isActive){
+            isBar();
+        }
+    })
+    foobar_button.on("click", function(){
+        if(gameSettings.isActive){
+            isFooBar();
+        }
+    })
+    not_button.on("click", function(){
+        if(gameSettings.isActive){
+            isNot();
+        }
+    })
+//        addEventToGameButton(foo_button, isFoo)  
+//        addEventToGameButton(bar_button, isBar)
+//        addEventToGameButton(foobar_button, isFooBar)
+//        addEventToGameButton(not_button, isNot)
 }
 
 //function addEventToGameButton(choose_button, choose_option){
@@ -73,6 +61,45 @@ function startGame(){
 //        })
 //}
 
+// koniec gry - pokazuje się wynik
+function showGameOver(points, accuracy, clicks){
+    var buttons = $(".game_screen_wrapcontent_buttons");
+    
+    gameSettings.start.removeClass("start");
+    buttons.addClass("gameover_buttons");
+    gameSettings.start.addClass("gameover");
+    gameSettings.start.html(function (){
+        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + accuracy + "/" + clicks + "</p><button class='play_again'>play again</button></div>"
+    });
+    gameSettings.start.animate({
+        width: "35vh",
+        height: "40vh",
+        top: "-10vh",
+        },200)
+}
+
+// zagraj ponownie - do dopracowania
+function playAgain(){
+    var button_play_again = $(".play_again");
+    
+    gameSettings.start.on("click", button_play_again, function(){
+        startGame();
+    })
+}
+
+// uruchamia timer z plug-ina
+function startTimer(){
+    $('.timer').startTimer({
+        onComplete: function(element){
+            gameSettings.isActive = false;
+            showGameOver(gameSettings.points, gameSettings.accuracy, gameSettings.clicks);
+        }
+    });
+}
+
+
+// ------------------------------------ //
+// weryfikacja poprawności odpowiedzi   //
 function isAnswerCorrect(condition){
     var counter_value = $("#counter_value");
     
@@ -101,11 +128,18 @@ function isFooBar(){
 function isNot(){
     isAnswerCorrect(gameSettings.random_number % 3 !== 0 && gameSettings.random_number % 5 !== 0)
 }
+// -----------------------------------//
 
+
+
+
+// -----------------------------------//
+// generowanie numerów 
 function getRandomNumber(){
     return Math.ceil(Math.random() * 100); 
 }
 
+// wyświetla randomomo wygenerowany numer
 function showRandomNumber(random_number){
     gameSettings.start.removeClass("start");
     gameSettings.start.html(random_number);
@@ -113,34 +147,12 @@ function showRandomNumber(random_number){
     transform_number($('.counter'), 30, 'fixed_width');
     return random_number;
 }
-
-function showGameOver(points, accuracy, clicks){
-    var buttons = $(".game_screen_wrapcontent_buttons");
-    
-    gameSettings.start.removeClass("start");
-    buttons.addClass("gameover_buttons");
-    gameSettings.start.addClass("gameover");
-    gameSettings.start.html(function (){
-        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + accuracy + "/" + clicks + "</p><button class='play_again'>play again</button></div>"
-    });
-    gameSettings.start.animate({
-        width: "35vh",
-        height: "40vh",
-        top: "-10vh",
-        },200)
-}
-
-function playAgain(){
-    var button_play_again = $(".play_again");
-    
-    gameSettings.start.on("click", button_play_again, function(){
-        startGame();
-    })
-}
+// -----------------------------------//
 
 $(document).ready(function(){
     gameSettings.start= $(".game_screen_wrapcontent_ready");
  
+//przypisanie odpowiednim strzałkom funkcji buttonów w grze
     document.onkeydown = function(e) {
     switch (e.keyCode) {
         case 37:
