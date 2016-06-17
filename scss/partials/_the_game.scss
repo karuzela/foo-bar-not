@@ -86,7 +86,7 @@
                 justify-content: space-around;
                 flex-direction: column;
                 height: 85vh;
-//                border: 1px solid orange;
+                border: 1px solid orange;
                 
                 .game_screen_menu_container {
                     height: 16vh;
@@ -96,7 +96,9 @@
                     font-family: $main-font;
                     font-size: 1.5em;
                     text-transform: uppercase;
-//                    border: 1px solid orange;
+                    border: 1px solid orange;
+                    position: relative;
+                    top: 10vh;
                     
                     .timer_container {
                         background-image: url("../images/plama.png");
@@ -155,7 +157,20 @@
                     flex-wrap: wrap-reverse;
                     width: 30vw;
                     align-self: center;
-//                    border: 1px solid red;
+                    position: relative;
+                    border: 1px solid red;
+                    top: 20vh;
+                }
+                
+                 .game_screen_wrapcontent_final_buttons {
+                    display: flex;
+                     position: relative;
+                    justify-content: center;
+                    flex-wrap: wrap-reverse;
+                    width: 30vw;
+                    align-self: center;
+                    top: 200vh;
+                    border: 1px solid red;
                 }
                 
                 .gameover_buttons {
@@ -175,8 +190,9 @@
                     align-self: center;
                     border-radius: 20px;
                     padding: 0.2em 0 0.2em 0;
-//                    border: 1px solid green;
+                    border: 1px solid green;
                     position: relative;
+                    top: 15vh;
                 }
                 
                 .checkmark {
@@ -187,8 +203,21 @@
                     height: 8vh;
                     width: 8vw;
                     z-index: 20000;
-                    left: 32vw;
-                    top: 35vh;
+                    left: 28vw;
+                    top: -25vh;
+                    opacity: 0;
+                }
+                
+                .checkmark_final {
+                    position: absolute;
+                    background-image: url("../images/checkmark.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 8vh;
+                    width: 8vw;
+                    z-index: 20000;
+                    left: 28vw;
+                    top: -25vh;
                     opacity: 0;
                 }
                 
@@ -237,7 +266,7 @@
 }
 
 
-.foo_button, .bar_button, .foobar_button, .not_button {
+.foo_button, .bar_button, .foobar_button, .not_button, .foo_final_button, .bar_final_button, .foobar_final_button, .not_final_button {
     font-family: $main-font;
     font-size: 1.2em;
     color: white;
@@ -250,24 +279,6 @@
     background-color: #ae83b9;
 }
 
-//.background_button {
-//    background-image: url("../images/buttons_background.jpg");
-//    background-repeat: no-repeat;
-//}
-//
-//.foo_button {
-//    background-position: -200px -100px;
-//}
-//
-//.not_button {
-//    background-position: -400px -200px;
-//}
-//
-//.bar_button {
-//    background-position: -600px -300px;
-//}
-//
-.foobar_button {
-//    background-position: -800px -400px;
+.foobar_button, .foobar_final_button {
      margin-bottom: 0.5em;
 }

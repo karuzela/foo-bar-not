@@ -4,7 +4,8 @@ var gameSettings = {
     clicks: 0,
     random_number: null,
     isActive: false,
-    start: null
+    start: null,
+//    success: gameSettings[accuracy]/gameSettings[clicks]
 }
 
 // przebieg gry
@@ -113,11 +114,18 @@ function startTimer(){
 // weryfikacja poprawności odpowiedzi   //
 function isAnswerCorrect(condition){
     var counter_value = $("#counter_value");
+    var foo_button = $(".foo_button");
+    var bar_button = $(".bar_button");
+    var foobar_button = $(".foobar_button");
+    var not_button = $(".not_button");
     
     if (condition){
         gameSettings.points = gameSettings.points + 10;
         gameSettings.accuracy++;
         $(".checkmark").animate({
+            opacity: 0.8},200).animate({
+            opacity: 0},200)
+         $(".checkmark_final").animate({
             opacity: 0.8},200).animate({
             opacity: 0},200)
     }
@@ -130,6 +138,15 @@ function isAnswerCorrect(condition){
     showRandomNumber(gameSettings.random_number);
     gameSettings.clicks++;
     counter_value.html(gameSettings.points);
+    
+    if (gameSettings.accuracy/gameSettings.clicks === 1 && gameSettings.clicks === 2){
+        console.log("dziala");
+        
+        $(".game_screen_wrapcontent_buttons").animate({
+            top:"200vh"},500).delay(1000);
+        $(".game_screen_wrapcontent_final_buttons").animate({
+            top: "0vh"}, 500)
+    }
 }
 
 function isFoo(){
