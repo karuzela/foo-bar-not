@@ -24,7 +24,7 @@ function removeReadyScreen (delay){
     var ready_screen = $("div.ready_container");
     
     ready_screen.delay(delay).animate({
-            top: "-100vh"}, 1000, function(){
+            top: "-150vh"}, 1000, function(){
                 prepareTheGameScreen();
             });
 }

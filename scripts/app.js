@@ -22,8 +22,11 @@ function startGame(){
 // resetuje ustawienia do rozpoczęcia nowej gry
     function reset(){
         var buttons = $(".game_screen_wrapcontent_buttons");
+        gameSettings.points = 0;
+        
         
         $('.timer').empty();
+        counter_value.html(gameSettings.points); 
         buttons.removeClass("gameover_buttons");
         gameSettings.start.removeClass("gameover");
         gameSettings.start.empty();
@@ -82,8 +85,12 @@ function showGameOver(points, accuracy, clicks){
     buttons.addClass("gameover_buttons");
     gameSettings.start.addClass("gameover");
     gameSettings.start.html(function (){
-        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((accuracy/clicks)*100) + "%</p><button class='play_again'>play again</button></div>"
-        
+        if (clicks === 0){
+        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: 0%</p><button class='play_again'>play again</button></div>";
+        }
+        else {
+            return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((accuracy/clicks)*100) + "%</p><button class='play_again'>play again</button></div>";
+        }
     });
     gameSettings.start.animate({
         width: "35vh",
@@ -110,12 +117,19 @@ function isAnswerCorrect(condition){
     if (condition){
         gameSettings.points = gameSettings.points + 10;
         gameSettings.accuracy++;
+        $(".checkmark").animate({
+            opacity: 0.8},200).animate({
+            opacity: 0},200)
+    }
+    else {
+        $("div.game_screen_wrapcontent_ready.counter").animate({
+            "background-color": "#9c1b82"},170).animate({
+            "background-color": "white"},170)  
     }
     gameSettings.random_number = getRandomNumber();
     showRandomNumber(gameSettings.random_number);
     gameSettings.clicks++;
-    counter_value.html(gameSettings.points); 
-    transform_number($('.counter'), 30, 'fixed_width');
+    counter_value.html(gameSettings.points);
 }
 
 function isFoo(){
@@ -149,7 +163,7 @@ function showRandomNumber(random_number){
     gameSettings.start.removeClass("start");
     gameSettings.start.html(random_number);
 // animacja numerów
-    //transform_number($('.counter'), 30, 'fixed_width');
+    transform_number($('.counter'), 50, 'fixed_width');
   
 }
 // -----------------------------------//
@@ -158,30 +172,37 @@ $(document).ready(function(){
     gameSettings.start= $(".game_screen_wrapcontent_ready");
  
 //przypisanie odpowiednim strzałkom funkcji buttonów w grze
-    document.onkeydown = function(e) {
+   $(document).keydown(function(e) {
     switch (e.keyCode) {
         case 37:
             if(gameSettings.isActive) {
                 isFoo();
              }
+             e.preventDefault();
+             return false;
             break;
         case 38:
             if(gameSettings.isActive){
                 isFooBar();
             }
+            e.preventDefault();
+             return false;
             break;
         case 39:
             if(gameSettings.isActive){
                 isBar();
             }
+            
             break;
         case 40:
             if(gameSettings.isActive){
                 isNot();
             }
+            e.preventDefault();
+             return false;
             break;
         }
-    };
+    });
     
     hover_main_circle($(".main_circle"));
     leave_main_circle($(".main_circle"));
@@ -192,7 +213,6 @@ $(document).ready(function(){
     clickButtonNo();
     hideHeart();
     startGame();
-    
     
     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
         {
