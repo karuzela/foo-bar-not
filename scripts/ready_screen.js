@@ -1,8 +1,9 @@
 /* pojawia się ekran do gry */
 function prepareTheGameScreen(){
     var game_screen = $("div.game_container");
+    var ready_screen = $("div.ready_container");
     
-    $("div.ready_container").remove();
+    ready_screen.remove();
     game_screen.animate({
             top: "0vh"}, 3000);
 }
@@ -55,10 +56,11 @@ function clickButtonMaybe(){
     var button_maybe = $(".maybe_button");
     var comment = $("#span_ready");
     var heart = $("#heart");
+    var heart_container = (".heart_Container");
     
     button_maybe.on("click", function(){
         heart.addClass("heart_hide");
-        heart.find('.heart-Container').removeClass('broken');
+        heart_container.removeClass('broken');
         comment.removeClass("span_ready_hide");
         comment.addClass('eyes');
         typeWriting("(0_0)");
@@ -72,12 +74,13 @@ function clickButtonNo(){
     button_no.click(function(){
         var heart = $("#heart");
         var comment = $("#span_ready");
+        var heart_container = $(".heart-Container");
     
         comment.addClass("span_ready_hide");
-        heart.find('.heart-Container').removeClass('broken');
+        heart_container.removeClass('broken');
         heart.removeClass("heart_hide");
         setTimeout(function() {
-            heart.find('.heart-Container').addClass('broken');
+            heart_container.addClass('broken');
         }, 800);
     })    
 }

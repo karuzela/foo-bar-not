@@ -1,4 +1,4 @@
-/* po najechaniu na kółko zmienia się na nim napis */
+/* po najechaniu na kółko zmienia się na nim napis --> do sprawdzenia jak to zrobić w CSS */
 function hover_main_circle (circle){
     var wrapcontent = $(".wrapcontent");
     var p = wrapcontent.find("p");

@@ -5,7 +5,7 @@
 }
 
 .container_ready_screen {
-    width:190%;
+    width:150%;
     height: 100vh;
     margin: 0 auto;
     display: flex;  
@@ -103,7 +103,6 @@
                     text-transform: uppercase;
                     height: 12vh;
                     font-size: 4em;
-                    font-family: $main-font;
                     position: relative;
                     top: 30vh;
                     animation-name: ready;
@@ -129,7 +128,6 @@
 }
 
 .yes_button, .no_button, .maybe_button {
-    font-family: $main-font;
     font-size: 1.2em;
     color: white;
     border: none;
@@ -140,24 +138,6 @@
     margin: 0.07em;
     background-color: #9c1b82;
 }
-
-//.background_button {
-//    background-image: url("../images/buttons_background.jpg");
-//    background-repeat: no-repeat;
-//}
-//
-//.maybe_button {
-//    background-position: -400px -200px;
-//}
-//
-//.yes_button {
-//    background-position: -600px -300px;
-//}
-//
-//.no_button {
-//    background-position: -800px -400px;
-//}
-
 
 //.beyond_parallax {
 //    background-color: #19092e;

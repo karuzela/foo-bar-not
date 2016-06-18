@@ -27,7 +27,7 @@
     
 /* ukrywa content przewidziany dla ekranów mniejszych niż 350px szerokości */
     .main_container_game_screen {
-        width: 100vw;
+        width: 90vw;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -93,7 +93,6 @@
                     width: 40vw;
                     display: flex;
                     justify-content: space-around;
-                    font-family: $main-font;
                     font-size: 1.5em;
                     text-transform: uppercase;
 //                    border: 1px solid orange;
@@ -182,7 +181,6 @@
                     height: 18vh;
                     width: 20vw;
                     font-size: 6em;
-                    font-family: $main-font;
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
@@ -256,7 +254,6 @@
                         border-radius: 20px;
                         border: none;
                         background-color: #ae83b9;
-                        font-family: $main-font;
                         font-size: 0.2em;
                         line-height: 0;
                     }
@@ -267,7 +264,6 @@
 
 
 .foo_button, .bar_button, .foobar_button, .not_button {
-    font-family: $main-font;
     font-size: 1.2em;
     color: white;
     border: none;
