@@ -2,6 +2,9 @@
     width: 100vw;
     height: 100vh;
     left: 350vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container_ready_screen {
@@ -29,53 +32,58 @@
     }
     
 /* ukrywa content przewidziany dla ekranów mniejszych niż 350px szerokości */
-    .main_container_ready_screen {
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        
-        .subcontainer_ready_screen {
-        width: 30%;
-        }
-    }
-    
-    .ready_screen_outside {
-        position: relative;
-        margin:4% 0 5% 3%;
-        padding:0;
-        border-top: none;
-    
-/* element konieczny do uzyskania koła w RWD */
-        
-      .ready_screen_spacer {
-        position: relative;
-        padding-top: 100%;
-       }
-    }
+//    .main_container_ready_screen {
+//        width: 100vw;
+//        display: flex;
+//        justify-content: center;
+//        align-content: center;
+//        
+//        .subcontainer_ready_screen {
+//        width: 30%;
+//        }
+//    }
+//    
+//    .ready_screen_outside {
+//        position: relative;
+//        margin:4% 0 5% 3%;
+//        padding:0;
+//        border-top: none;
+//    
+///* element konieczny do uzyskania koła w RWD */
+//        
+//      .ready_screen_spacer {
+//        position: relative;
+//        padding-top: 100%;
+//       }
+//    }
     
     .ready_screen {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border: 1px solid #454444;
-        border-radius: 50%;
-        text-align: center;
-        display: block;
-        padding: 5px;
-        background: white;
+//        position: absolute;
+//        top: 0;
+//        bottom: 0;
+//        left: 0;
+//        right: 0;
+//        border: 1px solid #454444;
+////        border-radius: 50%;
+//        text-align: center;
+//        display: block;
+//        padding: 5px;
+//        background: white;
+        
+        
+        background-image: url("../images/white_circle.png");
+        background-repeat: no-repeat;
+        background-size: contain;        
         
 /* element konieczny do uzyskania koła w RWD */
         
-        &:before {
-            content: '';
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle;
-            margin-right: -2%;
-         }
+//        &:before {
+//            content: '';
+//            display: inline-block;
+//            height: 100%;
+//            vertical-align: middle;
+//            margin-right: -2%;
+//         }
         
         
         .ready_screen_wrapcontent {

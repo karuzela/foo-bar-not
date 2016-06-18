@@ -1,12 +1,157 @@
-@import "modules/all";
-@import "partials/parallax";
-@import "partials/first_rule";
-@import "partials/second_rule";
-@import "partials/third_rule";
-@import "partials/ready";
-@import "partials/the_game";
-@import "partials/too_small_screens";
-@import "partials/main_circle";
-@import "partials/heart"; 
-@import "partials/main_styles";
+//@import "modules/all";
+//@import "partials/parallax";
+//@import "partials/first_rule";
+//@import "partials/second_rule";
+//@import "partials/third_rule";
+//@import "partials/ready";
+//@import "partials/the_game";
+//@import "partials/too_small_screens";
+//@import "partials/main_circle";
+//@import "partials/heart"; 
+//@import "partials/main_styles";
+
+// --- style główne --- //
+
+body {
+    font-family: 'Special Elite', 'Courier New'; 
+    font-size: 16px;
+    
+    button:focus {
+        outline:0;
+    }
+
+    button:active {
+        position: relative;
+        top: 1px;
+    }
+}
+
+/* colors */
+
+$background-color: #19092e;
+$pink-color: #9c1b82;
+$light-violet-color: white;
+
+/* screen width */
+
+$minimal-width: 350px;
+$xs-width: 450px;
+$s-width: 580px;
+$m-width: 700px;
+$l-width: 920px;
+$xl-width: 1100px;
+
+// --- first rule --- //
+
+.first_rule_container {
+    width: 100vw;
+    height: 100vh;
+    left: 100vw;
+    display: flex;
+    align-items: center;
+    
+    .first_rule_inside {
+        width: 100vw;
+        
+        #first_rule_copy {
+            font-size: 2em;
+        }
+    }
+}
+
+// --- second rule --- //
+
+.second_rule_container {
+    width: 100vw;
+    height: 400px;
+    left: 190vw;
+    
+    .second_rule_inside {
+        position: relative;
+        top: 20vh;
+        width: 100vw;
+        
+        #second_rule_copy {
+            position: relative;
+            font-size: 2.5em;    
+        }
+    }
+}
+
+// --- third rule --- //
+
+
+.third_rule_container {
+    width: 90vw;
+    height: 100vh;
+    left: 270vw;
+    display: flex;
+    align-items: center;
+    
+    .third_rule_inside {
+        width: 72vw;
+        
+        .third_rule_inside_copy {
+            display: flex;
+            justify-content: space-between;
+            height: 14vh;
+            align-items: center;
+        
+            p {
+                font-size: 1.5em;
+                line-height: 1.5em;
+                color: white;
+            }
+            
+            #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+                opacity: 0;
+            }
+            #p1_third_rule {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+//.third_rule_inside_copy {
+//    display: flex;
+//    justify-content: space-between;
+//    height: 14vh;
+//    align-items: center;
+//}
+
+.background_key {
+    background-image: url("../images/klawisze_nowe.png");
+    background-repeat: no-repeat;
+    width: 250px;
+	height: 170px;
+}
+
+.left {
+    background-position: -15px -100px;
+	width: 59px;
+	height: 56px;
+    opacity: 0;
+}
+
+.right {
+    background-position: -176px -100px;
+	width: 63px;
+	height: 54px;
+    opacity: 0;
+}
+
+.up {
+    background-position: -96px -8px;
+	width: 59px;
+	height: 56px;
+    opacity: 0;
+}
+
+.down {
+    background-position: -98px -101px;
+	width: 56px;
+	height: 55px;
+    opacity: 0;
+}
 
