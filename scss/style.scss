@@ -24,6 +24,8 @@ body {
     overflow-x: hidden;
     display: flex;
     background-color: $background-color;
+    // do sprawdzenia czy to jest potrzebne
+    height: 200vh;
     
     button:focus {
         outline:0;
@@ -37,12 +39,12 @@ body {
 
 /* screen width */
 
-$minimal-width: 350px;
-$xs-width: 450px;
-$s-width: 580px;
-$m-width: 700px;
-$l-width: 920px;
-$xl-width: 1100px;
+$minimal-width: 700px;
+//$xs-width: 450px;
+//$s-width: 580px;
+//$m-width: 700px;
+//$l-width: 920px;
+//$xl-width: 1100px;
 
 // --- parallax --- //
 
@@ -82,28 +84,110 @@ $xl-width: 1100px;
 
 // --- opening circle --- //
 
-.main_container_main_circle {
+.opening_circle_container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .opening_circle_width {
+    width: 100%;
+    }
+}
+
+.opening_circle_vertical_position {
+//    width:100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
     
-    .subcontainer_main_circle {
-        
-        .container {
-            
-            .main_circle_outside {
-                
-                .main_circle_spacer {
-                    
-                    .main_circle {
-                        
-                        .wrapcontent {
-                            
-                            .main_circle_copy {
-                                
-                            }
-                        }
-                    }
-                }
-            }
+.opening_circle_bouncing_movement {
+    position: relative;
+    // circle width
+    width: 20%;
+    margin:4% 0 5% 3%;
+    padding:0;
+    border-top: none;
+    animation-name: bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+/* element konieczny do uzyskania koła w RWD */
+
+    .opening_circle_empty_space {
+        position: relative;
+        padding-top: 100%;
+    }
+}
+    
+.opening_circle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #454444;
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    box-shadow: 2px 5px 15px 0px rgba(26, 38, 44, 0.5); 
+    background: rgba(136,123,143,1);
+    background: -moz-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,123,143,1)), color-stop(100%, rgba(219,155,219,0.22)));
+    background: -webkit-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+    background: -o-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+    background: -ms-linear-gradient(left, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+    background: linear-gradient(to right, rgba(136,123,143,1) 0%, rgba(219,155,219,0.22) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#887b8f', endColorstr='#db9bdb', GradientType=1 );
+
+/* element konieczny do uzyskania koła w RWD */
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -2%;
+    }
+
+    .scroll_me {
+        line-height: 1em;
+        color:#efeaea;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &>.opening_circle_content {
+        display: inline-block;
+        vertical-align: middle;
+
+/* copy wewnątrz koła */
+
+        &>.opening_circle_copy {
+            font-size: 1.1em;
+            display:block;
+            line-height: 1em;
+            color:#efeaea;
+            text-align: center;
+            text-transform: uppercase;
         }
+    }
+}
+
+@keyframes bounce {
+     0% {
+        top: 0;
+    }
+    50% {
+        top: -15px;
+    }
+     100% {
+        top: 0;
     }
 }
 
