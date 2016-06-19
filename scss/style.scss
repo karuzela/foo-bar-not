@@ -12,9 +12,18 @@
 
 // --- style główne --- //
 
+/* colors */
+
+$background-color: #19092e;
+$pink-color: #9c1b82;
+$light-violet-color: white;
+
 body {
     font-family: 'Special Elite', 'Courier New'; 
     font-size: 16px;
+    overflow-x: hidden;
+    display: flex;
+    background-color: $background-color;
     
     button:focus {
         outline:0;
@@ -26,12 +35,6 @@ body {
     }
 }
 
-/* colors */
-
-$background-color: #19092e;
-$pink-color: #9c1b82;
-$light-violet-color: white;
-
 /* screen width */
 
 $minimal-width: 350px;
@@ -40,6 +43,69 @@ $s-width: 580px;
 $m-width: 700px;
 $l-width: 920px;
 $xl-width: 1100px;
+
+// --- parallax --- //
+
+.parallax_container {
+    .scroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .horizon {
+        z-index: 1;
+        width: 450vw;
+    }
+
+    .front {
+    // odpowiada za wysokość na paralaksie //
+//     top: 30vh;
+        z-index: 1000;
+        width: 450vw;
+//        p {
+////          font-size: 2em;
+//            color: whitesmoke;
+//        }
+        .page {
+            position: absolute;
+            width: 100vw;
+            top: 0;
+        }
+        
+        .page1 {
+            position: absolute;
+            width: 100vw;
+            top: -150vh;
+        }
+    }
+}
+
+// --- opening circle --- //
+
+.main_container_main_circle {
+    
+    .subcontainer_main_circle {
+        
+        .container {
+            
+            .main_circle_outside {
+                
+                .main_circle_spacer {
+                    
+                    .main_circle {
+                        
+                        .wrapcontent {
+                            
+                            .main_circle_copy {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 // --- first rule --- //
 
@@ -80,7 +146,6 @@ $xl-width: 1100px;
 
 // --- third rule --- //
 
-
 .third_rule_container {
     width: 90vw;
     height: 100vh;
@@ -112,13 +177,6 @@ $xl-width: 1100px;
         }
     }
 }
-
-//.third_rule_inside_copy {
-//    display: flex;
-//    justify-content: space-between;
-//    height: 14vh;
-//    align-items: center;
-//}
 
 .background_key {
     background-image: url("../images/klawisze_nowe.png");
@@ -155,3 +213,49 @@ $xl-width: 1100px;
     opacity: 0;
 }
 
+// --- ready screen --- //
+
+.ready_container {
+    
+    .ready_screen {
+        
+        .ready_screen_wrapcontent_ready {
+            
+            #span_ready {
+                
+            }
+        }
+        
+        .ready_screen_wrapcontent_buttons {
+            
+            .no_button {
+                
+            }
+            
+            .maybe_button {
+                
+            }
+            
+            .yes_button {
+                
+            }
+        }
+        
+    }
+}
+
+// --- heart --- //
+
+// --- game screen --- //
+
+.game_container {
+    
+    .game_screen {
+        
+        .game_screen_wrapcontent {
+            
+            
+        }
+    }
+    
+}
