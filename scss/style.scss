@@ -394,6 +394,42 @@ body {
         }
     }
 }
+
+@include xs-width {
+    #first_rule_copy {
+        font-size: 2.3em;
+    }
+}
+
+@include s-width {
+    #first_rule_copy {
+        font-size: 2.5em;
+    }
+}
+
+@include m-width {
+    #first_rule_copy {
+        font-size: 2.8em;
+    }
+}
+
+@include l-width {
+    #first_rule_copy {
+        font-size: 3.1em;
+    }
+}
+
+@include xl-width {
+    #first_rule_copy {
+        font-size: 3.5em;
+    }
+}
+
+@include xxl-width {
+    #first_rule_copy {
+        font-size: 4em;
+    }
+}
     
 // --- second rule --- //
 
@@ -435,6 +471,7 @@ body {
                 justify-content: space-between;
                 height: 14vh;
                 align-items: center;
+                width: 50vw;
 
                 p {
                     font-size: 1.5em;
@@ -491,8 +528,19 @@ body {
 // --- ready screen --- //
 
 .ready_container {
+    width: 100vw;
+    height: 100vh;
+    left: 350vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     .ready_screen {
+        background-image: url("../images/white_circle.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 80vw;
+        height: 80vh;
         
         .ready_screen_wrapcontent_ready {
             
