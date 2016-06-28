@@ -247,8 +247,8 @@ $(document).ready(function(){
         }
     });
     
-    hover_main_circle($(".main_circle"));
-    leave_main_circle($(".main_circle"));
+    hover_main_circle($(".opening_circle"));
+    leave_main_circle($(".opening_circle"));
     animation_second_rule();
     animation_third_rule();
     clickButtonYes();

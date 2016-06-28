@@ -15,6 +15,7 @@
 $background-color: #19092e;
 $pink-color: #9c1b82;
 $light-violet-color: white;
+$light-grey: #efeaea;
 
 /* screen width */
 
@@ -302,7 +303,7 @@ body {
 
         .scroll_me {
             line-height: 1em;
-            color:#efeaea;
+            color:$light-grey;
             text-align: center;
             text-transform: uppercase;
         }
@@ -313,11 +314,11 @@ body {
 
     /* copy wewnątrz koła */
 
-            &>.opening_circle_copy {
+            &>#opening_circle_copy {
 //                font-size: 1.1em;
                 display:block;
                 line-height: 1em;
-                color:#efeaea;
+                color:$light-grey;
                 text-align: center;
                 text-transform: uppercase;
             }
@@ -326,37 +327,37 @@ body {
 }
 
 @include xs-width {
-    .opening_circle_copy, .scroll_me {
+    #opening_circle_copy, .scroll_me {
         font-size: 1.3em;
     }
 }
 
 @include s-width {
-    .opening_circle_copy, .scroll_me {
+    #opening_circle_copy, .scroll_me {
         font-size: 1.5em;
     }
 }
 
 @include m-width {
-    .opening_circle_copy, .scroll_me {
+    #opening_circle_copy, .scroll_me {
         font-size: 1.8em;
     }
 }
 
 @include l-width {
-    .opening_circle_copy, .scroll_me {
+    #opening_circle_copy, .scroll_me {
         font-size: 2.1em;
     }
 }
 
 @include xl-width {
-    .opening_circle_copy, .scroll_me {
+    #opening_circle_copy, .scroll_me {
         font-size: 2.5em;
     }
 }
 
 @include xxl-width {
-    .opening_circle_copy, .scroll_me {
+    #opening_circle_copy, .scroll_me {
         font-size: 3em;
     }
 }
@@ -388,6 +389,7 @@ body {
 
             #first_rule_copy {
                 font-size: 2em;
+                color: $light-grey;
             }
         }
     }
@@ -408,7 +410,8 @@ body {
 
             #second_rule_copy {
                 position: relative;
-                font-size: 2.5em;    
+                font-size: 2.5em;
+                color: $light-grey;
             }
         }
     }

@@ -1,21 +1,21 @@
 /* po najechaniu na kółko zmienia się na nim napis --> do sprawdzenia jak to zrobić w CSS */
 function hover_main_circle (circle){
-    var wrapcontent = $(".wrapcontent");
-    var p = wrapcontent.find("p");
+    var opening_circle_content = $(".opening_circle_content");
+    var copy = $("#opening_circle_copy");
     
     circle.on("mouseenter", function(){
-        wrapcontent.html("<p>Scroll me!</p>");
-        p.addClass("scroll_me");
+        opening_circle_content.html("<p>Scroll me!</p>");
+        copy.addClass("scroll_me");
     })
 }
 
 function leave_main_circle (circle){
-    var wrapcontent = $(".wrapcontent");
-    var p = wrapcontent.find("p");
+    var opening_circle_content = $(".opening_circle_content");
+    var copy = $("#opening_circle_copy");
     
     circle.on("mouseleave", function(){
-        wrapcontent.html("<p>foo, bar</p><p>or not?</p>");
-        p.removeClass("scroll_me");;
+        opening_circle_content.html("<p>foo, bar</p><p>or not?</p>");
+        copy.removeClass("scroll_me");;
     })
 }
 
