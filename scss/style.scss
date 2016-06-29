@@ -91,9 +91,6 @@ body {
     font-size: 16px;
     overflow-x: hidden;
     display: flex;
-    background-color: $background-color;
-    // do sprawdzenia czy to jest potrzebne
-    height: 200vh;
     
     button:focus {
         outline:0;
@@ -195,6 +192,9 @@ body {
 }
 
 @include minimal-width {
+    body {
+        background-color: $background-color;
+    }
     .small_screens {
         display: none;
     }
@@ -321,7 +321,7 @@ body {
     /* copy wewnątrz koła */
 
             &>#opening_circle_copy {
-//                font-size: 1.1em;
+                font-size: 1.1em;
                 display:block;
                 line-height: 1em;
                 color:$light-grey;
@@ -333,38 +333,62 @@ body {
 }
 
 @include xs-width {
-    #opening_circle_copy, .scroll_me {
-        font-size: 1.3em;
+    .opening_circle {
+        &>.opening_circle_content {
+            &>#opening_circle_copy, &>.scroll_me {
+                font-size: 1.3em;
+            }
+        }
     }
 }
 
 @include s-width {
-    #opening_circle_copy, .scroll_me {
-        font-size: 1.5em;
+    .opening_circle {
+        &>.opening_circle_content {
+            &>#opening_circle_copy, &>.scroll_me {
+                font-size: 1.5em;
+            }
+        }
     }
 }
 
 @include m-width {
-    #opening_circle_copy, .scroll_me {
-        font-size: 1.8em;
+    .opening_circle {
+        &>.opening_circle_content {
+            &>#opening_circle_copy, &>.scroll_me {
+                font-size: 1.8em;
+            }
+        }
     }
 }
 
 @include l-width {
-    #opening_circle_copy, .scroll_me {
-        font-size: 2.1em;
+    .opening_circle {
+        &>.opening_circle_content {
+            &>#opening_circle_copy, &>.scroll_me {
+                font-size: 2.1em;
+            }
+        }
     }
 }
 
 @include xl-width {
-    #opening_circle_copy, .scroll_me {
-        font-size: 2.5em;
+    .opening_circle {
+        &>.opening_circle_content {
+            &>#opening_circle_copy, &>.scroll_me {
+                font-size: 2.5em;
+            }
+        }
     }
 }
 
 @include xxl-width {
-    #opening_circle_copy, .scroll_me {
-        font-size: 3em;
+    .opening_circle {
+        &>.opening_circle_content {
+            &>#opening_circle_copy, &>.scroll_me {
+                font-size: 3em;
+            }
+        }
     }
 }
 
@@ -402,38 +426,62 @@ body {
 }
 
 @include xs-width {
-    #first_rule_copy {
-        font-size: 2.3em;
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2.3em;
+            }
+        }
     }
 }
 
 @include s-width {
-    #first_rule_copy {
-        font-size: 2.5em;
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2.5em;
+            }
+        }
     }
 }
 
 @include m-width {
-    #first_rule_copy {
-        font-size: 2.8em;
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2.8em;
+            }
+        }
     }
 }
 
 @include l-width {
-    #first_rule_copy {
-        font-size: 3.1em;
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 3.1em;
+            }
+        }
     }
 }
 
 @include xl-width {
-    #first_rule_copy {
-        font-size: 3.5em;
+    .first_rule_container{
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 3.5em;
+            }
+        }
     }
 }
 
 @include xxl-width {
-    #first_rule_copy {
-        font-size: 4em;
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 4em;
+            }
+        }
     }
 }
     
@@ -454,6 +502,66 @@ body {
                 position: relative;
                 font-size: 2.5em;
                 color: $light-grey;
+            }
+        }
+    }
+}
+
+@include xs-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.3em;
+            }
+        }
+    }
+}
+
+@include s-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+
+@include m-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.8em;
+            }
+        }
+    }
+}
+
+@include l-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 3.1em;
+            }
+        }
+    }
+}
+
+@include xl-width {
+    .second_rule_container{
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 3.5em;
+            }
+        }
+    }
+}
+
+@include xxl-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 4em;
             }
         }
     }
@@ -480,8 +588,8 @@ body {
 //                width: 70vw;
 
                 p {
-//                    font-size: 1.5em;
-//                    line-height: 1.5em;
+                    font-size: 1.5em;
+                    line-height: 1.5em;
                     color: white;
                 }
 
@@ -489,7 +597,7 @@ body {
                     opacity: 0;
                 }
                 #p1_third_rule {
-//                    font-size: 2em;
+                    font-size: 2em;
                 }
             }
         }
@@ -533,67 +641,79 @@ body {
 }
 
 @include xs-width {
-    #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-        font-size: 1em;
-        line-height: 0.8em;
-    }
-    #p1_third_rule {
-        font-size: 1.3em;
+    .third_rule_container {
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+            font-size: 1em;
+            line-height: 0.8em;
+        }
+        #p1_third_rule {
+            font-size: 1.3em;
+        }
     }
 }
 
 @include s-width {
-    #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-        font-size: 1.05em;
-        line-height: 1em;
-    }
-    #p1_third_rule {
-        font-size: 1.35em;
+    .third_rule_container {
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+            font-size: 1.05em;
+            line-height: 1em;
+        }
+        #p1_third_rule {
+            font-size: 1.35em;
+        }
     }
 }
 
 @include m-width {
-    #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-        font-size: 1.2em;
-        line-height: 1em;
-    }
-    #p1_third_rule {
-        font-size: 1.5em;
+    .third_rule_container {
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+            font-size: 1.2em;
+            line-height: 1em;
+        }
+        #p1_third_rule {
+            font-size: 1.5em;
+        }
     }
 }
 
 @include l-width {
-    #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-        font-size: 1.3em;
-        line-height: 1.1em;
-    }
-    #p1_third_rule {
-        font-size: 1.6em;
+    .third_rule_container {
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+            font-size: 1.3em;
+            line-height: 1.1em;
+        }
+        #p1_third_rule {
+            font-size: 1.6em;
+        }
     }
 }
 
 @include xl-width {
-    #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-        font-size: 1.5em;
-        line-height: 1.3em;
-    }
-    #p1_third_rule {
-        font-size: 1.8em;
+    .third_rule_container {
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+            font-size: 1.5em;
+            line-height: 1.3em;
+        }
+        #p1_third_rule {
+            font-size: 1.8em;
+        }
     }
 }
 
 @include xxl-width {
-    .third_rule_inside_copy {
-//        width: 50vw;
-    }
-    
-    #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-        font-size: 1.7em;
-        line-height: 1.5em;
-    }
-    
-    #p1_third_rule {
-        font-size: 2em;
+    .third_rule_container {
+        .third_rule_inside_copy {
+            width: 55vw;
+        }
+
+        #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+            font-size: 1.7em;
+            line-height: 1.5em;
+        }
+
+        #p1_third_rule {
+            font-size: 2em;
+        }
     }
 }
 
@@ -630,7 +750,7 @@ body {
 
 // --- ready screen xxl-width --- //
 
-//@include minimal-width {
+@include minimal-width {
     .ready_container {
         width: 100vw;
         height: 100vh;
@@ -676,7 +796,6 @@ body {
                     border: 1px solid orange;
                 }
             }
-
             .ready_screen_wrapcontent_buttons {
                 display: flex;
                 justify-content: center;
@@ -714,41 +833,57 @@ body {
             font-size: 4em;
         }
     }
-//}
+}
 
 @include xs-width {
-    .ready_screen {
-        padding: 30%;
+    .ready_container {
+        .ready_screen {
+            padding: 30%;
+        }
     }
 }
 
 @include s-width {
-    .ready_screen {
-        padding: 30%;
+    .ready_container {
+        .ready_screen {
+            padding: 30%;
+        }
     }
 }
 
 @include m-width {
-    .ready_screen {
-        padding: 35%;
+    .ready_container {
+        .ready_screen {
+            padding: 35%;
+        }
+    //    .ready_screen_wrapcontent_buttons {
+    //        position: relative;
+    //        top: 5vh;
+    //    }
     }
 }
 
 @include l-width {
-    .ready_screen {
-        padding: 35%;
+    .ready_container {
+        .ready_screen {
+            padding: 35%;
+        }
     }
 }
 
 @include xl-width {
-    .ready_screen {
-        padding: 35%;
+    .ready_container {
+        .ready_screen {
+            padding: 35%;
+        }
     }
 }
 
 @include xxl-width {
-    .ready_screen {
-        padding: 40%;
+    .ready_container {
+        .ready_screen {
+            padding: 35%;
+        }
     }
 }
 
