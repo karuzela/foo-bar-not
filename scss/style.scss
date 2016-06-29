@@ -777,7 +777,6 @@ body {
             .ready_screen_wrapcontent_ready {
                 text-transform: uppercase;
                 height: 20vh;
-                font-size: 4em;
                 animation-name: ready;
                 animation-duration: 1.5s;
                 animation-iteration-count: infinite;
@@ -801,13 +800,11 @@ body {
                 justify-content: center;
                 flex-wrap: wrap-reverse;
                 width: 30vw;
-                position: relative;
-                top: 15vh;
                 align-self: center;
                 border: 1px solid red;
 
                 .yes_button, .no_button, .maybe_button {
-                    font-size: 1.2em;
+                    font-size: 0.7em;
                     color: white;
                     border: none;
                     padding: 0.8em 0.2em 0.8em 0.2em;
@@ -824,13 +821,13 @@ body {
 
     @keyframes ready {
          0% {
-            font-size: 4em;
+            font-size: 3em;
         }
         50% {
-            font-size: 4.3em;
+            font-size: 3.3em;
         }
          100% {
-            font-size: 4em;
+            font-size: 3em;
         }
     }
 }
@@ -839,6 +836,10 @@ body {
     .ready_container {
         .ready_screen {
             padding: 30%;
+            .ready_screen_wrapcontent_buttons {
+                position: relative;
+                top: 3vh;
+            }
         }
     }
 }
@@ -855,11 +856,14 @@ body {
     .ready_container {
         .ready_screen {
             padding: 35%;
+            .ready_screen_wrapcontent_buttons {
+                position: relative;
+                top: 7vh;
+                .yes_button, .no_button, .maybe_button {
+                        font-size: 1em;
+                }
+            }
         }
-    //    .ready_screen_wrapcontent_buttons {
-    //        position: relative;
-    //        top: 5vh;
-    //    }
     }
 }
 
@@ -867,6 +871,21 @@ body {
     .ready_container {
         .ready_screen {
             padding: 35%;
+            .ready_screen_wrapcontent_buttons {
+                position: relative;
+                top: 10vh;
+            }
+        }
+    }
+    @keyframes ready {
+         0% {
+            font-size: 3.5em;
+        }
+        50% {
+            font-size: 3.8em;
+        }
+         100% {
+            font-size: 3.5em;
         }
     }
 }
@@ -877,12 +896,41 @@ body {
             padding: 35%;
         }
     }
+    @keyframes ready {
+         0% {
+            font-size: 3.9em;
+        }
+        50% {
+            font-size: 4.2em;
+        }
+         100% {
+            font-size: 3.9em;
+        }
+    }
 }
 
 @include xxl-width {
     .ready_container {
         .ready_screen {
             padding: 35%;
+            .ready_screen_wrapcontent_buttons {
+                position: relative;
+                top: 15vh;
+                .yes_button, .no_button, .maybe_button {
+                        font-size: 1.2em;
+                }
+            }
+        }
+    }
+    @keyframes ready {
+         0% {
+            font-size: 4.4em;
+        }
+        50% {
+            font-size: 4.7em;
+        }
+         100% {
+            font-size: 4.4em;
         }
     }
 }

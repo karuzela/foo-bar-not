@@ -10,6 +10,7 @@ function prepareTheGameScreen(){
 
 /* efekt pisania na maszynie */
 function typeWriting (newString){
+    console.log("test");
     var comment = $("#span_ready");
     var typeWriting = new TypeWriting({
             targetElement: comment [0],
@@ -56,7 +57,7 @@ function clickButtonMaybe(){
     var button_maybe = $(".maybe_button");
     var comment = $("#span_ready");
     var heart = $("#heart");
-    var heart_container = (".heart_Container");
+    var heart_container = $(".heart-Container");
     
     button_maybe.on("click", function(){
         heart.addClass("heart_hide");
