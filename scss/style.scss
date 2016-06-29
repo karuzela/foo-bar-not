@@ -549,7 +549,7 @@ body {
         
         .ready_screen_wrapcontent_ready {
             text-transform: uppercase;
-            height: 12vh;
+            height: 20vh;
             font-size: 4em;
 //            position: relative;
 //            top: 30vh;
@@ -559,9 +559,13 @@ body {
             animation-timing-function: linear;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             
             #span_ready {
-                
+                text-align: center;
+                height: 10vh;
+                position: relative;
+                top: 5vh;
             }
         }
         
@@ -571,7 +575,7 @@ body {
             flex-wrap: wrap-reverse;
             width: 30vw;
             position: relative;
-            top: 13vh;
+            top: 8vh;
             align-self: center;
             
             .yes_button, .no_button, .maybe_button {
@@ -603,6 +607,199 @@ body {
 }
 
 // --- heart --- //
+
+.heart_hide {
+    opacity: 1;
+}
+
+#heart {
+    position: relative;
+    top: -10vh;
+    height: 10vh;
+}
+
+.heart-Circle{
+  border-radius:260px;
+  height:140px;
+  overflow:hidden;
+  position:relative;
+  width:140px;
+}
+
+.heart-Container{
+  left:11%;
+  position:absolute;
+  top:20%;
+  -moz-transition:all 1s; 
+  -webkit-transition:all 1s;  
+  transition:all 1s;
+}
+
+.heart-Container.broken{
+  left:6%;
+  top:23%;
+}
+
+.heart{
+    height:90px;
+    position:relative;
+    width:50px; 
+}
+
+.heart:before, .heart:after{
+//    background:#fc2e5a;
+    background: $background-color;
+    border-radius:50px 50px 0 0;
+    content:"";
+    height:80px;
+    left:50px;
+    position:absolute;
+    top:4px;
+    width:50px;
+
+    -webkit-transform:rotate(-45deg);
+       -moz-transform:rotate(-45deg);
+        -ms-transform:rotate(-45deg);
+            transform:rotate(-45deg);
+    -webkit-transform-origin:0 100%;
+       -moz-transform-origin:0 100%;
+        -ms-transform-origin:0 100%;
+            transform-origin:0 100%;
+}
+
+.heart:after {
+    left:0;
+
+    -webkit-transform:rotate(45deg);
+       -moz-transform:rotate(45deg);
+        -ms-transform:rotate(45deg);
+            transform:rotate(45deg);
+
+    -webkit-transform-origin:100% 100%;
+       -moz-transform-origin:100% 100%;
+        -ms-transform-origin:100% 100%;
+            transform-origin:100% 100%;
+}
+
+/* Split the heart in two */
+.sides{
+  float:left;
+  position:relative;
+  -moz-transition:all 1s; 
+  -webkit-transition:all 1s;  
+  transition:all 1s;
+//    transition-delay: 5s;
+//    -webkit-transition-delay: 5s;
+}
+
+.half{
+  overflow:hidden;
+  position:relative;
+  width:50px;
+}
+
+.right-Side .heart:after,
+.right-Side .heart:before{
+  left:-50px;
+}
+
+/* create the rip in the center */
+.points{
+  position:absolute;
+  top:20px
+}
+
+.left-Side .points{left:100%}
+.right-Side .points{right:100%}
+
+.point{
+  border-bottom: 8px solid transparent;
+  border-left:   16px solid $background-color;
+  border-top:    8px solid transparent;
+  height:0;
+  width:0;
+   
+}
+
+.right-Side .point {
+  border-bottom:  8px solid transparent;
+  border-left:    none;
+  border-right:   16px solid $background-color;
+  border-top:     8px solid transparent;
+  position:relative;
+}
+
+.left-Side .point{
+  left:-3px;
+  position:relative;
+  top:3px;
+  -moz-transform:rotate(-2deg);
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+}
+
+.left-Side .pt1{
+  left:-5px;
+  top:-4px;
+  -moz-transform:rotate(29deg);
+  -webkit-transform:rotate(29deg);
+  transform:rotate(29deg);
+}
+
+.left-Side .pt2{
+  top:1px;
+}
+
+.left-Side .pt3{
+  left:-5px;
+  top:4px;
+  -moz-transform:rotate(-29deg);
+  -webkit-transform:rotate(29deg);
+  transform:rotate(29deg);
+}
+
+.left-Side .pt4{
+  left:-7px;
+  position:absolute;
+  top:5px;
+  -moz-transform:rotate(-9deg);
+  -webkit-transform:rotate(-9deg);
+  transform:rotate(-9deg);
+}
+
+.right-Side .point{
+  right:-3px;
+  top:-5px;
+  -moz-transform:rotate(-15deg);
+  -webkit-transform:rotate(-15deg);
+  transform:rotate(-15deg);
+}
+
+.right-Side .pt2{
+  top:-7px;
+}
+
+.right-Side .pt3{
+  right:-5px;
+  top:-6px;
+  -moz-transform:rotate(-26deg);
+  -webkit-transform:rotate(-26deg);
+  transform:rotate(-26deg);
+}
+
+.broken .left-Side{
+  margin-right:6px;
+  -moz-transform:rotate(-10deg);
+  -webkit-transform:rotate(-10deg);
+  transform:rotate(-10deg);
+}
+
+.broken .right-Side{
+  margin-left:6px;
+  -moz-transform:rotate(10deg);
+  -webkit-transform:rotate(10deg);
+  transform:rotate(10deg);
+}
 
 // --- game screen --- //
 
