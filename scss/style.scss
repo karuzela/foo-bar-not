@@ -534,15 +534,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
     
     .ready_screen {
         background-image: url("../images/white_circle.png");
         background-repeat: no-repeat;
         background-size: contain;
-        width: 80vw;
+        width: 40vw;
         height: 80vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
         
         .ready_screen_wrapcontent_ready {
+            text-transform: uppercase;
+            height: 12vh;
+            font-size: 4em;
+//            position: relative;
+//            top: 30vh;
+            animation-name: ready;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            display: flex;
+            justify-content: center;
             
             #span_ready {
                 
@@ -550,20 +566,39 @@ body {
         }
         
         .ready_screen_wrapcontent_buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap-reverse;
+            width: 30vw;
+            position: relative;
+            top: 13vh;
+            align-self: center;
             
-            .no_button {
-                
+            .yes_button, .no_button, .maybe_button {
+                font-size: 1.2em;
+                color: white;
+                border: none;
+                padding: 0.8em 0.2em 0.8em 0.2em;
+                border-radius: 20px;
+                box-shadow: 0 4px $background-color;
+                width: 6vw;
+                margin: 0.07em;
+                background-color: #9c1b82;
+                font-family: 'Special Elite', 'Courier New'; 
             }
-            
-            .maybe_button {
-                
-            }
-            
-            .yes_button {
-                
-            }
-        }
-        
+        }  
+    }
+}
+
+@keyframes ready {
+     0% {
+        font-size: 4em;
+    }
+    50% {
+        font-size: 4.3em;
+    }
+     100% {
+        font-size: 4em;
     }
 }
 
