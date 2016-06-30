@@ -765,8 +765,6 @@ body {
             background-image: url("../images/circle.png");
             background-repeat: no-repeat;
             background-size: contain;
-//            width: 45vw;
-//            height: 90vh;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -940,38 +938,11 @@ body {
 .heart_hide {
     opacity: 1;
 }
-
-//@include m-width {
-//    #heart {
-//        position: relative;
-//        top: -10vh;
-//        height: 10vh;
-//    }
-//}
-//
-//@include l-width {
-//    #heart {
-//        position: relative;
-//        top: -10vh;
-//        height: 10vh;
-//    }
-//}
-//
-//@include xl-width {
-//    #heart {
-//        position: relative;
-//        top: -5vh;
-//        height: 10vh;
-//    }
-//}
-//
-//@include xxl-width {
     #heart {
         position: relative;
         top: -10vh;
         height: 10vh;
     }
-//}
 
 .heart-Circle{
   border-radius:260px;
@@ -1158,14 +1129,244 @@ body {
 
 // --- game screen --- //
 
-.game_container {
-    
-    .game_screen {
-        
-        .game_screen_wrapcontent {
+
+@include minimal-width {
+    .game_container {
+        width: 100vw;
+        height: 100vh;
+        left: 350vw;
+        top: -200vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        border: 1px solid red;
+        .game_screen {
+            background-image: url("../images/circle.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+//            display: flex;
+//            justify-content: center;
+//            flex-direction: column;
+//            padding: 40%;
+//            margin-top: 10vh;
+//            height: 90vh;
+            width: 100%;
+            padding-bottom: 100%;
+            height: 0;
+            border: 1px solid green;
             
-            
+            .game_screen_wrapcontent {
+                height: 100vh;
+                border: 3px solid green;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                
+                .game_screen_menu_container {
+                    height: 16vh;
+                    width: 40vw;
+                    display: flex;
+                    justify-content: space-around;
+                    font-size: 1.5em;
+                    text-transform: uppercase;
+                    border: 1px solid orange;
+                    position: relative;
+
+        // wysokość menu
+                    top: -7vh;
+                    align-self: center;
+
+                    .timer_container {
+                            background-image: url("../images/plama.png");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            height: 20vh;
+                            width: 20vh;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            color: whitesmoke;
+
+                            .timer {
+    //                            display: inline-block;
+                                line-height: 1.5em;
+
+                                .hours {
+                                    display: none;
+                                }
+                                .minutes {
+                                    float: left;
+                                }
+
+                                .seconds {
+                                    float: left;
+                                }
+                            }
+                    }
+
+                    .counter_container {
+                          background-image: url("../images/plama_alt.png");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            height: 20vh;
+                            width: 20vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+
+
+                            #counter {
+                                line-height: 1.5em;
+                            }
+
+                            #counter_value {
+                                font-size: 1.8em;
+                                color: $background-color;
+                            }
+                        }
+                }
+                .game_screen_wrapcontent_buttons {
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap-reverse;
+                        width: 30vw;
+                        align-self: center;
+                        position: relative;
+                        border: 1px solid red;
+        //wysokość buttonów startowych
+                        top: 20vh;
+                }
+                .game_screen_wrapcontent_final_buttons {
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+                    flex-wrap: wrap-reverse;
+                    width: 30vw;
+                    align-self: center;
+                    top: 200vh;
+                    border: 1px solid red;
+                }
+                .gameover_buttons {
+                    opacity: 0;
+                }
+
+                .game_screen_wrapcontent_ready {
+                    text-transform: uppercase;
+                    height: 15vh;
+                    width: 20vw;
+                    font-size: 6em;
+                    line-height: 1.8em;
+                    color: $pink-color;
+                    -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
+                    -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
+                    box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
+                    align-self: center;
+                    border-radius: 20px;
+//                    padding: 0 0.2em 0 0.2em 0;
+                    border: 1px solid green;
+                    position: relative;
+        // wysokość losowanej liczby
+                    top: 5vh;
+                    text-align: center;
+                }
+
+               .checkmark {
+                        position: absolute;
+                        background-image: url("../images/checkmark.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 8vh;
+                        width: 8vw;
+                        z-index: 20000;
+                        left: 28vw;
+                        top: -25vh;
+                        opacity: 0;
+                    }
+
+                .checkmark_final {
+                    position: absolute;
+                    background-image: url("../images/checkmark.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 8vh;
+                    width: 8vw;
+                    z-index: 20000;
+                    left: 28vw;
+                    top: -25vh;
+                    opacity: 0;
+                }
+
+                .score {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: space-between;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .start {
+                    font-size: 6em;
+//                    line-height: 2.5em;
+                    cursor:pointer;
+                    border: 1px solid red;
+                    position: relative;
+            // wysokość startu
+                    top: 5vh;
+                }
+
+                .gameover {
+                        position: relative;
+                }
+
+                .gameover_copy {
+                    color: $pink-color;
+                    font-size: 0.5em;
+                }
+
+                .gameover_points_accuracy {
+                    color: $pink-color;
+                    font-size: 0.2em;
+                    line-height: 1em;
+                    padding: 0.5em;
+                }
+
+                .play_again {
+                    font-family: 'Special Elite', 'Courier New'; 
+                    padding: 1em 0.7em 1em 0.7em;
+                    box-shadow: 0 4px $background-color;
+                    border-radius: 20px;
+                    border: none;
+                    background-color: #ae83b9;
+                    font-size: 0.2em;
+                    line-height: 0;
+                }
+            }
         }
+    }
+    .foo_button, .bar_button, .foobar_button, .not_button {
+        font-size: 1.5em;
+        font-family: 'Special Elite', 'Courier New'; 
+        color: white;
+        border: none;
+        padding: 0.8em 0.2em 0.8em 0.2em;
+        border-radius: 20px;
+        width: 8vw;
+        margin: 0.07em;
+        box-shadow: 0 4px $background-color;
+        background-color: #ae83b9;
+    }
+
+    .buttons_final {
+        box-shadow: 0 4px $pink-color;
+        background-color: $background-color;
+
+    }
+
+    .foobar_button {
+         margin-bottom: 0.5em;
     }
 }
     

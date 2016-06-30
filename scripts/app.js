@@ -90,23 +90,27 @@ function showGameOver(points, accuracy, clicks){
     var buttons = $(".game_screen_wrapcontent_buttons");
     var buttons_final = $(".game_screen_wrapcontent_final_buttons");
     
-    gameSettings.start.removeClass("start");
+//    gameSettings.start.removeClass("start");
     buttons_final.addClass("gameover_buttons");
     buttons.addClass("gameover_buttons");
     gameSettings.start.addClass("gameover");
     gameSettings.start.html(function (){
         if (clicks === 0){
-        return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: 0%</p><button class='play_again'>play again</button></div>";
+        return "<div class='score'><p class='gameover_copy'>game over</p>"
+            
+//            <p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: 0%</p><button class='play_again'>play again</button></div>";
         }
         else {
-            return "<div class='score'><p class='gameover_copy'>game over</p><p class='gameover_points_accuracy'>points: " + gameSettings.points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) + "%</p><button class='play_again'>play again</button></div>";
+            return "<div class='score'><p class='gameover_copy'>game over</p>"
+                
+//                <p class='gameover_points_accuracy'>points: " + gameSettings.points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) + "%</p><button class='play_again'>play again</button></div>";
         }
     });
-    gameSettings.start.animate({
-        width: "35vh",
-        height: "40vh",
-        top: "5vh",
-        },200)
+//    gameSettings.start.animate({
+//        width: "35vh",
+//        height: "35vh",
+////        top: "5vh",
+//        },200)
 }
 
 function startTimer(){
