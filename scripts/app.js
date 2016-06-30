@@ -37,7 +37,7 @@ function startGame(){
         $(".game_screen_wrapcontent_final_buttons").css({
             "top": "200vh", "opacity": "1"});
         gameSettings.start.empty();
-        $(".final_score").css("opacity", "0");
+        $(".final_score").css({"opacity": "0", "z-index": "0"});
     }
     
 // odpala grę
@@ -112,6 +112,7 @@ function showGameOver(points, accuracy, clicks){
     
     $(".final_score").animate({
         opacity: 1,
+        zIndex: 20000,
         },200);
 }
 
