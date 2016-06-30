@@ -1248,6 +1248,7 @@ body {
                     align-self: center;
                     top: 200vh;
                     border: 1px solid red;
+                    z-index: 10000;
                 }
                 .gameover_buttons {
                     opacity: 0;
@@ -1317,22 +1318,31 @@ body {
                     top: 5vh;
                 }
 
-                .gameover {
-                        position: relative;
-                }
-
                 .gameover_copy {
                     color: $pink-color;
                     font-size: 0.5em;
+                    line-height: 3em;
                 }
-
-                .gameover_points_accuracy {
+            }
+            
+            .final_score {
+//               border: 3px solid red;
+               position: relative;
+               height: 16vh;
+               top: -40vh;
+               display: flex;
+               flex-direction: column;
+               opacity: 0;
+                
+                .final_score_points, .final_score_accuracy {
+//                    border: 2px solid blue;
+                    height: 8vh;
+                    font-size: 2em;
+                    text-align: center;
                     color: $pink-color;
-                    font-size: 0.2em;
-                    line-height: 1em;
-                    padding: 0.5em;
+//                    line-height: 2em;
                 }
-
+                
                 .play_again {
                     font-family: 'Special Elite', 'Courier New'; 
                     padding: 1em 0.7em 1em 0.7em;
@@ -1340,12 +1350,15 @@ body {
                     border-radius: 20px;
                     border: none;
                     background-color: #ae83b9;
-                    font-size: 0.2em;
+                    font-size: 1.5em;
                     line-height: 0;
+                    width: 10vw;
+                    align-self: center;
                 }
             }
         }
     }
+    
     .foo_button, .bar_button, .foobar_button, .not_button {
         font-size: 1.5em;
         font-family: 'Special Elite', 'Courier New'; 

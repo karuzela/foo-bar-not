@@ -31,18 +31,13 @@ function startGame(){
         $('.timer').empty();
         counter_value.html(gameSettings.points); 
         buttons.removeClass("gameover_buttons");
-        buttons_final.removeClass("gameover_buttons");
+//        buttons_final.removeClass("gameover_buttons");
         $(".game_screen_wrapcontent_buttons").css(
-            "top", "0vh");
-        $(".game_screen_wrapcontent_final_buttons").css(
-            "top", "200vh");
-        gameSettings.start.removeClass("gameover");
+            "top", "20vh");
+        $(".game_screen_wrapcontent_final_buttons").css({
+            "top": "200vh", "opacity": "1"});
         gameSettings.start.empty();
-        gameSettings.start.animate({
-            width: "20vw",
-            height: "18vh",
-            top: "5vh",
-            },200)
+        $(".final_score").css("opacity", "0");
     }
     
 // odpala grę
@@ -74,6 +69,7 @@ function startGame(){
         }
     })
     foobar_button.on("click", function(){
+        console.log("test");
         if(gameSettings.isActive){
             isFooBar();
         }
@@ -89,28 +85,34 @@ function startGame(){
 function showGameOver(points, accuracy, clicks){
     var buttons = $(".game_screen_wrapcontent_buttons");
     var buttons_final = $(".game_screen_wrapcontent_final_buttons");
+    var final_score_points = $(".final_score_points");
+    var final_score_accuracy = $(".final_score_accuracy");
     
-//    gameSettings.start.removeClass("start");
-    buttons_final.addClass("gameover_buttons");
+    buttons_final.css("opacity", "0");
     buttons.addClass("gameover_buttons");
-    gameSettings.start.addClass("gameover");
     gameSettings.start.html(function (){
+            return "<div class='score'><p class='gameover_copy'>game over</p>"
+    })
+    final_score_points.html(function (){
         if (clicks === 0){
-        return "<div class='score'><p class='gameover_copy'>game over</p>"
-            
-//            <p class='gameover_points_accuracy'>points: " + points + "</p><p class='gameover_points_accuracy'>accuracy: 0%</p><button class='play_again'>play again</button></div>";
+            return "<p>points: " + gameSettings.points + "</p>";
         }
         else {
-            return "<div class='score'><p class='gameover_copy'>game over</p>"
-                
-//                <p class='gameover_points_accuracy'>points: " + gameSettings.points + "</p><p class='gameover_points_accuracy'>accuracy: " + Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) + "%</p><button class='play_again'>play again</button></div>";
+            return "<p>points: " + gameSettings.points + "</p>";
         }
-    });
-//    gameSettings.start.animate({
-//        width: "35vh",
-//        height: "35vh",
-////        top: "5vh",
-//        },200)
+    })
+    final_score_accuracy.html(function (){
+        if (clicks === 0){
+            "<p>accuracy: 0%</p>";
+        }
+        else {
+            return "<p>accuracy: " + Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) + "%</p>";
+        }
+    })
+    
+    $(".final_score").animate({
+        opacity: 1,
+        },200);
 }
 
 function startTimer(){
@@ -261,10 +263,8 @@ $(document).ready(function(){
     hideHeart();
     startGame();
     
-    $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+    $.jInvertScroll(['.scroll'],        
         {
         height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
-        onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-        }
     });
 });
