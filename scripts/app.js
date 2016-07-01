@@ -100,28 +100,28 @@ function showGameOver(points, accuracy, clicks){
 // komentarz po zakończeniu gry jest uzależniony od liczby klików oraz accuracy
     if (gameSettings.clicks <= 20){
         gameSettings.start.html(function (){
-            return "<div class='score'><p class='gameover_copy'>well...</p>"
+            return "<div class='score'><p>well...</p>"
         })
     }
     else {
         if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 50){
             gameSettings.start.html(function (){
-                return "<div class='score'><p class='gameover_copy'>well...</p>"
+                return "<div class='score'><p>well...</p>"
             })
         }
         else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 70){
             gameSettings.start.html(function (){
-                return "<div class='score'><p class='gameover_copy'>good</p>"
+                return "<div class='score'><p>good</p>"
             })
         }
         else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 90){
             gameSettings.start.html(function (){
-                return "<div class='score'><p class='gameover_copy'>ok!</p>"
+                return "<div class='score'><p>ok!</p>"
             })
         }
         else{
             gameSettings.start.html(function (){
-                return "<div class='score'><p class='gameover_copy'>great!</p>"
+                return "<div class='score'><p>great!</p>"
             })
         }
     }

@@ -730,7 +730,6 @@ body {
 	display: block;
 	float:left;
 	margin: 1% 0 1% 0%;
-    border: 1px solid white;
     &:first-child { 
         margin-left: 0; 
     }
@@ -759,7 +758,6 @@ body {
         justify-content: center;
         align-items: center;
         align-content: center;
-        border: 1px solid red;
 
         .ready_screen {
             background-image: url("../images/circle.png");
@@ -769,8 +767,6 @@ body {
             justify-content: center;
             flex-direction: column;
             padding: 25%;
-            border: 1px solid green;
-
 
             .ready_screen_wrapcontent_ready {
                 text-transform: uppercase;
@@ -782,7 +778,6 @@ body {
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
-                border: 1px solid blue;
                 align-self: center;
 
                 #span_ready {
@@ -790,7 +785,6 @@ body {
                     height: 10vh;
                     position: relative;
                     top: 5vh;
-                    border: 1px solid orange;
                 }
             }
             
@@ -800,7 +794,6 @@ body {
                 flex-wrap: wrap-reverse;
                 width: 30vw;
                 align-self: center;
-                border: 1px solid red;
                 z-index: 10000;
                 position: relative;
                 top: 8vh;
@@ -1152,7 +1145,6 @@ body {
         justify-content: center;
         align-items: center;
         align-content: center;
-        border: 1px solid red;
         
         .game_screen {
             background-image: url("../images/circle.png");
@@ -1165,14 +1157,11 @@ body {
             height: 0;
             
             .game_screen_wrapcontent {
-//                height: 100vh;
-                border: 3px solid green;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 
                 .game_screen_menu_container {
-                    border: 1px red solid;
                     height: 16vh;
                     width: 25vw;
                     display: flex;
@@ -1195,7 +1184,7 @@ body {
                             color: whitesmoke;
 
                             #timer, .timer {
-                                line-height: 1.2em;
+                                line-height: 1em;
                                 font-size: 0.8em;
 
                                 .hours {
@@ -1203,12 +1192,12 @@ body {
                                 }
                                 .minutes {
                                     float: left;
-                                    font-size: 0.8em;
+                                    font-size: 1em;
                                 }
 
                                 .seconds {
                                     float: left;
-                                    font-size: 0.8em;
+                                    font-size: 1em;
                                 }
                             }
                     }
@@ -1235,6 +1224,7 @@ body {
                         }
                     }
                 }
+                
                 .game_screen_wrapcontent_buttons {
                         display: flex;
                         justify-content: center;
@@ -1245,39 +1235,25 @@ body {
                         top: 20vh;
                         z-index: 10000;
                 }
-                .game_screen_wrapcontent_final_buttons {
-                    display: flex;
-                    position: relative;
-                    justify-content: center;
-                    flex-wrap: wrap-reverse;
-                    width: 20vw;
-                    align-self: center;
-                    top: 200vh;
-                    border: 1px solid red;
-                    z-index: 10000;
-                }
+                
                 .gameover_buttons {
                     opacity: 0;
                 }
 
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-//                    height: 7vh;
-                    width: 20vw;
+//                    width: 20vw;
                     font-size: 1.5em;
-//                    line-height: 1.2em;
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     align-self: center;
                     border-radius: 20px;
-                    border: 1px solid green;
                     position: relative;
                     top: 10vh;
                     text-align: center;
                     padding: 0.5em;
-//                    line-height: 1.5em;
                 }
 
                .checkmark {
@@ -1290,21 +1266,8 @@ body {
                         z-index: 20000;
                         left: 35vw;
                         top: -8vh;
-                        opacity: 0;
-                    }
-
-//                .checkmark_final {
-//                    position: absolute;
-//                    background-image: url("../images/checkmark.png");
-//                    background-repeat: no-repeat;
-//                    background-size: contain;
-//                    height: 8vh;
-//                    width: 8vw;
-//                    z-index: 20000;
-//                    left: 22vw;
-//                    top: -10vh;
-//                    opacity: 0;
-//                }
+                        opacity: 1;
+                }
 
                 .score {
                     display: flex;
@@ -1315,16 +1278,7 @@ body {
                 }
 
                 .start {
-                    font-size: 1.5em;
-                    cursor:pointer;
-                    position: relative;
-                    top: 10vh;
-                }
-
-                .gameover_copy {
-//                    color: $pink-color;
-//                    font-size: 0.5em;
-//                    line-height: 3em;
+                    cursor: pointer;
                 }
             }
             
@@ -1393,7 +1347,6 @@ body {
 //            padding-bottom: 75%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
-                    position: relative;
                     top: 4vh;
                     width: 30vw;
                     
@@ -1401,14 +1354,6 @@ body {
                         #timer, .timer {
                         line-height: 1.5em;
                         font-size: 1em;
-
-                            .minutes {
-                                font-size: 1em;
-                            }
-
-                            .seconds {
-                                font-size: 1em;
-                            }
                         }
                     }
 
@@ -1425,43 +1370,21 @@ body {
                 }
                 .game_screen_wrapcontent_buttons {
                         width: 30vw;
-                        position: relative;
-                        top: 22vh;
+                        top: 17vh;
                 }
-                .game_screen_wrapcontent_final_buttons {
-                    width: 30vw;
-                }
+              
                 .game_screen_wrapcontent_ready {
                     font-size: 2.5em;
-                    position: relative;
                     top: 10vh;
                 }
                 
-                 .checkmark {
-                    position: absolute;
-                    height: 8vh;
-                    width: 8vw;
-                    left: 25vw;
-                    top: -13vh;
-                }
-
-                .checkmark_final {
-                    position: absolute;
-                    height: 8vh;
-                    width: 8vw;
-                    left: 25vw;
-                    top: -13vh;
-                }
-
-                .start {
-                    font-size: 2.5em;
-                    position: relative;
-                    top: 10vh;
+                .checkmark {
+                    left: 35vw;
+                    top: -12vh;
                 }
             }
             
             .final_score {
-               position: relative;
                top: -1vh;
                 
                 .final_score_points, .final_score_accuracy {
@@ -1491,7 +1414,6 @@ body {
             .game_screen_wrapcontent {
                 .game_screen_menu_container {
                     width: 40vw;
-                    position: relative;
                     top: 6vh;
                     font-size: 1.5em;
                     
@@ -1502,14 +1424,6 @@ body {
                         #timer, .timer {
                         line-height: 1.5em;
                         font-size: 1em;
-
-                            .minutes {
-                                font-size: 1em;
-                            }
-
-                            .seconds {
-                                font-size: 1em;
-                            }
                         }
                     }
                     
@@ -1517,40 +1431,39 @@ body {
                         height: 20vh;
                         width: 20vh;
                         
-                        #counter {
-//                            line-height: 1.2em;
-//                            font-size: 0.8em;
-                        }
+//                        #counter {
+////                            line-height: 1.2em;
+////                            font-size: 0.8em;
+//                        }
 
                         #counter_value {
-                            font-size: 1em;
+                            font-size: 1.5em;
                         }
                     }
                 }
                 .game_screen_wrapcontent_buttons {
-                        position: relative;
-                        top: 10vh;
+                        top: 15vh;
                 }
             
                 .game_screen_wrapcontent_ready {
-                    height: 12vh;
                     font-size: 3.5em;
-                    position: relative;
                     top: 12vh;
-                    line-height: 2em;
                 }
-
-                .start {
-                    font-size: 3.5em;
-                    position: relative;
-                    top: 12vh;
+                
+                .checkmark {
+                    left: 38vw;
+                    top: -15vh;
                 }
             }
             
             .final_score {
-               border: 1px solid red;
-               position: relative;
-               top: -60vh;
+               top: -5vh;
+                
+                .final_score_points, .final_score_accuracy {
+//                    height: 8vh;
+                    font-size: 1.5em;
+                    line-height: 1.3em;
+                }
             }
         }
     }
@@ -1568,27 +1481,17 @@ body {
 //            padding-bottom: 94%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
-                    position: relative;
                     top: 8vh;
                     
                     .timer_container {
                         #timer, .timer {
                         line-height: 1em;
-                        font-size: 1.2em;
-
-                            .minutes {
-                                font-size: 1.2em;
-                            }
-
-                            .seconds {
-                                font-size: 1.2em;
-                            }
+                        font-size: 1.5em;
                         }
                     }
                     
                     .counter_container {
                         #counter {
-                            line-height: 1.5em;
                             font-size: 1.5em;
                         }
 
@@ -1599,32 +1502,22 @@ body {
                 }
                 
                 .game_screen_wrapcontent_buttons {
-                        position: relative;
-                        top: 12vh;
+                        top: 17vh;
                 }
                
                 .game_screen_wrapcontent_ready {
                     font-size: 4em;
-                    position: relative;
-                    top: -12vh;
+                    top: 12vh;
                 }
-
-                .start {
-                    font-size: 4em;
-                    position: relative;
-                    top: -12vh;
+                
+                .checkmark {
+                    top: -20vh;
                 }
             }
             
             .final_score {
-               position: relative;
-               top: -60vh;
+               top: -7vh;
                 height: 15vh;
-                
-                .final_score_points, .final_score_accuracy {
-                    font-size: 1.2em;
-                    line-height: 1.2em;
-                }
                 
                 .play_again {
                     width: 10vw;
@@ -1644,60 +1537,32 @@ body {
         .game_screen {
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
-                    position: relative;
-                    top: 8vh;
-                    
-                    .timer_container {
-                        #timer, .timer {
-                        line-height: 1.5em;
-
-                            .minutes {
-                                font-size: 1.5em;
-                            }
-
-                            .seconds {
-                                font-size: 1.5em;
-                            }
-                        }
-                    }
-                    
-                    .counter_container {
-                        #counter {
-                            line-height: 1.5em;
-                            font-size: 1.5em;
-                        }
-
-                        #counter_value {
-                            font-size: 1.5em;
-                        }
-                    }
+                    top: 10vh;
                 }
                 
                 .game_screen_wrapcontent_buttons {
-                        position: relative;
-                        top: 13vh;
+                    top: 25vh;
                 }
                 
                 .game_screen_wrapcontent_ready {
                     font-size: 4.5em;
-                    position: relative;
-                    top: -10vh;
-                    line-height: 1.5em;
+                    top: 17vh;
                 }
-
-                .start {
-                    font-size: 4.5em;
-                    position: relative;
-                    top: -10vh;
+                
+                .checkmark {
+                    top: -17vh;
                 }
             }
             
             .final_score {
-               position: relative;
-               top: -45vh;
+               top: -3vh;
+                
+                .final_score_points, .final_score_accuracy {
+                    font-size: 2em;
+                }
                 
                 .play_again {
-                    font-size: 1em;
+                    font-size: 1.1em;
                 }
             }
         }
@@ -1711,60 +1576,24 @@ body {
         .game_screen {
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
-                    position: relative;
-                    top: 10vh;
-                    
-//                    .timer_container {
-//                        #timer, .timer {
-//                        line-height: 1.5em;
-//
-//                            .minutes {
-//                                font-size: 2em;
-//                            }
-//
-//                            .seconds {
-//                                font-size: 2em;
-//                            }
-//                        }
-//                    }
-//                    
-//                    .counter_container {
-//                        #counter {
-//                            line-height: 1.5em;
-//                            font-size: 1.5em;
-//                        }
-//
-//                        #counter_value {
-//                            font-size: 1.5em;
-//                        }
-//                    }
+                    top: 13vh;
                 }
                 .game_screen_wrapcontent_buttons {
-                        position: relative;
-                        top: 15vh;
+                    top: 35vh;
                 }
                 
                 .game_screen_wrapcontent_ready {
                     font-size: 5em;
-                    position: relative;
-                    top: -10vh;
+                    top: 23vh;
                 }
-
-                .start {
-                    font-size: 5em;
-                    position: relative;
-                    top: -10vh;
+                
+                .checkmark {
+                    top: -12vh;
                 }
             }
             
             .final_score {
-               position: relative;
-               top: -55vh;
-                
-                 .final_score_points, .final_score_accuracy {
-                    font-size: 1.5em;
-                    line-height: 1.5em;
-                }
+               top: 5vh;
                 
                 .play_again {
                     font-size: 1.2em;
@@ -1781,29 +1610,8 @@ body {
         .game_screen {
             .game_screen_wrapcontent {
                 .game_screen_menu_container {
-                    position: relative;
-                    top: 10vh;
-
-                    //                    .timer_container {
-//                        #timer, .timer {
-//                        line-height: 1.5em;
-//
-//                            .minutes {
-//                                font-size: 2em;
-//                            }
-//
-//                            .seconds {
-//                                font-size: 2em;
-//                            }
-//                        }
-//                    }
-//                    
+                    top: 15vh;                    
                     .counter_container {
-//                        #counter {
-//                            line-height: 1.5em;
-//                            font-size: 1.5em;
-//                        }
-
                         #counter_value {
                             font-size: 1.8em;
                         }
@@ -1811,26 +1619,25 @@ body {
                 }
                 
                 .game_screen_wrapcontent_buttons {
-                        position: relative;
-                        top: 15vh;
+                    top: 40vh;
                 }
 
                 .game_screen_wrapcontent_ready {
                     font-size: 6em;
-                    position: relative;
-                    top: -5vh;
+                    top: 26vh;
                 }
-
-                .start {
-                    font-size: 6em;
-                    position: relative;
-                    top: -5vh;
+                
+                .checkmark {
+                    top: -11vh;
                 }
             }
             
             .final_score {
-               position: relative;
-               top: -45vh;
+               top: 10vh;
+                
+                .final_score_points, .final_score_accuracy {
+                    font-size: 2.3em;
+                }
                 
                 .play_again {
                     font-size: 1.5em;
@@ -1839,250 +1646,3 @@ body {
         }
     }
 }
-    
-//@include minimal-width {
-//    .game_container {
-//        width: 100vw;
-//        height: 100vh;
-//        left: 350vw;
-//        top: -200vh;
-//        display: flex;
-//        justify-content: center;
-//        align-items: center;
-//        align-content: center;
-//        border: 1px solid red;
-//        .game_screen {
-//            background-image: url("../images/circle.png");
-//            background-repeat: no-repeat;
-//            background-size: contain;
-//            width: 100%;
-//            padding-bottom: 100%;
-//            height: 0;
-//            border: 1px solid green;
-//            
-//            .game_screen_wrapcontent {
-//                height: 100vh;
-//                border: 3px solid green;
-//                display: flex;
-//                justify-content: center;
-//                flex-direction: column;
-//                
-//                .game_screen_menu_container {
-//                    height: 16vh;
-//                    width: 40vw;
-//                    display: flex;
-//                    justify-content: space-around;
-//                    font-size: 1.5em;
-//                    text-transform: uppercase;
-//                    border: 1px solid orange;
-//                    position: relative;
-//
-//        // wysokość menu
-//                    top: -7vh;
-//                    align-self: center;
-//
-//                    .timer_container {
-//                            background-image: url("../images/plama.png");
-//                            background-repeat: no-repeat;
-//                            background-size: contain;
-//                            height: 20vh;
-//                            width: 20vh;
-//                            display: flex;
-//                            flex-direction: column;
-//                            align-items: center;
-//                            justify-content: center;
-//                            color: whitesmoke;
-//
-//                            .timer {
-//    //                            display: inline-block;
-//                                line-height: 1.5em;
-//
-//                                .hours {
-//                                    display: none;
-//                                }
-//                                .minutes {
-//                                    float: left;
-//                                }
-//
-//                                .seconds {
-//                                    float: left;
-//                                }
-//                            }
-//                    }
-//
-//                    .counter_container {
-//                        background-image: url("../images/plama_alt.png");
-//                        background-repeat: no-repeat;
-//                        background-size: contain;
-//                        height: 20vh;
-//                        width: 20vh;
-//                        display: flex;
-//                        align-items: center;
-//                        justify-content: center;
-//                        flex-direction: column;
-//
-//                        #counter {
-//                            line-height: 1.5em;
-//                        }
-//
-//                        #counter_value {
-//                            font-size: 1.8em;
-//                            color: $background-color;
-//                        }
-//                    }
-//                }
-//                .game_screen_wrapcontent_buttons {
-//                        display: flex;
-//                        justify-content: center;
-//                        flex-wrap: wrap-reverse;
-//                        width: 30vw;
-//                        align-self: center;
-//                        position: relative;
-//                        border: 1px solid red;
-//        //wysokość buttonów startowych
-//                        top: 20vh;
-//                        z-index: 10000;
-//                }
-//                .game_screen_wrapcontent_final_buttons {
-//                    display: flex;
-//                    position: relative;
-//                    justify-content: center;
-//                    flex-wrap: wrap-reverse;
-//                    width: 30vw;
-//                    align-self: center;
-//                    top: 200vh;
-//                    border: 1px solid red;
-//                    z-index: 10000;
-//                }
-//                .gameover_buttons {
-//                    opacity: 0;
-//                }
-//
-//                .game_screen_wrapcontent_ready {
-//                    text-transform: uppercase;
-//                    height: 15vh;
-//                    width: 20vw;
-//                    font-size: 6em;
-//                    line-height: 1.8em;
-//                    color: $pink-color;
-//                    -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
-//                    -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
-//                    box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
-//                    align-self: center;
-//                    border-radius: 20px;
-////                    padding: 0 0.2em 0 0.2em 0;
-//                    border: 1px solid green;
-//                    position: relative;
-//        // wysokość losowanej liczby
-//                    top: 5vh;
-//                    text-align: center;
-//                }
-//
-//               .checkmark {
-//                        position: absolute;
-//                        background-image: url("../images/checkmark.png");
-//                        background-repeat: no-repeat;
-//                        background-size: contain;
-//                        height: 8vh;
-//                        width: 8vw;
-//                        z-index: 20000;
-//                        left: 28vw;
-//                        top: -25vh;
-//                        opacity: 0;
-//                    }
-//
-//                .checkmark_final {
-//                    position: absolute;
-//                    background-image: url("../images/checkmark.png");
-//                    background-repeat: no-repeat;
-//                    background-size: contain;
-//                    height: 8vh;
-//                    width: 8vw;
-//                    z-index: 20000;
-//                    left: 28vw;
-//                    top: -25vh;
-//                    opacity: 0;
-//                }
-//
-//                .score {
-//                    display: flex;
-//                    flex-direction: column;
-//                    align-content: space-between;
-//                    justify-content: center;
-//                    align-items: center;
-//                }
-//
-//                .start {
-//                    font-size: 6em;
-////                    line-height: 2.5em;
-//                    cursor:pointer;
-//                    border: 1px solid red;
-//                    position: relative;
-//            // wysokość startu
-//                    top: 5vh;
-//                }
-//
-//                .gameover_copy {
-//                    color: $pink-color;
-//                    font-size: 0.5em;
-//                    line-height: 3em;
-//                }
-//            }
-//            
-//            .final_score {
-////               border: 3px solid red;
-//               position: relative;
-//               height: 16vh;
-//               top: -40vh;
-//               display: flex;
-//               flex-direction: column;
-//               opacity: 0;
-//                
-//                .final_score_points, .final_score_accuracy {
-////                    border: 2px solid blue;
-//                    height: 8vh;
-//                    font-size: 2em;
-//                    text-align: center;
-//                    color: $pink-color;
-////                    line-height: 2em;
-//                }
-//                
-//                .play_again {
-//                    font-family: 'Special Elite', 'Courier New'; 
-//                    padding: 1em 0.7em 1em 0.7em;
-//                    box-shadow: 0 4px $background-color;
-//                    border-radius: 20px;
-//                    border: none;
-//                    background-color: #ae83b9;
-//                    font-size: 1.5em;
-//                    line-height: 0;
-//                    width: 10vw;
-//                    align-self: center;
-//                }
-//            }
-//        }
-//    }
-//    
-//    .foo_button, .bar_button, .foobar_button, .not_button {
-//        font-size: 1.5em;
-//        font-family: 'Special Elite', 'Courier New'; 
-//        color: white;
-//        border: none;
-//        padding: 0.8em 0.2em 0.8em 0.2em;
-//        border-radius: 20px;
-//        width: 8vw;
-//        margin: 0.07em;
-//        box-shadow: 0 4px $background-color;
-//        background-color: #ae83b9;
-//    }
-//
-//    .buttons_final {
-//        box-shadow: 0 4px $pink-color;
-//        background-color: $background-color;
-//
-//    }
-//
-//    .foobar_button {
-//         margin-bottom: 0.5em;
-//    }
-//}
