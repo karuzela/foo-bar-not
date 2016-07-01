@@ -24,18 +24,26 @@ function startGame(){
 // resetuje ustawienia do rozpoczęcia nowej gry
     function reset(){
         var buttons = $(".game_screen_wrapcontent_buttons");
-        var buttons_final = $(".game_screen_wrapcontent_buttons_final");
+        var foo_button = $(".foo_button");
+        var bar_button = $(".bar_button");
+        var foobar_button = $(".foobar_button");
+        var not_button = $(".not_button");
+
+// buttony wracają do pierwotnego kształtu
+        foo_button.html("3");
+        bar_button.html("5");
+        foobar_button.html("3 or 5");
+        not_button.html("not");
+        foo_button.removeClass("buttons_final");
+        bar_button.removeClass("buttons_final");
+        foobar_button.removeClass("buttons_final");
+        not_button.removeClass("buttons_final");
+        buttons.removeClass("gameover_buttons");
+        
         gameSettings.points = 0;
         gameSettings.consecutive_hits = 0;
-        
         $('.timer').empty();
         counter_value.html(gameSettings.points); 
-        buttons.removeClass("gameover_buttons");
-//        buttons_final.removeClass("gameover_buttons");
-        $(".game_screen_wrapcontent_buttons").css(
-            "top", "20vh");
-        $(".game_screen_wrapcontent_final_buttons").css({
-            "top": "200vh", "opacity": "1"});
         gameSettings.start.empty();
         $(".final_score").css({"opacity": "0", "z-index": "0"});
     }
@@ -84,31 +92,56 @@ function startGame(){
 // koniec gry - pokazuje się wynik
 function showGameOver(points, accuracy, clicks){
     var buttons = $(".game_screen_wrapcontent_buttons");
-    var buttons_final = $(".game_screen_wrapcontent_final_buttons");
     var final_score_points = $(".final_score_points");
     var final_score_accuracy = $(".final_score_accuracy");
     
-    buttons_final.css("opacity", "0");
     buttons.addClass("gameover_buttons");
-    gameSettings.start.html(function (){
-            return "<div class='score'><p class='gameover_copy'>game over</p>"
-    })
-    final_score_points.html(function (){
-        if (clicks === 0){
+    
+// komentarz po zakończeniu gry jest uzależniony od liczby klików oraz accuracy
+    if (gameSettings.clicks <= 20){
+        gameSettings.start.html(function (){
+            return "<div class='score'><p class='gameover_copy'>well...</p>"
+        })
+    }
+    else {
+        if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 50){
+            gameSettings.start.html(function (){
+                return "<div class='score'><p class='gameover_copy'>well...</p>"
+            })
+        }
+        else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 70){
+            gameSettings.start.html(function (){
+                return "<div class='score'><p class='gameover_copy'>good</p>"
+            })
+        }
+        else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 90){
+            gameSettings.start.html(function (){
+                return "<div class='score'><p class='gameover_copy'>ok!</p>"
+            })
+        }
+        else{
+            gameSettings.start.html(function (){
+                return "<div class='score'><p class='gameover_copy'>great!</p>"
+            })
+        }
+    }
+    
+    if (clicks === 0){    
+        final_score_points.html(function (){
             return "<p>points: " + gameSettings.points + "</p>";
-        }
-        else {
+        })
+        final_score_accuracy.html(function (){
+            return "<p>accuracy: 0%</p>";
+        })
+    }
+    else {
+        final_score_points.html(function (){
             return "<p>points: " + gameSettings.points + "</p>";
-        }
-    })
-    final_score_accuracy.html(function (){
-        if (clicks === 0){
-            "<p>accuracy: 0%</p>";
-        }
-        else {
+        })
+        final_score_accuracy.html(function (){
             return "<p>accuracy: " + Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) + "%</p>";
-        }
-    })
+        })
+    }
     
     $(".final_score").animate({
         opacity: 1,
@@ -169,19 +202,23 @@ function showCheckmark (){
     $(".checkmark").animate({
         opacity: 0.8},150).animate({
         opacity: 0},150);
-    $(".checkmark_final").animate({
-        opacity: 0.8},150).animate({
-        opacity: 0},150)
 }
 
 // po 5 prawidłowych odpowiedziach z rzędu pokaże się trudniejsza wersja buttonów
 function showFinalButtons (){
-    $(".game_screen_wrapcontent_buttons").animate({
-        top:"200vh"},300).delay(300);
-    $(".game_screen_wrapcontent_final_buttons").css(
-        "opacity", "1")
-    $(".game_screen_wrapcontent_final_buttons").animate({
-        top: "0vh"}, 300)
+    var foo_button = $(".foo_button");
+    var bar_button = $(".bar_button");
+    var foobar_button = $(".foobar_button");
+    var not_button = $(".not_button");
+    
+    foo_button.html("foo");
+    bar_button.html("bar");
+    foobar_button.html("foobar");
+    not_button.html("not");
+    foo_button.addClass("buttons_final", 600, "easeInQuart");
+    bar_button.addClass("buttons_final", 600, "easeInQuart");
+    foobar_button.addClass("buttons_final", 600, "easeInQuart");
+    not_button.addClass("buttons_final", 600, "easeInQuart");
 }
 
 function isFoo(){

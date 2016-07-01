@@ -1158,25 +1158,28 @@ body {
             background-image: url("../images/circle.png");
             background-repeat: no-repeat;
             background-size: contain;
-            width: 70%;
-            padding-bottom: 70%;
+//            width: 70%;
+//            padding-bottom: 70%;
+            width: 100%;
+            padding-bottom: 100%;
             height: 0;
             
             .game_screen_wrapcontent {
-                height: 100vh;
+//                height: 100vh;
                 border: 3px solid green;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 
                 .game_screen_menu_container {
+                    border: 1px red solid;
                     height: 16vh;
                     width: 25vw;
                     display: flex;
                     justify-content: space-around;
                     text-transform: uppercase;
                     position: relative;
-                    top: -25vh;
+                    top: 2vh;
                     align-self: center;
 
                     .timer_container {
@@ -1239,7 +1242,7 @@ body {
                         width: 20vw;
                         align-self: center;
                         position: relative;
-                        top: -22vh;
+                        top: 20vh;
                         z-index: 10000;
                 }
                 .game_screen_wrapcontent_final_buttons {
@@ -1259,10 +1262,10 @@ body {
 
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-                    height: 7vh;
+//                    height: 7vh;
                     width: 20vw;
                     font-size: 1.5em;
-                    line-height: 1.2em;
+//                    line-height: 1.2em;
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
@@ -1271,36 +1274,37 @@ body {
                     border-radius: 20px;
                     border: 1px solid green;
                     position: relative;
-                    top: -25vh;
+                    top: 10vh;
                     text-align: center;
-                    line-height: 1.5em;
+                    padding: 0.5em;
+//                    line-height: 1.5em;
                 }
 
                .checkmark {
-                        position: absolute;
+                        position: relative;
                         background-image: url("../images/checkmark.png");
                         background-repeat: no-repeat;
                         background-size: contain;
                         height: 8vh;
                         width: 8vw;
                         z-index: 20000;
-                        left: 22vw;
-                        top: -10vh;
+                        left: 35vw;
+                        top: -8vh;
                         opacity: 0;
                     }
 
-                .checkmark_final {
-                    position: absolute;
-                    background-image: url("../images/checkmark.png");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 8vh;
-                    width: 8vw;
-                    z-index: 20000;
-                    left: 22vw;
-                    top: -10vh;
-                    opacity: 0;
-                }
+//                .checkmark_final {
+//                    position: absolute;
+//                    background-image: url("../images/checkmark.png");
+//                    background-repeat: no-repeat;
+//                    background-size: contain;
+//                    height: 8vh;
+//                    width: 8vw;
+//                    z-index: 20000;
+//                    left: 22vw;
+//                    top: -10vh;
+//                    opacity: 0;
+//                }
 
                 .score {
                     display: flex;
@@ -1314,20 +1318,20 @@ body {
                     font-size: 1.5em;
                     cursor:pointer;
                     position: relative;
-                    top: -25vh;
+                    top: 10vh;
                 }
 
                 .gameover_copy {
-                    color: $pink-color;
-                    font-size: 0.5em;
-                    line-height: 3em;
+//                    color: $pink-color;
+//                    font-size: 0.5em;
+//                    line-height: 3em;
                 }
             }
             
             .final_score {
                position: relative;
-               height: 16vh;
-               top: -70vh;
+               height: 10vh;
+               top: -3vh;
                display: flex;
                flex-direction: column;
                opacity: 0;
@@ -1385,18 +1389,15 @@ body {
 @include xs-width {
     .game_container {
         .game_screen {
-            width: 75%;
-            padding-bottom: 75%;
+//            width: 75%;
+//            padding-bottom: 75%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
                     position: relative;
-                    top: 2vh;
+                    top: 4vh;
                     width: 30vw;
                     
                     .timer_container {
-                        height: 20vh;
-                        width: 20vh;
-                        
                         #timer, .timer {
                         line-height: 1.5em;
                         font-size: 1em;
@@ -1412,55 +1413,60 @@ body {
                     }
 
                     .counter_container {
-                        height: 20vh;
-                        width: 20vh;
+                        #counter {
+                            line-height: 1.2em;
+                            font-size: 1em;
+                        }
+
+                        #counter_value {
+                            font-size: 1em;
+                        }
                     }
                 }
                 .game_screen_wrapcontent_buttons {
                         width: 30vw;
                         position: relative;
-                        top: 17vh;
+                        top: 22vh;
                 }
                 .game_screen_wrapcontent_final_buttons {
                     width: 30vw;
                 }
                 .game_screen_wrapcontent_ready {
-                    height: 15vh;
                     font-size: 2.5em;
                     position: relative;
-                    top: 8vh;
+                    top: 10vh;
                 }
                 
                  .checkmark {
                     position: absolute;
                     height: 8vh;
                     width: 8vw;
-                    left: 28vw;
-                    top: -25vh;
+                    left: 25vw;
+                    top: -13vh;
                 }
 
                 .checkmark_final {
                     position: absolute;
                     height: 8vh;
                     width: 8vw;
-                    left: 28vw;
-                    top: -25vh;
+                    left: 25vw;
+                    top: -13vh;
                 }
 
                 .start {
                     font-size: 2.5em;
                     position: relative;
-                    top: 8vh;
+                    top: 10vh;
                 }
             }
             
             .final_score {
                position: relative;
-               top: -40vh;
+               top: -1vh;
                 
                 .final_score_points, .final_score_accuracy {
-                    font-size: 1.2em;
-                    line-height: 1.6em;
+                    font-size: 1em;
+                    line-height: 1.2em;
                 }
                 
                 .play_again {
@@ -1480,16 +1486,19 @@ body {
 @include s-width {
     .game_container {
         .game_screen {
-            width: 90%;
-            padding-bottom: 90%;
+//            width: 90%;
+//            padding-bottom: 90%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container {
                     width: 40vw;
                     position: relative;
-                    top: 2vh;
+                    top: 6vh;
                     font-size: 1.5em;
                     
                     .timer_container {
+                        height: 20vh;
+                        width: 20vh;
+                        
                         #timer, .timer {
                         line-height: 1.5em;
                         font-size: 1em;
@@ -1505,39 +1514,43 @@ body {
                     }
                     
                     .counter_container {
+                        height: 20vh;
+                        width: 20vh;
+                        
                         #counter {
 //                            line-height: 1.2em;
 //                            font-size: 0.8em;
                         }
 
                         #counter_value {
-//                            font-size: 0.8em;
+                            font-size: 1em;
                         }
                     }
                 }
                 .game_screen_wrapcontent_buttons {
                         position: relative;
-                        top: 17vh;
+                        top: 10vh;
                 }
             
                 .game_screen_wrapcontent_ready {
+                    height: 12vh;
                     font-size: 3.5em;
                     position: relative;
-                    top: 8vh;
-                    line-height: 1.5em;
+                    top: 12vh;
+                    line-height: 2em;
                 }
 
                 .start {
                     font-size: 3.5em;
-                    border: 1px solid red;
                     position: relative;
-                    top: 8vh;
+                    top: 12vh;
                 }
             }
             
             .final_score {
+               border: 1px solid red;
                position: relative;
-               top: -40vh;
+               top: -60vh;
             }
         }
     }
@@ -1551,24 +1564,24 @@ body {
 @include m-width {
     .game_container {
         .game_screen {
-            width: 94%;
-            padding-bottom: 94%;
+//            width: 94%;
+//            padding-bottom: 94%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
                     position: relative;
-                    top: -2vh;
+                    top: 8vh;
                     
                     .timer_container {
                         #timer, .timer {
-                        line-height: 2em;
-                        font-size: 2em;
+                        line-height: 1em;
+                        font-size: 1.2em;
 
                             .minutes {
-                                font-size: 2em;
+                                font-size: 1.2em;
                             }
 
                             .seconds {
-                                font-size: 2em;
+                                font-size: 1.2em;
                             }
                         }
                     }
@@ -1587,25 +1600,31 @@ body {
                 
                 .game_screen_wrapcontent_buttons {
                         position: relative;
-                        top: 15vh;
+                        top: 12vh;
                 }
                
                 .game_screen_wrapcontent_ready {
                     font-size: 4em;
                     position: relative;
-                    top: 5vh;
+                    top: -12vh;
                 }
 
                 .start {
                     font-size: 4em;
                     position: relative;
-                    top: 5vh;
+                    top: -12vh;
                 }
             }
             
             .final_score {
                position: relative;
-               top: -45vh;
+               top: -60vh;
+                height: 15vh;
+                
+                .final_score_points, .final_score_accuracy {
+                    font-size: 1.2em;
+                    line-height: 1.2em;
+                }
                 
                 .play_again {
                     width: 10vw;
@@ -1626,18 +1645,18 @@ body {
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
                     position: relative;
-                    top: -2vh;
+                    top: 8vh;
                     
                     .timer_container {
                         #timer, .timer {
                         line-height: 1.5em;
 
                             .minutes {
-                                font-size: 2em;
+                                font-size: 1.5em;
                             }
 
                             .seconds {
-                                font-size: 2em;
+                                font-size: 1.5em;
                             }
                         }
                     }
@@ -1656,20 +1675,20 @@ body {
                 
                 .game_screen_wrapcontent_buttons {
                         position: relative;
-                        top: 15vh;
+                        top: 13vh;
                 }
                 
                 .game_screen_wrapcontent_ready {
                     font-size: 4.5em;
                     position: relative;
-                    top: 5vh;
-                    line-height: 1.8em;
+                    top: -10vh;
+                    line-height: 1.5em;
                 }
 
                 .start {
                     font-size: 4.5em;
                     position: relative;
-                    top: 5vh;
+                    top: -10vh;
                 }
             }
             
@@ -1693,7 +1712,7 @@ body {
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
                     position: relative;
-                    top: -12vh;
+                    top: 10vh;
                     
 //                    .timer_container {
 //                        #timer, .timer {
@@ -1728,19 +1747,24 @@ body {
                 .game_screen_wrapcontent_ready {
                     font-size: 5em;
                     position: relative;
-                    top: -1vh;
+                    top: -10vh;
                 }
 
                 .start {
                     font-size: 5em;
                     position: relative;
-                    top: -1vh;
+                    top: -10vh;
                 }
             }
             
             .final_score {
                position: relative;
-               top: -45vh;
+               top: -55vh;
+                
+                 .final_score_points, .final_score_accuracy {
+                    font-size: 1.5em;
+                    line-height: 1.5em;
+                }
                 
                 .play_again {
                     font-size: 1.2em;
@@ -1758,7 +1782,7 @@ body {
             .game_screen_wrapcontent {
                 .game_screen_menu_container {
                     position: relative;
-                    top: -10vh;
+                    top: 10vh;
 
                     //                    .timer_container {
 //                        #timer, .timer {
@@ -1794,19 +1818,19 @@ body {
                 .game_screen_wrapcontent_ready {
                     font-size: 6em;
                     position: relative;
-                    top: 1vh;
+                    top: -5vh;
                 }
 
                 .start {
                     font-size: 6em;
                     position: relative;
-                    top: 1vh;
+                    top: -5vh;
                 }
             }
             
             .final_score {
                position: relative;
-               top: -40vh;
+               top: -45vh;
                 
                 .play_again {
                     font-size: 1.5em;
