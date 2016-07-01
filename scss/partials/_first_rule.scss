@@ -1,15 +1,78 @@
-.first_rule_container {
-    width: 100vw;
-    height: 100vh;
-    left: 100vw;
-    display: flex;
-    align-items: center;
-    
-    .first_rule_inside {
+@include minimal-width {
+    .first_rule_container {
         width: 100vw;
-        
-        #first_rule_copy {
-            font-size: 2em;
+        height: 100vh;
+        left: 100vw;
+        display: flex;
+        align-items: center;
+
+        .first_rule_inside {
+            width: 100vw;
+
+            #first_rule_copy {
+                font-size: 2em;
+                color: $light-grey;
+            }
+        }
+    }
+}
+
+@include xs-width {
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2.3em;
+            }
+        }
+    }
+}
+
+@include s-width {
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+
+@include m-width {
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2.8em;
+            }
+        }
+    }
+}
+
+@include l-width {
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 3.1em;
+            }
+        }
+    }
+}
+
+@include xl-width {
+    .first_rule_container{
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 3.5em;
+            }
+        }
+    }
+}
+
+@include xxl-width {
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 4em;
+            }
         }
     }
 }

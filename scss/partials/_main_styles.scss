@@ -1,6 +1,8 @@
 body {
-    font-family: 'Special Elite', 'Courier New'; 
+    font-family: $main-font, 'Courier New'; 
     font-size: 16px;
+    overflow-x: hidden;
+    display: flex;
     
     button:focus {
         outline:0;

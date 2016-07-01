@@ -10,6 +10,7 @@
     <script type="text/javascript" src="scripts/jquery.jInvertScroll.js"></script>
     <script src="scripts/typewriting.js"></script>
     <script src="scripts/counter.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
     <script src="scripts/jquery.simple.timer.js"></script>
     <script type = "text/javascript" 
          src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -20,7 +21,7 @@
 </head>
 <body>
     <div class="small_screens">
-        <p class="too_small">Neither <span class="foo">foo</span> nor <span class="bar">bar</span> doesn't like such small screens - try a bigger one!</p>
+        <p class="too_small">Neither <span class="foo">foo</span> nor <span class="bar">bar</span> doesn't like such small screens - try a bigger one (at least 700px)!</p>
         <div class="sad_face">
             <span>#sadface</span>
         </div>
@@ -83,131 +84,101 @@
                     </div>
                 </div>
             </div>
-            <div class="ready_container page grid-container">
-                
-            <div class="section group">
-            <div class="col span_11_of_12">
-                                <div class="ready_screen">
-<!--
-                                    <div class="ready_screen_wrapcontent">
-                                        <div class="ready_screen_wrapcontent_inside">
--->
-                                            
-                                            <div class="ready_screen_wrapcontent_ready">
-                                                <span id="span_ready">ready?</span>
-                                            
-                                                <div id ="heart">
-
-                                                    <div class="heart-Circle" style="margin:0 auto">
-                                                        <div class="heart-Container">
-                                                            <div class="left-Side sides">
-                                                                <div class="half">
-                                                                    <div class="heart"></div> 
-                                                                </div>
-                                                                <div class="points">
-                                                                  <div class="point pt1"></div>
-                                                                  <div class="point pt4"></div>
-                                                                  <div class="point pt2"></div>
-                                                                  <div class="point pt3"></div>
-                                                                </div>
-                                                            </div> 
-                                                            <div class="right-Side sides">
-                                                                <div class="half">
-                                                                  <div class="heart"></div> 
-                                                                </div>
-                                                                <div class="points">
-                                                                  <div class="point pt1"></div>
-                                                                  <div class="point pt2"></div>
-                                                                  <div class="point pt3"></div>
-                                                                </div> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div>
-
+            <div class="ready_container page">   
+                <div class="section group">
+                    <div class="col span_3_of_12"></div>
+                    <div class="col span_6_of_12">
+                        <div class="ready_screen">
+  
+                            <div class="ready_screen_wrapcontent_ready">
+                                <span id="span_ready">ready?</span>
+                                <div id ="heart">
+                                    <div class="heart-Circle" style="margin:0 auto">
+                                        <div class="heart-Container">
+                                            <div class="left-Side sides">
+                                                <div class="half">
+                                                    <div class="heart"></div> 
                                                 </div>
-                                                
-                                            </div>
-                                            <div class="ready_screen_wrapcontent_buttons">
-                                                <button class="no_button">NO</button>
-                                                <button class="maybe_button">MAYBE</button>
-                                                <button class="yes_button">YES</button>
-                                            </div>
-                                            
-<!--
-                                        </div>
+                                                <div class="points">
+                                                  <div class="point pt1"></div>
+                                                  <div class="point pt4"></div>
+                                                  <div class="point pt2"></div>
+                                                  <div class="point pt3"></div>
+                                                </div>
+                                            </div> 
+                                            <div class="right-Side sides">
+                                                <div class="half">
+                                                  <div class="heart"></div> 
+                                                </div>
+                                                <div class="points">
+                                                  <div class="point pt1"></div>
+                                                  <div class="point pt2"></div>
+                                                  <div class="point pt3"></div>
+                                                </div> 
+                                            </div> 
+                                        </div> 
                                     </div>
--->
-                                    
                                 </div>
-                                
-<!--
-                            </article>
+                            </div>
+                            <div class="ready_screen_wrapcontent_buttons">
+                                <button class="no_button">NO</button>
+                                <button class="maybe_button">MAYBE</button>
+                                <button class="yes_button">YES</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="col span_3_of_12"></div>    
                 </div>
--->
-            111 
-                
             </div>
-            <div class="col span_1_of_12"></div>    
-            </div>
-                
-            </div>
-            
             <div class="game_container page1">
-                
-<!--
-                <div class="main_container_game_screen">
-                    <div class="subcontainer_game_screen">
-                        <div class="container_game_screen">
-                            <article class="game_screen_outside">
-                                <div class="game_screen_spacer">
-                                </div>
--->
-                                
-                                <div class="game_screen">
-                                    
-                                    <div class="game_screen_wrapcontent">
-                                        <div class="game_screen_wrapcontent_inside">
-                                            <div class="game_screen_menu_container">
-                                                <div class="timer_container">
-                                                    <p id="timer">time:</p>
-                                                    <div class="timer" data-seconds-left=02></div>
-                                                </div>
-                                                <div class="counter_container">
-                                                    <p id="counter">points:</p>
-                                                    <p id="counter_value" >0</p>
-                                                </div>
-                                            </div>
-                                            <div class="game_screen_wrapcontent_ready counter">100
-                                            </div>
-                                            <div class="game_screen_wrapcontent_buttons">
-                                                <button class="foo_button background_button game_button">3                   <div class="checkmark"></div></button>
-                                                <button class="not_button background_button game_button">not</button>
-                                                <button class="bar_button background_button game_button">5</button>
-                                                <button class="foobar_button background_button game_button">3 and 5</button>
-                                            </div>
-                                            
-                                            <div class="game_screen_wrapcontent_final_buttons">
-                                                <button class="buttons_final foo_button">foo                   <div class="checkmark_final"></div></button>
-                                                <button class="buttons_final not_button">not</button>
-                                                <button class="buttons_final bar_button">bar</button>
-                                                <button class="buttons_final foobar_button">foobar</button>
-                                            </div>
-                                            
-                                        </div>
+                <div class="section group">
+                    <div class="col span_3_of_12"></div>
+                    <div class="col span_6_of_12">
+                        <div class="game_screen">
+                            <div class="game_screen_wrapcontent">
+                                <div class="game_screen_menu_container">
+                                    <div class="timer_container">
+                                        <p id="timer">time:</p>
+                                        <div class="timer" data-seconds-left=90></div>
+                                    </div>
+                                    <div class="counter_container">
+                                        <p id="counter">points:</p>
+                                        <p id="counter_value" >0</p>
                                     </div>
                                 </div>
-                                
-<!--
-                            </article>
+                                <div class="game_screen_wrapcontent_ready counter">100
+                                </div>
+                                <div class="game_screen_wrapcontent_buttons">
+                                    <button class="foo_button background_button game_button">3       
+                                    </button>
+                                    <button class="not_button background_button game_button">not</button>
+                                    <button class="bar_button background_button game_button">5</button>
+                                    <button class="foobar_button background_button game_button">3 and 5</button>
+                                </div>
+                                 <div class="checkmark"></div>
+                            </div>
+                            <div class="final_score">
+                                <div class="final_score_points">
+                                </div>
+                                <div class="final_score_accuracy">
+                                </div>
+                                <button class="play_again">play again</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="col span_3_of_12"></div> 
                 </div>
--->
-                
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<!--
+$minimal-width: 700px;
+$xs-width: 850px;
+$s-width: 990px;
+$m-width: 1130px;
+$l-width: 1260px;
+$xl-width: 1400px;
+$xxl-width: 1550px;-->

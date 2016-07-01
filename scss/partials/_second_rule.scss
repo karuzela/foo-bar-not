@@ -1,16 +1,79 @@
-.second_rule_container {
-    width: 100vw;
-    height: 400px;
-    left: 190vw;
-    
-    .second_rule_inside {
-        position: relative;
-        top: 20vh;
+@include minimal-width {
+    .second_rule_container {
         width: 100vw;
-        
-        #second_rule_copy {
+        height: 400px;
+        left: 190vw;
+
+        .second_rule_inside {
             position: relative;
-            font-size: 2.5em;    
+            top: 20vh;
+            width: 100vw;
+
+            #second_rule_copy {
+                position: relative;
+                font-size: 2.5em;
+                color: $light-grey;
+            }
+        }
+    }
+}
+
+@include xs-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.3em;
+            }
+        }
+    }
+}
+
+@include s-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+
+@include m-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.8em;
+            }
+        }
+    }
+}
+
+@include l-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 3.1em;
+            }
+        }
+    }
+}
+
+@include xl-width {
+    .second_rule_container{
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 3.5em;
+            }
+        }
+    }
+}
+
+@include xxl-width {
+    .second_rule_container {
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 4em;
+            }
         }
     }
 }

@@ -1,5 +1,17 @@
+@mixin below-minimal-width {
+    @media only screen and (max-width: $minimal-width){
+        @content;
+    }
+}
+
 @mixin minimal-width {
     @media only screen and (min-width: $minimal-width){
+        @content;
+    } 
+}
+
+@mixin xxs-width {
+    @media only screen and (min-width: $xxs-width){
         @content;
     }
 }
@@ -30,6 +42,18 @@
 
 @mixin xl-width {
     @media only screen and (min-width: $xl-width){
+        @content;
+    }
+}
+
+@mixin xxl-width {
+    @media only screen and (min-width: $xxl-width){
+        @content;
+    }
+}
+
+@mixin large-desktop-width {
+    @media only screen and (min-width: $large-desktop-width){
         @content;
     }
 }

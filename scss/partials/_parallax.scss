@@ -1,53 +1,42 @@
-body {
-  overflow-x: hidden;
-  display: flex;
-  background-color: $background-color;
+@include below-minimal-width {
+    .parallax_container {
+        display: none;
+    }
 }
-    
-.parallax_container {
-    .scroll {
-        position: fixed;
-        top: 0;
-        left: 0;
+
+@include minimal-width {
+    body {
+        background-color: $background-color;
     }
-    .horizon {
-        z-index: 1;
-        width: 450vw;
+    .small_screens {
+        display: none;
     }
-//    .middle {
-//        z-index: 500;
-//        width: 4000px;
-//    }
-    .front {
-    // odpowiada za wysokość na paralaksie //
-//     top: 30vh;
-        z-index: 1000;
-        width: 450vw;
-        p {
-//          font-size: 2em;
-            color: whitesmoke;
-        }
-        .page {
-            position: absolute;
-            width: 100vw;
+    .parallax_container {
+        .scroll {
+            position: fixed;
             top: 0;
+            left: 0;
         }
-        
-        .page1 {
-            position: absolute;
-            width: 100vw;
-            top: -100vh;
+        .horizon {
+            z-index: 1;
+            width: 450vw;
+        }
+
+        .front {
+            z-index: 1000;
+            width: 450vw;
+
+            .page {
+                position: absolute;
+                width: 100vw;
+                top: 0;
+            }
+
+            .page1 {
+                position: absolute;
+                width: 100vw;
+                top: -150vh;
+            }
         }
     }
 }
-/**
-  * important: keep position fixed, you can however use top:0 instead of bottom:0
-  * if you want to make it stick to the top of the browser
-  */
-
-/**
-  * z-index ordering of the different layers, do this for your layers,
-  * also assign absolute width (to prevent issues if the script gets executed before the images get loaded)
-  */
-
-
