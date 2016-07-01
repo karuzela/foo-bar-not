@@ -1,1 +1,1 @@
-(http://i.imgur.com/MpDICOH.png)
+![MpDICOH.png] (http://i.imgur.com/MpDICOH.png)
