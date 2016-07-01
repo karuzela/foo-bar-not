@@ -10,13 +10,19 @@ Decide if number is divisible by 3 and/or 5 and act accordingly (fast!).
 
 ## MADE WITH:
 
-<!--| I used       | -->
-<!--| ------------- |-->
+| I used       | 
+| ------------- |
 | HTML      | 
 | CSS (Sass)      | 
 | JavaScript (jQuery) | 
 | the help of lots of chocolate |
 
-## RWD: confirmed
+## RWD: 
+
+confirmed
+
+## miscellanea
 
 The concept and layout (except for the background) are mine.
+
+
