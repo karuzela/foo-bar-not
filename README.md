@@ -1,4 +1,6 @@
-## My very first project after 5-week coding bootcamp. No previous experience (!).
+## My very first project after 5-week coding bootcamp. 
+
+No previous experience (!).
 
 ![intro screen] (http://i.imgur.com/PHIx3VG.jpg)
 
@@ -21,8 +23,12 @@ Decide if number is divisible by 3 and/or 5 and act accordingly (be fast!).
 
 confirmed
 
+## [LINK](http://vortexpp.pl/)
+
+
+
 ## MISCELLANEA
 
-The concept and layout (except for the background) are mine.
+The concept and layouts are also mine (except for the background scribbles).
 
 
