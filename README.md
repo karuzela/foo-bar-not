@@ -1,1 +1,1 @@
-![MpDICOH.png] (http://i.imgur.com/MpDICOH.png)
+![game screen] (http://i.imgur.com/cdwDgn4.png)
