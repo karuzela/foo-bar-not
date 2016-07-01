@@ -27,6 +27,7 @@ $m-width: 1130px;
 $l-width: 1260px;
 $xl-width: 1400px;
 $xxl-width: 1550px;
+$large-desktop-width: 1680px;
 
 // --- media queries --- //
 
@@ -80,6 +81,12 @@ $xxl-width: 1550px;
 
 @mixin xxl-width {
     @media only screen and (min-width: $xxl-width){
+        @content;
+    }
+}
+
+@mixin large-desktop-width {
+    @media only screen and (min-width: $large-desktop-width){
         @content;
     }
 }
@@ -796,7 +803,7 @@ body {
                 align-self: center;
                 z-index: 10000;
                 position: relative;
-                top: 8vh;
+                top: 5vh;
 
                 .yes_button, .no_button, .maybe_button {
                     font-size: 0.7em;
@@ -941,7 +948,7 @@ body {
 // --- heart --- //
 
 .heart_hide {
-    opacity: 1;
+    opacity: 0;
 }
 
 #heart {
@@ -1150,8 +1157,6 @@ body {
             background-image: url("../images/circle.png");
             background-repeat: no-repeat;
             background-size: contain;
-//            width: 70%;
-//            padding-bottom: 70%;
             width: 100%;
             padding-bottom: 100%;
             height: 0;
@@ -1175,8 +1180,8 @@ body {
                             background-image: url("../images/plama.png");
                             background-repeat: no-repeat;
                             background-size: contain;
-                            height: 15vh;
-                            width: 15vh;
+                            height: 10vh;
+                            width: 10vh;
                             display: flex;
                             flex-direction: column;
                             align-items: center;
@@ -1206,8 +1211,8 @@ body {
                         background-image: url("../images/plama_alt.png");
                         background-repeat: no-repeat;
                         background-size: contain;
-                        height: 15vh;
-                        width: 15vh;
+                        height: 10vh;
+                        width: 10vh;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1232,7 +1237,7 @@ body {
                         width: 20vw;
                         align-self: center;
                         position: relative;
-                        top: 20vh;
+                        top: 10vh;
                         z-index: 10000;
                 }
                 
@@ -1242,7 +1247,6 @@ body {
 
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-//                    width: 20vw;
                     font-size: 1.5em;
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
@@ -1251,7 +1255,7 @@ body {
                     align-self: center;
                     border-radius: 20px;
                     position: relative;
-                    top: 10vh;
+                    top: 3vh;
                     text-align: center;
                     padding: 0.5em;
                 }
@@ -1266,7 +1270,7 @@ body {
                         z-index: 20000;
                         left: 35vw;
                         top: -8vh;
-                        opacity: 1;
+                        opacity: 0;
                 }
 
                 .score {
@@ -1283,9 +1287,10 @@ body {
             }
             
             .final_score {
+               border: 1px red solid;
                position: relative;
                height: 10vh;
-               top: -3vh;
+               top: -8vh;
                display: flex;
                flex-direction: column;
                opacity: 0;
@@ -1343,8 +1348,6 @@ body {
 @include xs-width {
     .game_container {
         .game_screen {
-//            width: 75%;
-//            padding-bottom: 75%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
                     top: 4vh;
@@ -1409,8 +1412,6 @@ body {
 @include s-width {
     .game_container {
         .game_screen {
-//            width: 90%;
-//            padding-bottom: 90%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container {
                     width: 40vw;
@@ -1431,18 +1432,13 @@ body {
                         height: 20vh;
                         width: 20vh;
                         
-//                        #counter {
-////                            line-height: 1.2em;
-////                            font-size: 0.8em;
-//                        }
-
                         #counter_value {
                             font-size: 1.5em;
                         }
                     }
                 }
                 .game_screen_wrapcontent_buttons {
-                        top: 15vh;
+                        top: 18vh;
                 }
             
                 .game_screen_wrapcontent_ready {
@@ -1477,8 +1473,6 @@ body {
 @include m-width {
     .game_container {
         .game_screen {
-//            width: 94%;
-//            padding-bottom: 94%;
             .game_screen_wrapcontent {
                 .game_screen_menu_container { 
                     top: 8vh;
@@ -1541,7 +1535,7 @@ body {
                 }
                 
                 .game_screen_wrapcontent_buttons {
-                    top: 25vh;
+                    top: 21vh;
                 }
                 
                 .game_screen_wrapcontent_ready {
@@ -1641,6 +1635,37 @@ body {
                 
                 .play_again {
                     font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+// --- game screen large-desktop --- //
+
+@include large-desktop-width {
+    .game_container {
+        .game_screen {
+            .game_screen_wrapcontent {
+                .game_screen_menu_container {
+                    top: 12vh;                    
+                }
+                
+                .game_screen_wrapcontent_buttons {
+                    top: 30vh;
+                }
+
+                .game_screen_wrapcontent_ready {
+                    font-size: 7em;
+                    top: 20vh;
+                }
+            }
+            
+            .final_score {
+               top: 5vh;
+                
+                .final_score_points, .final_score_accuracy {
+                    font-size: 2.5em;
                 }
             }
         }
