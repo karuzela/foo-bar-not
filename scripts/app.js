@@ -41,6 +41,8 @@ function startGame(){
         buttons.removeClass("gameover_buttons");
         
         gameSettings.points = 0;
+        gameSettings.clicks = 0;
+        gameSettings.accuracy = 0;
         gameSettings.consecutive_hits = 0;
         $('.timer').empty();
         counter_value.html(gameSettings.points); 
@@ -66,9 +68,9 @@ function startGame(){
         init();
     })
     gameSettings.start.on("click", init);
-    foo_button.on("click", function(){
+    foo_button.on("click", function(){  
         if (gameSettings.isActive) {
-                isFoo();
+            isFoo();
          }
     })
     bar_button.on("click", function(){
@@ -77,7 +79,6 @@ function startGame(){
         }
     })
     foobar_button.on("click", function(){
-        console.log("test");
         if(gameSettings.isActive){
             isFooBar();
         }
@@ -100,13 +101,18 @@ function showGameOver(points, accuracy, clicks){
 // komentarz po zakończeniu gry jest uzależniony od liczby klików oraz accuracy
     if (gameSettings.clicks <= 20){
         gameSettings.start.html(function (){
-            return "<div class='score'><p>well...</p>"
+            return "<div class='score'><p>play faster!</p>"
         })
     }
     else {
+        if (Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 20){
+            gameSettings.start.html(function (){
+                return "<div class='score'><p>really?!</p>"
+            })
+        }
         if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 50){
             gameSettings.start.html(function (){
-                return "<div class='score'><p>well...</p>"
+                return "<div class='score'><p>oh well...</p>"
             })
         }
         else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 70){
@@ -114,9 +120,9 @@ function showGameOver(points, accuracy, clicks){
                 return "<div class='score'><p>good</p>"
             })
         }
-        else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 90){
+        else if(Math.ceil((gameSettings.accuracy/gameSettings.clicks)*100) < 95){
             gameSettings.start.html(function (){
-                return "<div class='score'><p>ok!</p>"
+                return "<div class='score'><p>nice</p>"
             })
         }
         else{
@@ -151,7 +157,7 @@ function showGameOver(points, accuracy, clicks){
 
 function startTimer(){
     $('.timer').startTimer({
-        onComplete: function(element){
+        onComplete: function(){
             gameSettings.isActive = false;
             showGameOver(gameSettings.points, gameSettings.accuracy, gameSettings.clicks);
         }
@@ -171,6 +177,8 @@ function isAnswerCorrect(condition){
     else {
        showThatAnswerIsIncorrect(); 
         gameSettings.consecutive_hits = 0;
+        gameSettings.points = gameSettings.points - 30;
+    
     }
     gameSettings.random_number = getRandomNumber();
     showRandomNumber(gameSettings.random_number);
@@ -191,10 +199,10 @@ function answerIsCorrect(final_buttons){
     gameSettings.accuracy++;
     gameSettings.consecutive_hits++;
     showCheckmark();
-     if (gameSettings.consecutive_hits === 5 && final_buttons === false){
+    if (gameSettings.consecutive_hits === 5 && final_buttons === false){
             showFinalButtons();
             final_buttons = true;
-        }
+    }
 }
 
 // po każdej poprawnej odpowiedzi pojawia się checkmark
@@ -223,18 +231,22 @@ function showFinalButtons (){
 
 function isFoo(){
     isAnswerCorrect(gameSettings.random_number % 3 === 0 && !(gameSettings.random_number % 5 === 0));
+//    gameSettings.points = gameSettings.points + 10;
 }
 
 function isBar(){
     isAnswerCorrect(gameSettings.random_number % 5 === 0 && !(gameSettings.random_number % 3 === 0));
+//    gameSettings.points = gameSettings.points + 10;
 }
 
 function isFooBar(){
     isAnswerCorrect(gameSettings.random_number % 3 === 0 && gameSettings.random_number % 5 === 0);
+//    gameSettings.points = gameSettings.points + 30;
 }
 
 function isNot(){
     isAnswerCorrect(gameSettings.random_number % 3 !== 0 && gameSettings.random_number % 5 !== 0)
+//    gameSettings.points = gameSettings.points + 1;
 }
 // -----------------------------------//
 
