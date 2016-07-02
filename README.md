@@ -17,15 +17,15 @@ Decide if number is divisible by 3 and/or 5 and act accordingly (be fast!).
 | HTML      | 
 | CSS (Sass)      | 
 | JavaScript (jQuery) | 
-| the help of lots of chocolate |
+| the help of a lot of chocolate |
 
 ## RWD: 
 
 confirmed
 
-## [LINK](http://vortexpp.pl/)
+## LINK:
 
-
+[http://vortexpp.pl/] (http://vortexpp.pl/)
 
 ## MISCELLANEA
 
