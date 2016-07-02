@@ -24,7 +24,7 @@ function animation_second_rule(){
     $(window).scroll(function(){
         if($(window).scrollTop() > 300) {
             $("#second_rule_copy").animate({ 
-                top: "45vh"}, 7000);
+                top: "35vh"}, 7000);
         } 
     });
 }
