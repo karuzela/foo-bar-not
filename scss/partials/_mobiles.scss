@@ -21,7 +21,7 @@
         .front {
             z-index: 1000;
             
-            width: 500vw;
+            width: 510vw;
 
             .page {
                 position: absolute;
@@ -289,7 +289,6 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        border: 1px solid orange;
 
         .ready_screen {
             background-color: white;
@@ -330,7 +329,7 @@
                 justify-content: center;
 //                flex-wrap: wrap-reverse;
 //                
-                width: 40vw;
+                width: 50vw;
                 
                 align-self: center;
                 z-index: 10000;
@@ -338,14 +337,14 @@
                 top: 5vh;
 
                 .yes_button, .no_button, .maybe_button {
-                    font-size: 0.7em;
+                    font-size: 1em;
                     color: white;
                     border: none;
                     padding: 0.8em 0.2em 0.8em 0.2em;
                     border-radius: 20px;
                     box-shadow: 0 4px $background-color;
                     
-                    width: 15vw;
+                    width: 35vw;
                     
                     margin: 0.07em;
                     background-color: $pink-color;
@@ -377,7 +376,7 @@
         width: 100vw;
         height: 100vh;
         
-        left: 400vw;
+        left: 410vw;
         
         top: -200vh;
         display: flex;
@@ -386,12 +385,9 @@
         align-content: center;
         
         .game_screen {
-            background-image: url("../images/circle.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 100%;
-            padding-bottom: 100%;
-            height: 0;
+            background-color: white;
+            height: 60vh;
+            border-radius: 15vh;
             
             .game_screen_wrapcontent {
                 display: flex;
