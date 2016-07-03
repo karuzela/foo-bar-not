@@ -210,7 +210,7 @@
                 align-items: center;
 
                 p {
-                    font-size: 1em;
+                    font-size: 1.5em;
                     
                     line-height: 1.5em;
                     color: white;
@@ -221,7 +221,7 @@
                 }
                 
                 #p1_third_rule {
-                    font-size: 1.3em;
+                    font-size: 1.8em;
                 }
                 
                 .number {
@@ -235,44 +235,12 @@
                 .button {
                     display: none;
                 }
+                
+                .or {
+                    display: none;
+                }
             }
         }
-    }
-
-    .left {
-        background-image: url("../images/left.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 12vw;
-        height: 6vh;
-        opacity: 0;
-    }
-
-    .right {
-        background-image: url("../images/right.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 12vw;
-        height: 6vh;
-        opacity: 0;
-    }
-
-    .up {
-        background-image: url("../images/up.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 12vw;
-        height: 6vh;
-        opacity: 0;
-    }
-
-    .down {
-        background-image: url("../images/down.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 12vw;
-        height: 6vh;
-        opacity: 0;
     }
 }
 
@@ -329,7 +297,7 @@
                 justify-content: center;
 //                flex-wrap: wrap-reverse;
 //                
-                width: 50vw;
+                width: 65vw;
                 
                 align-self: center;
                 z-index: 10000;
@@ -386,7 +354,7 @@
         
         .game_screen {
             background-color: white;
-            height: 60vh;
+            height: 85vh;
             border-radius: 15vh;
             
             .game_screen_wrapcontent {
@@ -396,7 +364,9 @@
                 
                 .game_screen_menu_container {
                     height: 16vh;
-                    width: 25vw;
+                    
+                    width: 70vw;
+                    
                     display: flex;
                     justify-content: space-around;
                     text-transform: uppercase;
@@ -408,8 +378,10 @@
                         background-image: url("../images/plama.png");
                         background-repeat: no-repeat;
                         background-size: contain;
-                        height: 10vh;
-                        width: 10vh;
+                        
+                        height: 15vh;
+                        width: 15vh;
+                        
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -418,7 +390,8 @@
 
                         #timer, .timer {
                             line-height: 1em;
-                            font-size: 0.8em;
+                            
+                            font-size: 1.5em;
 
                             .hours {
                                 display: none;
@@ -439,8 +412,10 @@
                         background-image: url("../images/plama_alt.png");
                         background-repeat: no-repeat;
                         background-size: contain;
-                        height: 10vh;
-                        width: 10vh;
+                        
+                        height: 15vh;
+                        width: 15vh;
+                        
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -448,11 +423,13 @@
 
                         #counter {
                             line-height: 1.2em;
-                            font-size: 0.8em;
+                            
+                            font-size: 1.5em;
                         }
 
                         #counter_value {
-                            font-size: 0.8em;
+                            font-size: 1.5em;
+                            
                             color: $background-color;
                         }
                     }
@@ -461,11 +438,16 @@
                 .game_screen_wrapcontent_buttons {
                     display: flex;
                     justify-content: center;
-                    flex-wrap: wrap-reverse;
-                    width: 20vw;
+                    
+                    flex-wrap: wrap;
+                    width: 100vw;
+                    
                     align-self: center;
                     position: relative;
-                    top: 10vh;
+                    
+                    top: 23vh;
+                    height: 23vh;
+                    
                     z-index: 10000;
                 }
                 
@@ -475,7 +457,9 @@
 
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-                    font-size: 1.5em;
+                    
+                    font-size: 3.5em;
+                    
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
@@ -483,7 +467,9 @@
                     align-self: center;
                     border-radius: 20px;
                     position: relative;
-                    top: 3vh;
+                    
+                    top: 10vh;
+                    
                     text-align: center;
                     padding: 0.5em;
                 }
@@ -517,17 +503,22 @@
             .final_score {
                position: relative;
                height: 10vh;
-               top: -8vh;
+                
+               top: -12vh;
+                
                display: flex;
                flex-direction: column;
                opacity: 0;
                 
                 .final_score_points, .final_score_accuracy {
                     height: 8vh;
-                    font-size: 1em;
+                    
+                    font-size: 2em;
+                    
                     text-align: center;
                     color: $pink-color;
-                    line-height: 1.3em;
+                    
+                    line-height: 1.5em;
                 }
                 
                 .play_again {
@@ -537,7 +528,7 @@
                     border-radius: 20px;
                     border: none;
                     background-color: $light-violet-color;
-                    font-size: 0.7em;
+                    font-size: 1.5em;
                     line-height: 0;
                     align-self: center;
                 }
@@ -546,16 +537,24 @@
     }
     
     .foo_button, .bar_button, .foobar_button, .not_button {
-        font-size: 0.6em;
+        font-size: 2em;
+        
         font-family: $main-font, 'Courier New'; 
         color: white;
         border: none;
-        padding: 0.8em 0.2em 0.8em 0.2em;
+//        padding: 0.8em 0.2em 0.8em 0.2em;
         border-radius: 20px;
-        width: 6vw;
+        
+        width: 33vw;
+        height: 9vh;
+        
         margin: 0.07em;
         box-shadow: 0 4px $background-color;
         background-color: $light-violet-color;
+        
+        .button_and {
+            display: none;
+        }
     }
 
     .buttons_final {

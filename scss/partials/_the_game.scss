@@ -187,6 +187,14 @@
         margin: 0.07em;
         box-shadow: 0 4px $background-color;
         background-color: $light-violet-color;
+        
+        .button_and {
+            display: inline;
+        }
+        
+        .button_and_short {
+            display: none;
+        }
     }
 
     .buttons_final {

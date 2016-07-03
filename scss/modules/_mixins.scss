@@ -1,11 +1,11 @@
-@mixin mobile-width {
-    @media only screen and (min-width: $mobile-width){
+@mixin below-minimal-width {
+    @media only screen and (max-width: $mobile-width){
         @content;
     }
 }
 
-@mixin below-minimal-width {
-    @media only screen and (max-width: $minimal-width){
+@mixin mobile-width {
+    @media only screen and (min-width: $mobile-width){
         @content;
     }
 }
