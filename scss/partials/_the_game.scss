@@ -169,7 +169,6 @@
                     background-color: $light-violet-color;
                     font-size: 0.7em;
                     line-height: 0;
-                    width: 13vw;
                     align-self: center;
                 }
             }
@@ -367,10 +366,6 @@
             .final_score {
                top: -7vh;
                 height: 15vh;
-                
-                .play_again {
-                    width: 10vw;
-                }
             }
         }
     }
@@ -390,7 +385,7 @@
                 }
                 
                 .game_screen_wrapcontent_buttons {
-                    top: 21vh;
+                    top: 30vh;
                 }
                 
                 .game_screen_wrapcontent_ready {
@@ -428,7 +423,7 @@
                     top: 13vh;
                 }
                 .game_screen_wrapcontent_buttons {
-                    top: 35vh;
+                    top: 30vh;
                 }
                 
                 .game_screen_wrapcontent_ready {
