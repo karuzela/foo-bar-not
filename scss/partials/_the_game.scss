@@ -1,10 +1,10 @@
-// --- game screen minimal-width --- //
+// --- game screen mobile-width --- //
 
-@include minimal-width {
+@include mobile-width {
     .game_container {
         width: 100vw;
         height: 100vh;
-        left: 350vw;
+        left: 410vw;
         top: -200vh;
         display: flex;
         justify-content: center;
@@ -12,13 +12,9 @@
         align-content: center;
         
         .game_screen {
-            background-color: transparent;
-            background-image: url("../images/circle.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 100%;
-            padding-bottom: 100%;
-            height: 0;
+            background-color: white;
+            height: 85vh;
+            border-radius: 15vh;
             
             .game_screen_wrapcontent {
                 display: flex;
@@ -27,7 +23,7 @@
                 
                 .game_screen_menu_container {
                     height: 16vh;
-                    width: 25vw;
+                    width: 70vw;
                     display: flex;
                     justify-content: space-around;
                     text-transform: uppercase;
@@ -39,8 +35,8 @@
                         background-image: url("../images/plama.png");
                         background-repeat: no-repeat;
                         background-size: contain;
-                        height: 10vh;
-                        width: 10vh;
+                        height: 15vh;
+                        width: 15vh;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -49,7 +45,7 @@
 
                         #timer, .timer {
                             line-height: 1em;
-                            font-size: 0.8em;
+                            font-size: 1.5em;
 
                             .hours {
                                 display: none;
@@ -70,8 +66,8 @@
                         background-image: url("../images/plama_alt.png");
                         background-repeat: no-repeat;
                         background-size: contain;
-                        height: 10vh;
-                        width: 10vh;
+                        height: 15vh;
+                        width: 15vh;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -79,11 +75,11 @@
 
                         #counter {
                             line-height: 1.2em;
-                            font-size: 0.8em;
+                            font-size: 1.5em;
                         }
 
                         #counter_value {
-                            font-size: 0.8em;
+                            font-size: 1.5em;
                             color: $background-color;
                         }
                     }
@@ -92,11 +88,12 @@
                 .game_screen_wrapcontent_buttons {
                     display: flex;
                     justify-content: center;
-                    flex-wrap: wrap-reverse;
-                    width: 20vw;
+                    flex-wrap: wrap;
+                    width: 100vw;
                     align-self: center;
                     position: relative;
-                    top: 10vh;
+                    top: 23vh;
+                    height: 23vh;
                     z-index: 10000;
                 }
                 
@@ -106,7 +103,7 @@
 
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-                    font-size: 1.5em;
+                    font-size: 3.5em;
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
@@ -114,7 +111,7 @@
                     align-self: center;
                     border-radius: 20px;
                     position: relative;
-                    top: 3vh;
+                    top: 10vh;
                     text-align: center;
                     padding: 0.5em;
                 }
@@ -148,17 +145,17 @@
             .final_score {
                position: relative;
                height: 10vh;
-               top: -8vh;
+               top: -12vh;
                display: flex;
                flex-direction: column;
                opacity: 0;
                 
                 .final_score_points, .final_score_accuracy {
                     height: 8vh;
-                    font-size: 1em;
+                    font-size: 2em;
                     text-align: center;
                     color: $pink-color;
-                    line-height: 1.3em;
+                    line-height: 1.5em;
                 }
                 
                 .play_again {
@@ -168,7 +165,7 @@
                     border-radius: 20px;
                     border: none;
                     background-color: $light-violet-color;
-                    font-size: 0.7em;
+                    font-size: 1.5em;
                     line-height: 0;
                     align-self: center;
                 }
@@ -177,22 +174,19 @@
     }
     
     .foo_button, .bar_button, .foobar_button, .not_button {
-        font-size: 0.6em;
+        font-size: 2em;
+        
         font-family: $main-font, 'Courier New'; 
         color: white;
         border: none;
-        padding: 0.8em 0.2em 0.8em 0.2em;
         border-radius: 20px;
-        width: 6vw;
+        width: 33vw;
+        height: 9vh;
         margin: 0.07em;
         box-shadow: 0 4px $background-color;
         background-color: $light-violet-color;
         
         .button_and {
-            display: inline;
-        }
-        
-        .button_and_short {
             display: none;
         }
     }
@@ -204,6 +198,90 @@
 
     .foobar_button {
         margin-bottom: 0.5em;
+    }
+}
+
+// --- game screen minimal-width --- //
+
+@include minimal-width {
+    .game_container {
+        left: 350vw;
+        
+        .game_screen {
+            background-color: transparent;
+            background-image: url("../images/circle.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            padding-bottom: 100%;
+            height: 0;
+            
+            .game_screen_wrapcontent {
+                
+                .game_screen_menu_container {
+                    width: 25vw;
+
+                    .timer_container {
+                        height: 10vh;
+                        width: 10vh;
+
+                        #timer, .timer {
+                            font-size: 0.8em;
+                        }
+                    }
+
+                    .counter_container {
+                        height: 10vh;
+                        width: 10vh;
+
+                        #counter {
+                            font-size: 0.8em;
+                        }
+
+                        #counter_value {
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+                
+                .game_screen_wrapcontent_buttons {
+                    flex-wrap: wrap-reverse;
+                    width: 20vw;
+                    top: 10vh;
+                    height: 10vh;
+                }
+
+                .game_screen_wrapcontent_ready {
+                    top: 3vh;
+                }
+            }
+            
+            .final_score {
+               top: -8vh;
+                
+                .final_score_points, .final_score_accuracy {
+                    font-size: 1em;
+                    line-height: 1.3em;
+                }
+                
+                .play_again {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+    
+    .foo_button, .bar_button, .foobar_button, .not_button {
+        font-size: 0.6em;
+        width: 6vw;
+        
+        .button_and {
+            display: inline;
+        }
+        
+        .button_and_short {
+            display: none;
+        }
     }
 }
 

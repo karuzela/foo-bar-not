@@ -1,4 +1,4 @@
-@include minimal-width {
+@include mobile-width {
     .first_rule_container {
         width: 100vw;
         height: 100vh;
@@ -10,8 +10,18 @@
             width: 100vw;
 
             #first_rule_copy {
-                font-size: 2em;
+                font-size: 1.7em;
                 color: $light-grey;
+            }
+        }
+    }
+}
+
+@include minimal-width {
+    .first_rule_container {
+        .first_rule_inside {
+            #first_rule_copy {
+                font-size: 2em;
             }
         }
     }

@@ -1,24 +1,20 @@
-@include minimal-width {
+@include mobile-width {
     .ready_container {
         width: 100vw;
         height: 100vh;
-        left: 350vw;
+        left: 410vw;
         display: flex;
         justify-content: center;
         align-items: center;
         align-content: center;
 
         .ready_screen {
-            background-color: transparent;
-            height: inherit;
-            
-            background-image: url("../images/circle.png");
-            background-repeat: no-repeat;
-            background-size: contain;
+            background-color: white;
             display: flex;
             justify-content: center;
             flex-direction: column;
-            padding: 25%;
+            height: 60vh;
+            border-radius: 15vh;
 
             .ready_screen_wrapcontent_ready {
                 text-transform: uppercase;
@@ -46,22 +42,21 @@
             
             .ready_screen_wrapcontent_buttons {
                 display: flex;
-                justify-content: center;
-                flex-wrap: wrap-reverse;
-                width: 30vw;
+                justify-content: center;                
+                width: 65vw;
                 align-self: center;
                 z-index: 10000;
                 position: relative;
                 top: 5vh;
 
                 .yes_button, .no_button, .maybe_button {
-                    font-size: 0.7em;
+                    font-size: 1em;
                     color: white;
                     border: none;
                     padding: 0.8em 0.2em 0.8em 0.2em;
                     border-radius: 20px;
                     box-shadow: 0 4px $background-color;
-                    width: 6vw;
+                    width: 35vw;
                     margin: 0.07em;
                     background-color: $pink-color;
                     font-family: $main-font, 'Courier New'; 
@@ -79,6 +74,31 @@
         }
         100% {
             font-size: 3em;
+        }
+    }
+}
+
+@include minimal-width {
+    .ready_container {
+        left: 350vw;
+
+        .ready_screen {
+            background-color: transparent;
+            height: inherit;
+            background-image: url("../images/circle.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 25%;
+            
+            .ready_screen_wrapcontent_buttons {
+                flex-wrap: wrap-reverse;
+                width: 30vw;
+
+                .yes_button, .no_button, .maybe_button {
+                    font-size: 0.7em;
+                    width: 6vw;
+                }
+            }  
         }
     }
 }

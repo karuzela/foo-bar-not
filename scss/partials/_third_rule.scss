@@ -1,13 +1,15 @@
-@include minimal-width {
+@include mobile-width {
     .third_rule_container {
         width: 90vw;
         height: 100vh;
-        left: 270vw;
+        
+        left: 310vw;
+        
         display: flex;
         align-items: center;
 
         .third_rule_inside {
-            width: 72vw;
+            width: 85vw;
 
             .third_rule_inside_copy {
                 display: flex;
@@ -16,13 +18,50 @@
                 align-items: center;
 
                 p {
-                    font-size: 0.9em;
+                    font-size: 1.5em;
+                    
                     line-height: 1.5em;
                     color: white;
                 }
 
                 #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
                     opacity: 0;
+                }
+                
+                #p1_third_rule {
+                    font-size: 1.8em;
+                }
+                
+                .number {
+                    display: none;
+                }
+                
+                .and {
+                    display: none;
+                }
+                
+                .button {
+                    display: none;
+                }
+                
+                .or {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include minimal-width {
+    .third_rule_container {
+        left: 270vw;
+
+        .third_rule_inside {
+            width: 72vw;
+
+            .third_rule_inside_copy {
+                p {
+                    font-size: 0.9em;
                 }
                 
                 #p1_third_rule {

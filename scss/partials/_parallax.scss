@@ -1,10 +1,10 @@
-//@include below-minimal-width {
-//    .parallax_container {
-//        display: none;
-//    }
-//}
+@include below-minimal-width {
+    .parallax_container {
+        display: none;
+    }
+}
 
-@include minimal-width {
+@include mobile-width {
     body {
         background-color: $background-color;
     }
@@ -24,7 +24,7 @@
 
         .front {
             z-index: 1000;
-            width: 450vw;
+            width: 510vw;
 
             .page {
                 position: absolute;
@@ -37,6 +37,14 @@
                 width: 100vw;
                 top: -150vh;
             }
+        }
+    }
+}
+
+@include minimal-width {
+    .parallax_container {
+        .front {
+            width: 450vw;
         }
     }
 }

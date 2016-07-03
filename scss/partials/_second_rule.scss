@@ -1,8 +1,8 @@
-@include minimal-width {
+@include mobile-width {
     .second_rule_container {
         width: 100vw;
         height: 400px;
-        left: 190vw;
+        left: 210vw;
 
         .second_rule_inside {
             position: relative;
@@ -11,8 +11,20 @@
 
             #second_rule_copy {
                 position: relative;
-                font-size: 2.5em;
+                font-size: 2em;
                 color: $light-grey;
+            }
+        }
+    }
+}
+
+@include minimal-width {
+    .second_rule_container {
+        left: 210vw;
+
+        .second_rule_inside {
+            #second_rule_copy {
+                font-size: 2.5em;
             }
         }
     }
