@@ -15,7 +15,7 @@
         }
         .horizon {
             z-index: 1;
-            width: 450vw;
+            width: 500vw;
         }
 
         .front {
@@ -276,14 +276,14 @@
         align-content: center;
 
         .ready_screen {
-//            background-image: url("../images/circle.png");
-//            background-repeat: no-repeat;
-//            background-size: contain;
             background-color: white;
+            
             display: flex;
             justify-content: center;
             flex-direction: column;
-            padding: 25%;
+            
+            height: 60vh;
+            border-radius: 15vh;
 
             .ready_screen_wrapcontent_ready {
                 text-transform: uppercase;
@@ -312,8 +312,10 @@
             .ready_screen_wrapcontent_buttons {
                 display: flex;
                 justify-content: center;
-                flex-wrap: wrap-reverse;
-                width: 30vw;
+//                flex-wrap: wrap-reverse;
+//                
+                width: 40vw;
+                
                 align-self: center;
                 z-index: 10000;
                 position: relative;
@@ -326,7 +328,9 @@
                     padding: 0.8em 0.2em 0.8em 0.2em;
                     border-radius: 20px;
                     box-shadow: 0 4px $background-color;
-                    width: 6vw;
+                    
+                    width: 15vw;
+                    
                     margin: 0.07em;
                     background-color: $pink-color;
                     font-family: $main-font, 'Courier New'; 

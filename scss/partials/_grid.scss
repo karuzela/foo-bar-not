@@ -19,9 +19,20 @@
 .group:after { clear:both;}
 
 .span_6_of_12 {
-  	width: 50%;
+  	width: 80%;
 }
 
 .span_3_of_12 {
-  	width: 25%;
+  	width: 10%;
 }
+
+@include minimal-width {
+    .span_6_of_12 {
+        width: 50%;
+    }
+
+    .span_3_of_12 {
+        width: 25%;
+    }
+}
+

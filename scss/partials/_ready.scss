@@ -9,6 +9,9 @@
         align-content: center;
 
         .ready_screen {
+            background-color: transparent;
+//            border-radius: initial;
+            
             background-image: url("../images/circle.png");
             background-repeat: no-repeat;
             background-size: contain;
