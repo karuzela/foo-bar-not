@@ -12,19 +12,51 @@
         display: none;
     }
     .parallax_container {
+        .horizon {
+           display: none;
+        }
+
+        .front {
+            z-index: 1000;
+            width: 510vw;
+            background-image: url("../images/purple-spirals-background.jpg");
+
+            .page {
+                width: 100vw;
+            }
+
+            .page1 {
+                width: 100vw;
+//                border: 1px solid orange;
+                position: relative;
+            }
+        }
+    }
+}
+
+@include minimal-width {
+    body {
+        background-color: $background-color;
+    }
+    .small_screens {
+        display: none;
+    }
+    .parallax_container {
         .scroll {
             position: fixed;
             top: 0;
             left: 0;
         }
         .horizon {
+            display: block;
             z-index: 1;
             width: 450vw;
         }
 
         .front {
             z-index: 1000;
-            width: 510vw;
+            width: 450vw;
+            background-image: none;
 
             .page {
                 position: absolute;
@@ -37,14 +69,6 @@
                 width: 100vw;
                 top: -150vh;
             }
-        }
-    }
-}
-
-@include minimal-width {
-    .parallax_container {
-        .front {
-            width: 450vw;
         }
     }
 }

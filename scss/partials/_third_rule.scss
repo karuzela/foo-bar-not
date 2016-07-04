@@ -5,6 +5,8 @@
         left: 310vw;
         display: flex;
         align-items: center;
+        flex-direction: column;
+        justify-content: center;
 
         .third_rule_inside {
             width: 85vw;
@@ -19,10 +21,11 @@
                     font-size: 1.3em;
                     line-height: 1.5em;
                     color: white;
+                    text-align: center;
                 }
 
                 #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
-                    opacity: 0;
+                    opacity: 1;
                 }
                 
                 #p1_third_rule {
@@ -53,6 +56,7 @@
 @include minimal-width {
     .third_rule_container {
         left: 270vw;
+        align-items: flex-start;
 
         .third_rule_inside {
             width: 72vw;
@@ -60,6 +64,10 @@
             .third_rule_inside_copy {
                 p {
                     font-size: 0.9em;
+                }
+                
+                #p2_third_rule, #p3_third_rule, #p4_third_rule, #p5_third_rule {
+                    opacity: 0;
                 }
                 
                 #p1_third_rule {

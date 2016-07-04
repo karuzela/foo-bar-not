@@ -305,8 +305,8 @@ $(document).ready(function(){
     
 //    hover_main_circle($(".opening_circle"));
 //    leave_main_circle($(".opening_circle"));
-    animation_second_rule();
-    animation_third_rule();
+    animation_second_rule_min_width_700();
+    animation_third_rule_min_width_700();
     clickButtonYes();
     clickButtonMaybe();
     clickButtonNo();

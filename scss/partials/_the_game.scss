@@ -4,8 +4,7 @@
     .game_container {
         width: 100vw;
         height: 100vh;
-        left: 410vw;
-        top: -200vh;
+        left: -100vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -92,7 +91,7 @@
                     width: 100vw;
                     align-self: center;
                     position: relative;
-                    top: 23vh;
+                    top: 15vh;
                     height: 23vh;
                     z-index: 10000;
                 }
@@ -103,7 +102,7 @@
 
                 .game_screen_wrapcontent_ready {
                     text-transform: uppercase;
-                    font-size: 3.5em;
+                    font-size: 3.4em;
                     color: $pink-color;
                     -webkit-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
                     -moz-box-shadow: 11px 14px 44px -11px rgba(25,9,46,1);
@@ -125,7 +124,7 @@
                     width: 8vw;
                     z-index: 20000;
                     left: 35vw;
-                    top: -8vh;
+                    top: -40vh;
                     opacity: 0;
                 }
 
@@ -145,7 +144,7 @@
             .final_score {
                position: relative;
                height: 10vh;
-               top: -12vh;
+               top: -21vh;
                display: flex;
                flex-direction: column;
                opacity: 0;
@@ -175,13 +174,11 @@
     
     .foo_button, .bar_button, .foobar_button, .not_button {
         font-size: 2em;
-        
         font-family: $main-font, 'Courier New'; 
         color: white;
         border: none;
         border-radius: 20px;
         width: 33vw;
-        height: 9vh;
         margin: 0.07em;
         box-shadow: 0 4px $background-color;
         background-color: $light-violet-color;
@@ -194,10 +191,7 @@
     .buttons_final {
         box-shadow: 0 4px $pink-color;
         background-color: $background-color;
-    }
-
-    .foobar_button {
-        margin-bottom: 0.5em;
+        font-size: 1.5em;
     }
 }
 
@@ -206,6 +200,7 @@
 @include minimal-width {
     .game_container {
         left: 350vw;
+        top: -200vh;
         
         .game_screen {
             background-color: transparent;
@@ -254,6 +249,10 @@
                 .game_screen_wrapcontent_ready {
                     top: 3vh;
                 }
+                
+               .checkmark {
+                    top: -8vh;
+                }
             }
             
             .final_score {
@@ -282,6 +281,14 @@
         .button_and_short {
             display: none;
         }
+    }
+    
+    .buttons_final {
+        font-size: 0.6em;
+    }
+    
+    .foobar_button {
+        margin-bottom: 0.5em;
     }
 }
 

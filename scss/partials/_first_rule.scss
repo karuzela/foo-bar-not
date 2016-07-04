@@ -1,8 +1,8 @@
 @include mobile-width {
     .first_rule_container {
+        position: relative;
         width: 100vw;
-        height: 100vh;
-        left: 100vw;
+        height: 50vh;
         display: flex;
         align-items: center;
 
@@ -10,7 +10,8 @@
             width: 100vw;
 
             #first_rule_copy {
-                font-size: 1.7em;
+                text-align: center;
+                font-size: 1.5em;
                 color: $light-grey;
             }
         }
@@ -19,9 +20,13 @@
 
 @include minimal-width {
     .first_rule_container {
+        left: 100vw;
+        height: 100vh;
+        
         .first_rule_inside {
             #first_rule_copy {
                 font-size: 2em;
+                text-align: left;
             }
         }
     }

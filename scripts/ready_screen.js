@@ -2,10 +2,20 @@
 function prepareTheGameScreen(){
     var game_screen = $("div.game_container");
     var ready_screen = $("div.ready_container");
-    
+    var min_width = window.matchMedia("(min-width: 700px)"); min_width.addListener(showGameScreen);
+    showGameScreen(min_width);
     ready_screen.remove();
-    game_screen.animate({
-            top: "0vh"}, 3000);
+    
+    function showGameScreen(mediaQuery){
+        if(mediaQuery.matches){
+            game_screen.animate({
+                top: "0vh"}, 3000);
+        }
+        else {
+            game_screen.animate({
+                left: "0vw"}, 1000);
+        }
+    }
 }
 
 /* efekt pisania na maszynie */
