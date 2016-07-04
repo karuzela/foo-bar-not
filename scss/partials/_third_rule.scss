@@ -49,6 +49,11 @@
                     display: none;
                 }
             }
+            
+            .third_rule_inside_copy_p1 {
+                position: relative;
+                top: -10vh;
+            }
         }
     }
 }
@@ -93,6 +98,10 @@
                 .or {
                     display: none;
                 }
+            }
+            
+            .third_rule_inside_copy_p1 {
+                position: inherit;
             }
         }
     }
