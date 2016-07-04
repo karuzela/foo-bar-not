@@ -313,8 +313,13 @@ $(document).ready(function(){
     hideHeart();
     startGame();
     
+//    $.jInvertScroll(['.scroll'],        
+//        {
+//        height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+//    });
+    
     $.jInvertScroll(['.scroll'],        
         {
-        height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+        height: 'auto'                 // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
     });
 });
