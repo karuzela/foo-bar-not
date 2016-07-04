@@ -4,6 +4,12 @@
     }
 }
 
+@mixin mobile-iphone5-width {
+    @media only screen and (min-width: $mobile-iphone5-width){
+        @content;
+    }
+}
+
 @mixin mobile-width {
     @media only screen and (min-width: $mobile-width){
         @content;
